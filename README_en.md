@@ -1,126 +1,57 @@
 [简体中文](README.md) | [English](README_en.md)
 
-<div align="center">
+# WhoBot AI Phone Agent Skill
 
-# 🦞 OpenClaw WhoBot Skill
+Synced from [`whobot-phonecall-skill`](https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill). Skill version **2.0.0**, CLI protocol **2**.
 
-**Turn your lobster into an AI Phone Digital Employee expert**
+Discover agents by industry and task, try browser voice or real phone calls, create and tune agents, upload leads, check outbound progress, and manage account access. Available operations and pricing depend on product references and system responses. Follow the skill confirmation flow for real calls and paid actions.
 
-[![ClawHub](https://img.shields.io/badge/ClawHub-Published-ff6d00?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTIgMkM2LjQ4IDIgMiA2LjQ4IDIgMTJzNC40OCAxMCAxMCAxMCAxMC00LjQ4IDEwLTEwUzE3LjUyIDIgMTIgMnoiIGZpbGw9IndoaXRlIi8+PC9zdmc+&logoColor=white)](https://clawhub.ai/whobot-ai/openclaw-whobot-skill)
-[![WhoBot](https://img.shields.io/badge/WhoBot-whobot.com-0066ff?style=for-the-badge&logo=google-chrome&logoColor=white)](https://www.whobot.com)
-[![License](https://img.shields.io/badge/License-MIT-00c853?style=for-the-badge)](LICENSE)
+## Install
 
----
-
-*Your 🦞 is smart, but it doesn't know AI phone calls. Install this Skill, and it will.*
-
-</div>
-
-## Why This Skill
-
-🦞 [OpenClaw](https://openclaw.ai/) is the hottest open-source AI agent — it automates all kinds of work. But when you ask it professional questions about **AI Phone Digital Employees** — it can't answer accurately.
-
-The reason is simple: 🦞 is smart, but it doesn't have WhoBot's domain knowledge.
-
-**OpenClaw WhoBot Skill** solves this — officially built by WhoBot, it connects your 🦞 to WhoBot's AI knowledge base, turning it into a "phone AI expert."
-
-Once installed, any question related to WhoBot or AI phone digital employees triggers expert-level answers.
-
-## Quick Install
-
-### Option 1: ClawHub (Recommended)
-
-Visit [ClawHub](https://clawhub.ai/whobot-ai/openclaw-whobot-skill) and click install, or use the CLI:
+Requires Node.js 20+ with npm and npx.
 
 ```bash
-clawhub install whobot-ai/openclaw-whobot-skill
+npx skills add whobot-com/openclaw-whobot-skill -g -y
 ```
 
-### Option 2: Tell your 🦞
-
-Copy and send this to your 🦞:
-
-> Please install the Skill from ClawHub: whobot-ai/openclaw-whobot-skill
-
-Your 🦞 will handle the rest.
-
-### Option 3: Manual Install
+Manual OpenClaw installation:
 
 ```bash
-git clone https://github.com/whobot-ai/openclaw-whobot-skill.git
-# Place SKILL.md and references/ into ~/.openclaw/skills/openclaw-whobot/
+git clone https://github.com/whobot-com/openclaw-whobot-skill.git
+mkdir -p ~/.openclaw/skills/whobot-phonecall-skill
+cp openclaw-whobot-skill/SKILL.md openclaw-whobot-skill/release.json ~/.openclaw/skills/whobot-phonecall-skill/
+cp -R openclaw-whobot-skill/references ~/.openclaw/skills/whobot-phonecall-skill/
 ```
 
-## What Can It Do
+Restart or reload your host. Disable an existing legacy `openclaw-whobot` installation to avoid duplicate triggers.
 
-After installing, your 🦞 gains full WhoBot knowledge. Try asking:
+`openclaw-whobot.skill` is the updated ZIP package containing `whobot-phonecall-skill/`. ClawHub releases are maintained separately; this repository sync does not update ClawHub.
 
-| You Ask | 🦞 Answers |
-|---------|-----------|
-| What is WhoBot? | Premium AI Phone Digital Employee platform — 98% of recipients can't tell it's AI |
-| Core technology? | Humanization Engine + Role-Play Flywheel, proprietary end-to-end voice system |
-| Which industries? | Healthcare, automotive, restaurant, education, telecom, 30+ more |
-| Cost savings? | 90% cheaper than human agents — 1,000 conversions for just ¥30,000 |
-| Who invested? | GSR Ventures Series A (backed Didi, Ele.me) |
-| Team background? | CEO ex-Zuoyebang/Baidu, CTO ex-Alibaba Cloud P8, COO bestselling author |
+Follow [SKILL.md](SKILL.md) and [setup](references/setup.md) to install or check the official CLI:
 
-### Knowledge Coverage
-
-| Topic | Content |
-|-------|---------|
-| **Company** | Overview, funding, team, compliance |
-| **Product** | Five modules, platform features, Talk-and-Act Real-Time OS |
-| **Technology** | Humanization Engine, Role-Play Flywheel, proprietary voice system |
-| **Industries** | Healthcare, automotive, restaurant, education, telecom, 30+ more |
-| **Case Studies** | Kuafu Fried Skewers, Youxue Education, Telecom BPO |
-| **Business** | Cost advantages (90% reduction), value proposition, competitive moats |
-
-## MCP Server (Advanced)
-
-Beyond the Skill, this project also provides an **MCP Server** as an OpenClaw / Claude Code plugin with three tools:
-
-| Tool | Description |
-|------|-------------|
-| `whobot_knowledge` | Search WhoBot knowledge base by keywords |
-| `whobot_faq` | Answer frequently asked questions about WhoBot |
-| `whobot_overview` | Get full company and product overview |
-
-### 🦞 OpenClaw Config
-
-Add to `~/.openclaw/openclaw.json`:
-
-```json
-{
-  "mcpServers": {
-    "whobot-knowledge": {
-      "command": "python3",
-      "args": ["mcp-server/server.py"],
-      "cwd": "/path/to/openclaw-whobot-skill"
-    }
-  }
-}
+```bash
+npx --yes @whobot/cli@latest install
+whobot status --skill 2.0.0
 ```
 
-### Claude Code Config
+This repository stores the skill at its root. References to `skills/whobot-phonecall-skill` refer to the upstream multi-skill repository layout.
+
+## Contents
+
+- `SKILL.md`, `release.json`, and reference documents: the phone agent skill.
+- `openclaw-whobot.skill`: packaged upstream skill files.
+- `mcp-server/`, `references/knowledge.md`, and `scripts/sync-knowledge.sh`: preserved legacy knowledge MCP integration, independent of the new CLI workflow.
+
+## Optional legacy knowledge MCP
 
 ```bash
 claude mcp add whobot-knowledge python3 /path/to/openclaw-whobot-skill/mcp-server/server.py
 ```
 
-## About WhoBot
+Run `./scripts/sync-knowledge.sh` to update the legacy knowledge document from `whobot-ai/whobot-ai`. This script does not sync the new phone agent skill.
 
-[WhoBot](https://www.whobot.com) is a premium AI Phone Digital Employee platform that makes and receives calls like a real human.
+[WhoBot](https://whobot.com) · [Console](https://work.whobot.com/) · [Upstream](https://github.com/whobot-ai/skills)
 
-**Two Core Capabilities**:
-- 🎭 **Humanization Engine** — Natural pauses, filler words, emotion awareness. Like a human, but more consistent
-- 🧬 **Role-Play Flywheel** — 30+ industries deep, data flywheel driven, every call makes the next one better
+## License
 
-> 10x cost reduction. 100% renewal rate. 98% of call recipients can't tell whether they're talking to a human or AI.
-
----
-
-<div align="center">
-
-**[WhoBot Website →](https://www.whobot.com)** · **[ClawHub →](https://clawhub.ai/whobot-ai/openclaw-whobot-skill)** · **[OpenClaw →](https://openclaw.ai/)**
-
-</div>
+[MIT](LICENSE)
