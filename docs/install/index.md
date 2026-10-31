@@ -12,7 +12,7 @@ Skill 是一个目录（`SKILL.md` + `release.json` + `references/`），放进�
 不管用哪个 Agent，最简单的方式都是把这句话发给它：
 
 ```text
-请帮我安装这个 Skill：https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill
+请帮我安装呼波特的电话 Skill https://github.com/whobot-com/openclaw-whobot-skill
 ```
 
 Agent 会自己下载并放到它的技能目录；装好后新开一个对话即可。下面的表格和各平台页面是给想了解细节或手动安装的人看的。

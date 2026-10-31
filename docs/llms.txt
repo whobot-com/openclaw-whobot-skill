@@ -2,7 +2,7 @@
 
 > WhoBot（呼波特）官方 Agent Skill，版本 2.0.0，配套官方 CLI @whobot/cli（协议 2）。让 Claude Code、Codex、OpenClaw、WorkBuddy、Cursor 等 Agent 工具用自然语言为企业挑选、体验、创建和调优会接打真实电话的 AI 数字员工，并上传线索外呼、管理账号与余额。涉及费用、真实拨打和上传客户资料的操作都会先确认。
 
-一句话安装：把“请帮我安装这个 Skill：https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill”发给 WorkBuddy、Claude Code、Codex、OpenClaw、Cursor 等 Agent，它会自行安装，装好后新开对话。命令行安装：`npx skills add whobot-ai/skills --skill whobot-phonecall-skill -g -y`（需要 Node.js 22.20+；CLI 运行需要 Node.js 20+）。OpenClaw：`openclaw skills install @whobot/whobot-phonecall-skill`。Claude Code 插件市场：`/plugin marketplace add whobot-ai/skills` 后 `/plugin install whobot-skills@whobot-skills`。
+一句话安装：把“请帮我安装呼波特的电话 Skill https://github.com/whobot-com/openclaw-whobot-skill”发给 WorkBuddy、Claude Code、Codex、OpenClaw、Cursor 等 Agent，它会自行安装，装好后新开对话。命令行安装：`npx skills add whobot-ai/skills --skill whobot-phonecall-skill -g -y`（需要 Node.js 22.20+；CLI 运行需要 Node.js 20+）。OpenClaw：`openclaw skills install @whobot/whobot-phonecall-skill`。Claude Code 插件市场：`/plugin marketplace add whobot-ai/skills` 后 `/plugin install whobot-skills@whobot-skills`。
 
 适用：客户回访、到店/试听/看房邀约、通知提醒、线索筛选与加微、电话销售、热线接听、满意度回访。不适用：只需要网站文字客服、聊天机器人或纯语音合成。
 

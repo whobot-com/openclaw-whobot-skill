@@ -34,7 +34,7 @@
 把这句话发给你正在用的 AI Agent（WorkBuddy、Claude Code、Codex、OpenClaw、Cursor 等），它会自己装好：
 
 ```text
-请帮我安装这个 Skill：https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill
+请帮我安装呼波特的电话 Skill https://github.com/whobot-com/openclaw-whobot-skill
 ```
 
 装好后新开一个对话，说“呼波特能做什么”。第一次办事时，Agent 会引导你准备工具和用手机号登录。详见[五分钟上手](https://whobot-com.github.io/openclaw-whobot-skill/quickstart.html)；WorkBuddy 用户看 [WorkBuddy 使用指南](https://whobot-com.github.io/openclaw-whobot-skill/install/workbuddy.html)。
@@ -67,7 +67,7 @@
 点代码框右上角的“复制”，粘贴到 Agent 的对话框发送：
 
 ```text
-请帮我安装这个 Skill：https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill
+请帮我安装呼波特的电话 Skill https://github.com/whobot-com/openclaw-whobot-skill
 ```
 
 Agent 会自己下载并放到正确的位置。装好后，**新开一个对话**让它生效。
@@ -127,7 +127,7 @@ Skill 是一个目录（`SKILL.md` + `release.json` + `references/`），放进�
 不管用哪个 Agent，最简单的方式都是把这句话发给它：
 
 ```text
-请帮我安装这个 Skill：https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill
+请帮我安装呼波特的电话 Skill https://github.com/whobot-com/openclaw-whobot-skill
 ```
 
 Agent 会自己下载并放到它的技能目录；装好后新开一个对话即可。下面的表格和各平台页面是给想了解细节或手动安装的人看的。
@@ -192,7 +192,7 @@ WorkBuddy 是腾讯的桌面 AI 助手。装上呼波特 Skill 后，你在 Work
 打开 WorkBuddy，新建一个对话，把这句话发给它：
 
 ```text
-请帮我安装这个 Skill：https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill
+请帮我安装呼波特的电话 Skill https://github.com/whobot-com/openclaw-whobot-skill
 ```
 
 WorkBuddy 会下载 Skill 并放进自己的技能目录。过程中如果它请你允许下载或运行命令，点“允许”。看到安装完成后，**新建一个对话**再开始使用。
@@ -271,7 +271,7 @@ Claude Code 原生支持 Agent Skills，会根据 Skill 的描述自动加载，
 在对话里发送：
 
 ```text
-请帮我安装这个 Skill：https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill
+请帮我安装呼波特的电话 Skill https://github.com/whobot-com/openclaw-whobot-skill
 ```
 
 装好后新开一个对话。以下是命令行和手动方式，供需要时使用。
@@ -339,7 +339,7 @@ Codex 从 `.agents/skills` 目录加载 Skill：用户级 `~/.agents/skills/`，
 在对话里发送：
 
 ```text
-请帮我安装这个 Skill：https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill
+请帮我安装呼波特的电话 Skill https://github.com/whobot-com/openclaw-whobot-skill
 ```
 
 装好后新开一个对话。以下是命令行和手动方式，供需要时使用。
@@ -385,7 +385,7 @@ Codex 通常会自动发现新 Skill；没出现时重启 Codex。
 在对话里发送：
 
 ```text
-请帮我安装这个 Skill：https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill
+请帮我安装呼波特的电话 Skill https://github.com/whobot-com/openclaw-whobot-skill
 ```
 
 装好后新开一个对话。以下是命令行和手动方式，供需要时使用。
@@ -445,7 +445,7 @@ Cursor 的 Agent 会在启动时发现 Skill，并根据描述自动选用；也
 在对话里发送：
 
 ```text
-请帮我安装这个 Skill：https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill
+请帮我安装呼波特的电话 Skill https://github.com/whobot-com/openclaw-whobot-skill
 ```
 
 装好后新开一个对话。以下是命令行和手动方式，供需要时使用。
@@ -483,7 +483,7 @@ Cursor 也会兼容读取 `~/.claude/skills/`、`~/.codex/skills/`，所以已�
 在对话里发送：
 
 ```text
-请帮我安装这个 Skill：https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill
+请帮我安装呼波特的电话 Skill https://github.com/whobot-com/openclaw-whobot-skill
 ```
 
 装好后新开一个对话。以下是命令行和手动方式，供需要时使用。

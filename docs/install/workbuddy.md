@@ -12,7 +12,7 @@ WorkBuddy 是腾讯的桌面 AI 助手。装上呼波特 Skill 后，你在 Work
 打开 WorkBuddy，新建一个对话，把这句话发给它：
 
 ```text
-请帮我安装这个 Skill：https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill
+请帮我安装呼波特的电话 Skill https://github.com/whobot-com/openclaw-whobot-skill
 ```
 
 WorkBuddy 会下载 Skill 并放进自己的技能目录。过程中如果它请你允许下载或运行命令，点“允许”。看到安装完成后，**新建一个对话**再开始使用。

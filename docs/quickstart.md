@@ -12,7 +12,7 @@ description: 一句话安装呼波特电话数字员工 Skill：把一句话发�
 点代码框右上角的“复制”，粘贴到 Agent 的对话框发送：
 
 ```text
-请帮我安装这个 Skill：https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill
+请帮我安装呼波特的电话 Skill https://github.com/whobot-com/openclaw-whobot-skill
 ```
 
 Agent 会自己下载并放到正确的位置。装好后，**新开一个对话**让它生效。

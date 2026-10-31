@@ -13,8 +13,10 @@
 **一句话安装（推荐）**：把这句话发给你的 AI Agent（WorkBuddy、Claude Code、Codex、OpenClaw、Cursor 等），装好后新开一个对话即可。
 
 ```text
-请帮我安装这个 Skill：https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill
+请帮我安装呼波特的电话 Skill https://github.com/whobot-com/openclaw-whobot-skill
 ```
+
+**给 Agent 的安装说明**：本仓库根目录就是 Skill。安装时把 `SKILL.md`、`release.json` 和 `references/` 复制到宿主 skills 目录下的 `whobot-phonecall-skill/` 文件夹（如 `~/.workbuddy/skills/`、`~/.claude/skills/`、`~/.agents/skills/`、`~/.openclaw/skills/`），不需要复制 `docs/`、`mcp-server/`、`scripts/`；完成后提示用户新开对话。
 
 WorkBuddy 用户请看 [WorkBuddy 使用指南](https://whobot-com.github.io/openclaw-whobot-skill/install/workbuddy.html)。
 

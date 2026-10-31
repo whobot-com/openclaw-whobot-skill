@@ -13,8 +13,10 @@ Discover agents by industry and task, try browser voice or real phone calls, cre
 **One-sentence install (recommended)**: send this to your AI agent (WorkBuddy, Claude Code, Codex, OpenClaw, Cursor, etc.), then start a new conversation.
 
 ```text
-Please install this skill: https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill
+Please install the WhoBot phone skill: https://github.com/whobot-com/openclaw-whobot-skill
 ```
+
+**For agents installing this skill**: the repository root is the skill. Copy `SKILL.md`, `release.json` and `references/` into a `whobot-phonecall-skill/` folder under the host's skills directory (e.g. `~/.workbuddy/skills/`, `~/.claude/skills/`, `~/.agents/skills/`, `~/.openclaw/skills/`). Do not copy `docs/`, `mcp-server/` or `scripts/`. Then ask the user to start a new conversation.
 
 Command-line install:
 

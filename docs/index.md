@@ -37,7 +37,7 @@ description: 呼波特（WhoBot）AI 电话数字员工 Skill：在 Claude Code�
 把这句话发给你正在用的 AI Agent（WorkBuddy、Claude Code、Codex、OpenClaw、Cursor 等），它会自己装好：
 
 ```text
-请帮我安装这个 Skill：https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill
+请帮我安装呼波特的电话 Skill https://github.com/whobot-com/openclaw-whobot-skill
 ```
 
 装好后新开一个对话，说“呼波特能做什么”。第一次办事时，Agent 会引导你准备工具和用手机号登录。详见[五分钟上手](quickstart.md)；WorkBuddy 用户看 [WorkBuddy 使用指南](install/workbuddy.md)。
