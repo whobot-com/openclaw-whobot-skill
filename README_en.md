@@ -4,11 +4,13 @@
 
 Synced from [`whobot-phonecall-skill`](https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill). Skill version **2.0.0**, CLI protocol **2**.
 
+📖 **Full documentation (Chinese): <https://whobot-com.github.io/openclaw-whobot-skill/>** — per-platform setup, usage guides, protocol reference, [llms.txt](https://whobot-com.github.io/openclaw-whobot-skill/llms.txt).
+
 Discover agents by industry and task, try browser voice or real phone calls, create and tune agents, upload leads, check outbound progress, and manage account access. Available operations and pricing depend on product references and system responses. Follow the skill confirmation flow for real calls and paid actions.
 
 ## Install
 
-Requires Node.js 20+ with npm and npx.
+Requires Node.js 20+ with npm and npx; the `npx skills` installer requires Node.js 22.20+. See the [platform overview](https://whobot-com.github.io/openclaw-whobot-skill/install/) for Claude Code, Codex, OpenClaw, WorkBuddy, Cursor and more.
 
 ```bash
 npx skills add whobot-com/openclaw-whobot-skill -g -y
@@ -40,6 +42,7 @@ This repository stores the skill at its root. References to `skills/whobot-phone
 
 - `SKILL.md`, `release.json`, and reference documents: the phone agent skill.
 - `openclaw-whobot.skill`: packaged upstream skill files.
+- `docs/`: documentation site source (GitHub Pages), which also publishes `llms.txt` and `llms-full.txt`.
 - `mcp-server/`, `references/knowledge.md`, and `scripts/sync-knowledge.sh`: preserved legacy knowledge MCP integration, independent of the new CLI workflow.
 
 ## Optional legacy knowledge MCP

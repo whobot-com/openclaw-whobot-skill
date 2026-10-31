@@ -1,0 +1,36 @@
+title: 呼波特电话数字员工 Skill 文档
+description: WhoBot whobot-phonecall-skill 的安装、各平台接入、使用旅程与协议参考。
+lang: zh-CN
+url: https://whobot-com.github.io
+baseurl: /openclaw-whobot-skill
+repo_url: https://github.com/whobot-com/openclaw-whobot-skill
+upstream_url: https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill
+skill_version: 2.0.0
+cli_protocol: 2
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter_opts:
+    disable: true
+
+plugins:
+  - jekyll-relative-links
+  - jekyll-optional-front-matter
+  - jekyll-sitemap
+relative_links:
+  enabled: true
+  collections: false
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+exclude:
+  - scripts/
+  - README.md
+  - Gemfile
+  - Gemfile.lock

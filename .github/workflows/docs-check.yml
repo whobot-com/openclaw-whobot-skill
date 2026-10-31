@@ -1,0 +1,15 @@
+name: docs-check
+on:
+  push:
+    paths: ["docs/**", "SKILL.md"]
+  pull_request:
+    paths: ["docs/**", "SKILL.md"]
+jobs:
+  llms-full:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node docs/scripts/build-llms.mjs --check

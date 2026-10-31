@@ -1,0 +1,30 @@
+# 侧栏顺序，同时是 scripts/build-llms.mjs 拼接 llms-full.txt 的顺序。
+- section: 开始
+  pages:
+    - { title: 概览, path: index.md }
+    - { title: 五分钟上手, path: quickstart.md }
+- section: 各平台接入
+  pages:
+    - { title: 平台总览, path: install/index.md }
+    - { title: Claude Code, path: install/claude-code.md }
+    - { title: Codex, path: install/codex.md }
+    - { title: OpenClaw, path: install/openclaw.md }
+    - { title: WorkBuddy / CodeBuddy, path: install/workbuddy.md }
+    - { title: Cursor, path: install/cursor.md }
+    - { title: 其他 Agent 工具, path: install/other-agents.md }
+    - { title: DeepSeek Harness 插件, path: install/deepseek-harness.md }
+- section: 使用指南
+  pages:
+    - { title: 找标杆员工, path: guide/find-benchmark.md }
+    - { title: 体验通话, path: guide/try-a-call.md }
+    - { title: 创建数字员工, path: guide/create-agent.md }
+    - { title: 调优与撤销, path: guide/adjust-agent.md }
+    - { title: 线索外呼, path: guide/leads.md }
+    - { title: 账号与余额, path: guide/account.md }
+- section: 参考
+  pages:
+    - { title: 工作原理与协议 v2, path: reference/protocol.md }
+    - { title: 确认、费用与隐私, path: reference/safety.md }
+    - { title: 更新与排障, path: reference/troubleshooting.md }
+    - { title: 版本与发布渠道, path: reference/releases.md }
+    - { title: 常见问题, path: faq.md }

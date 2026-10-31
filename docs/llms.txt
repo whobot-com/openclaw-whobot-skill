@@ -1,0 +1,47 @@
+# 呼波特电话数字员工 Skill（whobot-phonecall-skill）
+
+> WhoBot（呼波特）官方 Agent Skill，版本 2.0.0，配套官方 CLI @whobot/cli（协议 2）。让 Claude Code、Codex、OpenClaw、WorkBuddy、Cursor 等 Agent 工具用自然语言为企业挑选、体验、创建和调优会接打真实电话的 AI 数字员工，并上传线索外呼、管理账号与余额。涉及费用、真实拨打和上传客户资料的操作都会先确认。
+
+安装（通用）：`npx skills add whobot-ai/skills --skill whobot-phonecall-skill -g -y`（需要 Node.js 22.20+；CLI 运行需要 Node.js 20+）。OpenClaw：`openclaw skills install @whobot/whobot-phonecall-skill`。Claude Code 插件市场：`/plugin marketplace add whobot-ai/skills` 后 `/plugin install whobot-skills@whobot-skills`。
+
+适用：客户回访、到店/试听/看房邀约、通知提醒、线索筛选与加微、电话销售、热线接听、满意度回访。不适用：只需要网站文字客服、聊天机器人或纯语音合成。
+
+## 开始
+
+- [概览](https://whobot-com.github.io/openclaw-whobot-skill/)：能做什么、一条命令安装、适用范围
+- [五分钟上手](https://whobot-com.github.io/openclaw-whobot-skill/quickstart.html)：环境、安装、第一次对话与登录
+
+## 各平台接入
+
+- [平台总览](https://whobot-com.github.io/openclaw-whobot-skill/install/)：各平台推荐方式、安装目录与共同要求
+- [Claude Code](https://whobot-com.github.io/openclaw-whobot-skill/install/claude-code.html)：插件市场、npx skills、手动安装，超时与权限
+- [Codex](https://whobot-com.github.io/openclaw-whobot-skill/install/codex.html)：~/.agents/skills、$skill-installer、沙箱联网
+- [OpenClaw](https://whobot-com.github.io/openclaw-whobot-skill/install/openclaw.html)：ClawHub 安装、手动安装、从旧版 openclaw-whobot 迁移
+- [WorkBuddy / CodeBuddy](https://whobot-com.github.io/openclaw-whobot-skill/install/workbuddy.html)：对话安装、~/.workbuddy/skills、Windows 说明
+- [Cursor](https://whobot-com.github.io/openclaw-whobot-skill/install/cursor.html)：安装目录与调用方式
+- [其他 Agent 工具](https://whobot-com.github.io/openclaw-whobot-skill/install/other-agents.html)：Cline、Gemini CLI、GitHub Copilot、Trae、Qoder、Qwen Code、Kimi Code、OpenCode、Windsurf 等
+- [DeepSeek Harness 插件](https://whobot-com.github.io/openclaw-whobot-skill/install/deepseek-harness.html)：@whobot/dsh-agent-whobot，卡片式交互
+
+## 使用指南
+
+- [找标杆员工](https://whobot-com.github.io/openclaw-whobot-skill/guide/find-benchmark.html)：按打给谁、电话目标、卖什么匹配标杆
+- [体验通话](https://whobot-com.github.io/openclaw-whobot-skill/guide/try-a-call.html)：网页语音与真实电话试打
+- [创建数字员工](https://whobot-com.github.io/openclaw-whobot-skill/guide/create-agent.html)：标杆、录音、资料或业务描述创建并雇佣
+- [调优与撤销](https://whobot-com.github.io/openclaw-whobot-skill/guide/adjust-agent.html)：改开场白与话术、版本与撤销
+- [线索外呼](https://whobot-com.github.io/openclaw-whobot-skill/guide/leads.html)：上岗前提、表头、时段、去重、线索包
+- [账号与余额](https://whobot-com.github.io/openclaw-whobot-skill/guide/account.html)：登录、退出、重置、余额
+
+## 参考
+
+- [工作原理与协议 v2](https://whobot-com.github.io/openclaw-whobot-skill/reference/protocol.html)：目录结构、预检、next.action 动作表、执行纪律、入口命令
+- [确认、费用与隐私](https://whobot-com.github.io/openclaw-whobot-skill/reference/safety.html)
+- [更新与排障](https://whobot-com.github.io/openclaw-whobot-skill/reference/troubleshooting.html)
+- [版本与发布渠道](https://whobot-com.github.io/openclaw-whobot-skill/reference/releases.html)
+- [常见问题](https://whobot-com.github.io/openclaw-whobot-skill/faq.html)
+- [SKILL.md 原文](https://github.com/whobot-ai/skills/blob/main/skills/whobot-phonecall-skill/SKILL.md)
+
+## Optional
+
+- [llms-full.txt](https://whobot-com.github.io/openclaw-whobot-skill/llms-full.txt)：以上全部页面与 SKILL.md 的合并全文
+- [呼波特公司与产品介绍](https://www.whobot.com/llms.txt)
+- [管理平台](https://work.whobot.com/)：员工上岗、企业认证

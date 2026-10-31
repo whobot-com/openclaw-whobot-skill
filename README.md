@@ -4,11 +4,13 @@
 
 同步自 [whobot-ai/skills](https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill) 的 `whobot-phonecall-skill`，当前版本 **2.0.0**，CLI 协议 **2**。
 
+📖 **完整文档：<https://whobot-com.github.io/openclaw-whobot-skill/>**（各平台接入、使用指南、协议参考、[llms.txt](https://whobot-com.github.io/openclaw-whobot-skill/llms.txt)）
+
 支持按行业和任务找标杆、网页语音与真实电话体验、创建及调优数字员工、上传线索和查询外呼进度、账号登录与余额查询。实际能力和费用以产品资料及系统返回为准；真实拨打和收费操作按 skill 的确认流程执行。
 
 ## 安装
 
-运行环境：Node.js 20+（含 npm、npx）。
+运行环境：Node.js 20+（含 npm、npx）；使用 `npx skills` 安装工具需要 Node.js 22.20+。各平台（Claude Code、Codex、OpenClaw、WorkBuddy、Cursor 等）的安装方式见[平台总览](https://whobot-com.github.io/openclaw-whobot-skill/install/)。
 
 ```bash
 npx skills add whobot-com/openclaw-whobot-skill -g -y
@@ -47,6 +49,7 @@ whobot status --skill 2.0.0
 
 - `SKILL.md`、`release.json`、`references/`：电话数字员工 skill 及参考资料。
 - `openclaw-whobot.skill`：与上游 skill 文件一致的安装包。
+- `docs/`：文档站源码（GitHub Pages），`llms.txt` / `llms-full.txt` 由此发布。
 - `mcp-server/`、`references/knowledge.md`、`scripts/sync-knowledge.sh`：保留的旧版知识库 MCP 功能，独立于新版 CLI 流程。
 
 ## 旧版知识库 MCP（可选）
