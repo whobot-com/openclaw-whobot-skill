@@ -53,4 +53,5 @@ npx skills add whobot-ai/skills --skill whobot-phonecall-skill -g -y
 - Skill 源码（合集仓库）：<https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill>
 - 专用仓库与本文档：<https://github.com/whobot-com/openclaw-whobot-skill>
 - ClawHub：<https://clawhub.ai/whobot/whobot-phonecall-skill>
-- 给 AI 读的索引：[llms.txt](llms.txt) · [llms-full.txt](llms-full.txt)
+- 给 AI 读的索引：[llms.txt](llms.txt) · [llms-full.txt](llms-full.txt) · 公司与产品全量介绍 [whobot.com/llms.txt](https://www.whobot.com/llms.txt)（GitHub 同步：[whobot-com/llms.txt](https://github.com/whobot-com/llms.txt)）
+- DeepSeek Harness 用户：安装插件 [`@whobot/dsh-agent-whobot`](install/deepseek-harness.md)
