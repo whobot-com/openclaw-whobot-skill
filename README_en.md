@@ -63,7 +63,7 @@ claude mcp add whobot-knowledge python3 /path/to/openclaw-whobot-skill/mcp-serve
 
 Run `./scripts/sync-knowledge.sh` to update the legacy knowledge document from `whobot-ai/whobot-ai`. This script does not sync the new phone agent skill.
 
-[WhoBot](https://whobot.com) · [Console](https://work.whobot.com/) · [Upstream](https://github.com/whobot-ai/skills)
+[WhoBot](https://whobot.com) · [Console](https://work.whobot.com/) · [ModelScope](https://modelscope.cn/skills/WhoBot/whobot-phonecall-skill) · [Upstream](https://github.com/whobot-ai/skills)
 
 ## License
 

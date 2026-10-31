@@ -50,7 +50,7 @@
 - 官网：<https://www.whobot.com>　管理平台（员工上岗、企业认证）：<https://work.whobot.com/>
 - Skill 源码（合集仓库）：<https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill>
 - 专用仓库与本文档：<https://github.com/whobot-com/openclaw-whobot-skill>
-- ClawHub：<https://clawhub.ai/whobot/whobot-phonecall-skill>
+- ClawHub：<https://clawhub.ai/whobot/whobot-phonecall-skill>　ModelScope 魔搭：<https://modelscope.cn/skills/WhoBot/whobot-phonecall-skill>
 - 给 AI 读的索引：[llms.txt](https://whobot-com.github.io/openclaw-whobot-skill/llms.txt) · [llms-full.txt](https://whobot-com.github.io/openclaw-whobot-skill/llms-full.txt) · 公司与产品全量介绍 [whobot.com/llms.txt](https://www.whobot.com/llms.txt)（GitHub 同步：[whobot-com/llms.txt](https://github.com/whobot-com/llms.txt)）
 - DeepSeek Harness 用户：安装插件 [`@whobot/dsh-agent-whobot`](https://whobot-com.github.io/openclaw-whobot-skill/install/deepseek-harness.html)
 
@@ -146,12 +146,13 @@ Agent 会自己下载并放到它的技能目录；装好后新开一个对话�
 
 `…` 代表 `whobot-ai/skills --skill whobot-phonecall-skill -g -y`。
 
-## 三个安装来源，内容相同
+## 安装来源，内容相同
 
 | 来源 | 地址 | 适合 |
 |---|---|---|
 | 合集仓库（主源） | `whobot-ai/skills` 下的 `skills/whobot-phonecall-skill` | `npx skills`、Claude Code 插件市场、手动复制 |
 | 专用仓库 | `whobot-com/openclaw-whobot-skill`（Skill 在仓库根目录，另含 `.skill` 安装包） | 下载 ZIP 安装包、只想要这一个 Skill |
+| ModelScope 魔搭 | `WhoBot/whobot-phonecall-skill`（[页面](https://modelscope.cn/skills/WhoBot/whobot-phonecall-skill)，自动同步合集仓库） | 国内网络环境、魔搭用户 |
 | ClawHub | `@whobot/whobot-phonecall-skill`（组织版）、`@whobot-ai/whobot-phonecall-skill`（个人版） | OpenClaw |
 
 ClawHub 的发布版本号与 Skill 文件内的版本号分别管理，详见[版本与发布渠道](https://whobot-com.github.io/openclaw-whobot-skill/reference/releases.html)。
@@ -512,6 +513,20 @@ npx skills add whobot-ai/skills --skill whobot-phonecall-skill -g -a <agent> -y
 
 目录来自 `skills` 安装工具的[官方支持列表](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)，以该列表的最新版本为准。上表没有的工具，可以先查列表；完全不在列表里的，把 `whobot-phonecall-skill` 整个文件夹手动复制到该工具的 skills 目录。
 
+
+## 从 ModelScope 魔搭安装
+
+访问 GitHub 不方便时，可以从魔搭安装：
+
+```bash
+npx skills add https://modelscope.cn/skills/WhoBot/whobot-phonecall-skill
+```
+
+或使用魔搭官方脚本：
+
+```bash
+curl -fsSL https://modelscope.cn/skills/install.sh | bash -s -- WhoBot/whobot-phonecall-skill
+```
 
 ## 使用前确认三件事
 
@@ -991,6 +1006,7 @@ Skill 文件版本和 ClawHub 发布版本分别管理：ClawHub 每次上传都
 | GitHub 专用仓库 | <https://github.com/whobot-com/openclaw-whobot-skill> | 只含电话 Skill（根目录），附 `.skill` 安装包、旧版知识库 MCP 与本文档 |
 | ClawHub 组织版 | <https://clawhub.ai/whobot/whobot-phonecall-skill> | `openclaw skills install @whobot/whobot-phonecall-skill` |
 | ClawHub 个人版 | <https://clawhub.ai/whobot-ai/whobot-phonecall-skill> | 与组织版同源 |
+| ModelScope 魔搭 | <https://modelscope.cn/skills/WhoBot/whobot-phonecall-skill> | 组织 WhoBot 发布，从合集仓库自动同步；`npx skills add https://modelscope.cn/skills/WhoBot/whobot-phonecall-skill` |
 | skills.sh | <https://www.skills.sh/whobot-ai/skills/whobot-phonecall-skill> | 以 GitHub 为源，按安装记录收录 |
 
 ## 历史
@@ -1039,6 +1055,10 @@ Skill 文件版本和 ClawHub 发布版本分别管理：ClawHub 每次上传都
 ### 新版和旧版 openclaw-whobot 有什么不同？
 
 旧版只能基于知识库回答产品问题；新版 2.0 能实际完成找员工、体验、创建、调优和外呼。两个同时启用会重复触发，请停用旧版。
+
+### 访问 GitHub 慢或打不开怎么办？
+
+Skill 也发布在 ModelScope 魔搭：<https://modelscope.cn/skills/WhoBot/whobot-phonecall-skill>。可以对 Agent 说“请帮我从 https://modelscope.cn/skills/WhoBot/whobot-phonecall-skill 安装这个 Skill”，或在终端运行 `npx skills add https://modelscope.cn/skills/WhoBot/whobot-phonecall-skill`。
 
 ### 去哪里反馈问题？
 

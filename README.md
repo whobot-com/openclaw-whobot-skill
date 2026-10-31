@@ -74,7 +74,7 @@ claude mcp add whobot-knowledge python3 /path/to/openclaw-whobot-skill/mcp-serve
 
 ## 官方入口
 
-[WhoBot 官网](https://whobot.com) · [管理平台](https://work.whobot.com/) · [上游 Skills](https://github.com/whobot-ai/skills)
+[WhoBot 官网](https://whobot.com) · [管理平台](https://work.whobot.com/) · [ModelScope 魔搭](https://modelscope.cn/skills/WhoBot/whobot-phonecall-skill) · [上游 Skills](https://github.com/whobot-ai/skills)
 
 ## License
 

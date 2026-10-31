@@ -43,5 +43,6 @@
 ## Optional
 
 - [llms-full.txt](https://whobot-com.github.io/openclaw-whobot-skill/llms-full.txt)：以上全部页面与 SKILL.md 的合并全文
+- [ModelScope 魔搭](https://modelscope.cn/skills/WhoBot/whobot-phonecall-skill)：组织 WhoBot 发布的同一 Skill，适合国内网络环境
 - [呼波特公司与产品介绍](https://www.whobot.com/llms.txt)
 - [管理平台](https://work.whobot.com/)：员工上岗、企业认证

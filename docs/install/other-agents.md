@@ -40,6 +40,20 @@ npx skills add whobot-ai/skills --skill whobot-phonecall-skill -g -a <agent> -y
 目录来自 `skills` 安装工具的[官方支持列表](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)，以该列表的最新版本为准。上表没有的工具，可以先查列表；完全不在列表里的，把 `whobot-phonecall-skill` 整个文件夹手动复制到该工具的 skills 目录。
 
 
+## 从 ModelScope 魔搭安装
+
+访问 GitHub 不方便时，可以从魔搭安装：
+
+```bash
+npx skills add https://modelscope.cn/skills/WhoBot/whobot-phonecall-skill
+```
+
+或使用魔搭官方脚本：
+
+```bash
+curl -fsSL https://modelscope.cn/skills/install.sh | bash -s -- WhoBot/whobot-phonecall-skill
+```
+
 ## 使用前确认三件事
 
 1. 工具能在本机执行命令（Skill 依赖 `@whobot/cli`）。

@@ -53,6 +53,6 @@ description: 呼波特（WhoBot）AI 电话数字员工 Skill：在 Claude Code�
 - 官网：<https://www.whobot.com>　管理平台（员工上岗、企业认证）：<https://work.whobot.com/>
 - Skill 源码（合集仓库）：<https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill>
 - 专用仓库与本文档：<https://github.com/whobot-com/openclaw-whobot-skill>
-- ClawHub：<https://clawhub.ai/whobot/whobot-phonecall-skill>
+- ClawHub：<https://clawhub.ai/whobot/whobot-phonecall-skill>　ModelScope 魔搭：<https://modelscope.cn/skills/WhoBot/whobot-phonecall-skill>
 - 给 AI 读的索引：[llms.txt](llms.txt) · [llms-full.txt](llms-full.txt) · 公司与产品全量介绍 [whobot.com/llms.txt](https://www.whobot.com/llms.txt)（GitHub 同步：[whobot-com/llms.txt](https://github.com/whobot-com/llms.txt)）
 - DeepSeek Harness 用户：安装插件 [`@whobot/dsh-agent-whobot`](install/deepseek-harness.md)

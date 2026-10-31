@@ -41,6 +41,10 @@ description: 关于呼波特电话数字员工 Skill 的常见问题：费用、
 
 旧版只能基于知识库回答产品问题；新版 2.0 能实际完成找员工、体验、创建、调优和外呼。两个同时启用会重复触发，请停用旧版。
 
+### 访问 GitHub 慢或打不开怎么办？
+
+Skill 也发布在 ModelScope 魔搭：<https://modelscope.cn/skills/WhoBot/whobot-phonecall-skill>。可以对 Agent 说“请帮我从 https://modelscope.cn/skills/WhoBot/whobot-phonecall-skill 安装这个 Skill”，或在终端运行 `npx skills add https://modelscope.cn/skills/WhoBot/whobot-phonecall-skill`。
+
 ### 去哪里反馈问题？
 
 对 Agent 说“我要反馈问题”，把生成的排障报告发给客服；或在 [GitHub](https://github.com/whobot-com/openclaw-whobot-skill/issues) 提 issue（不要贴验证码、Token、完整手机号和客户资料）。

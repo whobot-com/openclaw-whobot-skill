@@ -24,6 +24,7 @@ Skill 文件版本和 ClawHub 发布版本分别管理：ClawHub 每次上传都
 | GitHub 专用仓库 | <https://github.com/whobot-com/openclaw-whobot-skill> | 只含电话 Skill（根目录），附 `.skill` 安装包、旧版知识库 MCP 与本文档 |
 | ClawHub 组织版 | <https://clawhub.ai/whobot/whobot-phonecall-skill> | `openclaw skills install @whobot/whobot-phonecall-skill` |
 | ClawHub 个人版 | <https://clawhub.ai/whobot-ai/whobot-phonecall-skill> | 与组织版同源 |
+| ModelScope 魔搭 | <https://modelscope.cn/skills/WhoBot/whobot-phonecall-skill> | 组织 WhoBot 发布，从合集仓库自动同步；`npx skills add https://modelscope.cn/skills/WhoBot/whobot-phonecall-skill` |
 | skills.sh | <https://www.skills.sh/whobot-ai/skills/whobot-phonecall-skill> | 以 GitHub 为源，按安装记录收录 |
 
 ## 历史

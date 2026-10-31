@@ -31,12 +31,13 @@ Agent 会自己下载并放到它的技能目录；装好后新开一个对话�
 
 `…` 代表 `whobot-ai/skills --skill whobot-phonecall-skill -g -y`。
 
-## 三个安装来源，内容相同
+## 安装来源，内容相同
 
 | 来源 | 地址 | 适合 |
 |---|---|---|
 | 合集仓库（主源） | `whobot-ai/skills` 下的 `skills/whobot-phonecall-skill` | `npx skills`、Claude Code 插件市场、手动复制 |
 | 专用仓库 | `whobot-com/openclaw-whobot-skill`（Skill 在仓库根目录，另含 `.skill` 安装包） | 下载 ZIP 安装包、只想要这一个 Skill |
+| ModelScope 魔搭 | `WhoBot/whobot-phonecall-skill`（[页面](https://modelscope.cn/skills/WhoBot/whobot-phonecall-skill)，自动同步合集仓库） | 国内网络环境、魔搭用户 |
 | ClawHub | `@whobot/whobot-phonecall-skill`（组织版）、`@whobot-ai/whobot-phonecall-skill`（个人版） | OpenClaw |
 
 ClawHub 的发布版本号与 Skill 文件内的版本号分别管理，详见[版本与发布渠道](../reference/releases.md)。
