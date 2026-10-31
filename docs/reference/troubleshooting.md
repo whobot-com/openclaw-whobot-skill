@@ -19,7 +19,8 @@ whobot doctor --pretty
 | 现象 | 处理 |
 |---|---|
 | `whobot: command not found` | 确认 Node.js 20+ 可用，运行 `npx --yes @whobot/cli@latest install`，新开终端再试 |
-| `npx skills` 安装失败 | 安装工具需要 Node.js 22.20+；或改用[手动复制](../install/index.md#通用安装任何平台) |
+| 一句话安装失败 | 确认 Agent 能联网、能运行命令；或按各平台页面手动安装 |
+| `npx skills` 安装失败 | 安装工具需要 Node.js 22.20+；或改用[手动复制](../install/index.md#命令行安装任何平台) |
 | 预检提示需要升级 | 按 Skill 给出的确认卡升级 CLI 或 Skill，然后新开会话 |
 | 安装输出 `PREVIOUS_CLI_MISSING` 或 `CREDENTIAL_ORIGIN_MISMATCH` | 原来的程序被清理或服务地址已变。同意后用安装命令加 `--reset-local` 重装，再重新登录一次；员工和数据在服务端不受影响 |
 | 显示已登录却不能用 | 说“为什么显示已登录却不能用”，Skill 会查询状态，必要时引导重置 |

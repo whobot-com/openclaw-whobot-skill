@@ -7,7 +7,16 @@ description: 在 OpenAI Codex（CLI / IDE 扩展 / App）中安装和使用呼�
 
 Codex 从 `.agents/skills` 目录加载 Skill：用户级 `~/.agents/skills/`，仓库级为工作目录到仓库根之间的各级 `.agents/skills/`。
 
-## 安装
+
+## 一句话安装
+
+在对话里发送：
+
+<div class="prompt">请帮我安装这个 Skill：https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill</div>
+
+装好后新开一个对话。以下是命令行和手动方式，供需要时使用。
+
+## 命令行安装
 
 ```bash
 npx skills add whobot-ai/skills --skill whobot-phonecall-skill -g -a codex -y

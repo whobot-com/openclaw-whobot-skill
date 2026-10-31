@@ -1,59 +1,52 @@
 ---
 title: 五分钟上手
-description: 安装呼波特电话数字员工 Skill、安装官方 CLI、登录并完成第一次网页体验通话。
+description: 一句话安装呼波特电话数字员工 Skill：把一句话发给 WorkBuddy、Claude Code、Codex 等 Agent，它会自己装好，然后直接开始用。
 ---
 
 # 五分钟上手
 
-## 1. 准备环境
+不用打开终端，也不用记命令。把下面这句话发给你正在用的 AI Agent（WorkBuddy、Claude Code、Codex、OpenClaw、Cursor 都可以）。
 
-| 需要 | 说明 |
-|---|---|
-| Node.js 22.20+（含 npm、npx） | `npx skills` 安装工具要求 22.20+；只手动复制 Skill 时 Node.js 20+ 即可运行 CLI |
-| 一个支持 Agent Skills 的宿主 | Claude Code、Codex、OpenClaw、WorkBuddy、Cursor 等，见[平台总览](install/) |
-| 一个能接收短信的手机号 | 登录呼波特账号用；验证码只用于本次登录 |
+## 第一步：一句话安装
 
-检查版本：
+<div class="prompt">请帮我安装这个 Skill：https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill</div>
 
-```bash
-node -v
-npx -v
-```
+Agent 会自己下载并放到正确的位置。装好后，**新开一个对话**让它生效。
 
-## 2. 安装 Skill
+> 注意：Agent 安装时可能会请你允许它下载文件、运行命令，点“允许”即可。电脑上需要有 Node.js；没有的话 Agent 会提示你，按提示安装或直接让它帮你装。
 
-通用方式（自动识别本机已安装的 Agent 工具，`-g` 装到用户目录，所有项目可用）：
+## 第二步：说第一句话
+
+在新对话里说：
+
+<div class="prompt">呼波特能做什么？</div>
+
+Agent 会介绍能做的事。接着可以直接说你的需求，例如：
+
+<div class="prompt">我是做口腔诊所的，想找一个能邀约老客户到店的电话数字员工，先让我体验一下。</div>
+
+## 第三步：按提示完成第一次使用
+
+第一次办事时，Agent 会按顺序带你完成：
+
+1. **准备工具**：自动安装呼波特官方工具，可能请你再点一次“允许”。
+2. **登录**：给你看隐私协议和用户协议，问手机号，再问短信验证码。
+3. **体验通话**：推荐合适的数字员工，给出网页通话链接。点开链接、允许麦克风，就能直接和它对话；结束后 Agent 告诉你结果。
+
+从这里开始都是用说的：想做自己的员工、改话术、给客户外呼，直接告诉 Agent。涉及费用或真实拨打时，它会先给你看确认卡，你同意后才执行。
+
+## 接下来
+
+- 用 WorkBuddy：[WorkBuddy 使用指南](install/workbuddy.md)
+- 想知道还能说什么：[使用指南](guide/find-benchmark.md)
+- 装不上、用不了：[更新与排障](reference/troubleshooting.md)
+
+## 附：用命令安装（开发者）
+
+习惯命令行的话，也可以在终端运行（需要 Node.js 22.20+）：
 
 ```bash
 npx skills add whobot-ai/skills --skill whobot-phonecall-skill -g -y
 ```
 
-只装给某一个工具时加 `-a`，例如 `-a claude-code`、`-a codex`、`-a cursor`。不想用安装工具，或你的平台有自己的市场，见各平台页面。
-
-装好后**重启宿主或新开一个会话**，让它重新加载 Skill。
-
-## 3. 第一次对话
-
-对 Agent 说：
-
-> 呼波特能做什么？
-
-Agent 会用产品资料回答，不调用任何命令。接着说：
-
-> 帮我找一个做客户回访的电话数字员工，先用网页体验一下。
-
-这时 Skill 第一次需要执行业务，会自动做三件事：
-
-1. 运行 `whobot status --skill 2.0.0` 自检；
-2. 没装 CLI 时按说明执行 `npx --yes @whobot/cli@latest install`；
-3. 需要登录时给你看隐私协议和用户协议，问手机号，再问短信验证码。
-
-之后它会推荐标杆员工，给出网页通话链接。点开链接、允许麦克风，就能和数字员工直接对话；结束后 Agent 会告诉你通话结果。
-
-> 注意：宿主执行命令的超时时间至少要 130 秒，否则等待通话或生成结果时会被提前打断。各平台的设置方法见对应平台页面。
-
-## 4. 接下来
-
-- 用录音或资料做自己的员工：[创建数字员工](guide/create-agent.md)
-- 让员工给客户名单外呼：[线索外呼](guide/leads.md)（员工需先在管理平台上岗）
-- 装不上、用不了：[更新与排障](reference/troubleshooting.md)
+各平台的安装目录和手动方式见[平台总览](install/)。

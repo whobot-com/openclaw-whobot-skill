@@ -70,6 +70,11 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .doc blockquote p:last-child { margin-bottom: 0; }
 .doc blockquote.warn { background: var(--warn-bg); color: var(--warn-ink); }
 
+/* 一句话安装 */
+.doc .prompt { position: relative; margin: 4px 0 20px; padding: 18px 20px 58px; border-radius: 12px; background: linear-gradient(135deg, #eef3ff, #f6f9ff); font-size: 17px; line-height: 1.7; color: var(--ink); word-break: break-all; box-shadow: inset 0 0 0 1px rgba(47,107,255,.14); }
+.prompt-copy { position: absolute; left: 20px; bottom: 14px; border: 0; background: var(--blue); color: #fff; font: 600 14px var(--font); padding: 7px 16px; border-radius: 8px; cursor: pointer; }
+.prompt-copy:hover { background: var(--blue-ink); }
+
 /* 首页卡片 */
 .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; margin: 8px 0 24px; padding: 0 !important; list-style: none; }
 .cards li { margin: 0; }

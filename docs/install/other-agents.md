@@ -5,6 +5,16 @@ description: 在 Cline、Gemini CLI、GitHub Copilot、Trae、Qoder、Qwen Code�
 
 # 其他 Agent 工具
 
+## 一句话安装
+
+在对话里发送：
+
+<div class="prompt">请帮我安装这个 Skill：https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill</div>
+
+装好后新开一个对话。以下是命令行和手动方式，供需要时使用。
+
+## 命令行安装
+
 凡是支持 [Agent Skills 规范](https://agentskills.io) 的工具，都可以用 `npx skills` 安装，把 `-a` 换成对应的名字：
 
 ```bash
@@ -26,6 +36,7 @@ npx skills add whobot-ai/skills --skill whobot-phonecall-skill -g -a <agent> -y
 | Roo Code | `roo` | `~/.roo/skills/` | `.roo/skills/` |
 
 目录来自 `skills` 安装工具的[官方支持列表](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)，以该列表的最新版本为准。上表没有的工具，可以先查列表；完全不在列表里的，把 `whobot-phonecall-skill` 整个文件夹手动复制到该工具的 skills 目录。
+
 
 ## 使用前确认三件事
 

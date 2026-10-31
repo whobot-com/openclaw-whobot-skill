@@ -10,6 +10,14 @@ Discover agents by industry and task, try browser voice or real phone calls, cre
 
 ## Install
 
+**One-sentence install (recommended)**: send this to your AI agent (WorkBuddy, Claude Code, Codex, OpenClaw, Cursor, etc.), then start a new conversation.
+
+```text
+Please install this skill: https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill
+```
+
+Command-line install:
+
 Requires Node.js 20+ with npm and npx; the `npx skills` installer requires Node.js 22.20+. See the [platform overview](https://whobot-com.github.io/openclaw-whobot-skill/install/) for Claude Code, Codex, OpenClaw, WorkBuddy, Cursor and more.
 
 ```bash

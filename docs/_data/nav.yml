@@ -6,10 +6,10 @@
 - section: 各平台接入
   pages:
     - { title: 平台总览, path: install/index.md }
+    - { title: WorkBuddy（推荐）, path: install/workbuddy.md }
     - { title: Claude Code, path: install/claude-code.md }
     - { title: Codex, path: install/codex.md }
     - { title: OpenClaw, path: install/openclaw.md }
-    - { title: WorkBuddy / CodeBuddy, path: install/workbuddy.md }
     - { title: Cursor, path: install/cursor.md }
     - { title: 其他 Agent 工具, path: install/other-agents.md }
     - { title: DeepSeek Harness 插件, path: install/deepseek-harness.md }

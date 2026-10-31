@@ -10,6 +10,16 @@
 
 ## 安装
 
+**一句话安装（推荐）**：把这句话发给你的 AI Agent（WorkBuddy、Claude Code、Codex、OpenClaw、Cursor 等），装好后新开一个对话即可。
+
+```text
+请帮我安装这个 Skill：https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill
+```
+
+WorkBuddy 用户请看 [WorkBuddy 使用指南](https://whobot-com.github.io/openclaw-whobot-skill/install/workbuddy.html)。
+
+命令行安装：
+
 运行环境：Node.js 20+（含 npm、npx）；使用 `npx skills` 安装工具需要 Node.js 22.20+。各平台（Claude Code、Codex、OpenClaw、WorkBuddy、Cursor 等）的安装方式见[平台总览](https://whobot-com.github.io/openclaw-whobot-skill/install/)。
 
 ```bash

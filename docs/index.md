@@ -25,21 +25,20 @@ description: 呼波特（WhoBot）AI 电话数字员工 Skill：在 Claude Code�
 ## 从这里开始
 
 <ul class="cards">
-  <li><a href="quickstart.html"><strong>五分钟上手</strong><span>装好 Node.js，一条命令安装，说第一句话。</span></a></li>
-  <li><a href="install/"><strong>选择你的平台</strong><span>Claude Code、Codex、OpenClaw、WorkBuddy、Cursor 等接入方案对比。</span></a></li>
+  <li><a href="quickstart.html"><strong>五分钟上手</strong><span>一句话安装，说第一句话，完成第一次体验。</span></a></li>
+  <li><a href="install/workbuddy.html"><strong>WorkBuddy 使用指南</strong><span>在 WorkBuddy 里安装和使用，从找员工到外呼。</span></a></li>
+  <li><a href="install/"><strong>选择你的平台</strong><span>WorkBuddy、Claude Code、Codex、OpenClaw、Cursor 等平台说明。</span></a></li>
   <li><a href="guide/find-benchmark.html"><strong>使用指南</strong><span>找标杆、体验、创建、调优、外呼，每一步会发生什么。</span></a></li>
   <li><a href="reference/protocol.html"><strong>工作原理</strong><span>Skill 如何驱动 CLI，协议 v2 的动作与确认机制。</span></a></li>
 </ul>
 
-## 一条命令安装
+## 一句话安装
 
-需要 Node.js 22.20+（安装工具 `skills` 的要求；Skill 运行本身需要 Node.js 20+）：
+把这句话发给你正在用的 AI Agent（WorkBuddy、Claude Code、Codex、OpenClaw、Cursor 等），它会自己装好：
 
-```bash
-npx skills add whobot-ai/skills --skill whobot-phonecall-skill -g -y
-```
+<div class="prompt">请帮我安装这个 Skill：https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill</div>
 
-安装后重启或新开一个会话，对 Agent 说“呼波特能做什么”。第一次执行业务时，Skill 会自检并引导安装官方 CLI。各平台的推荐方式与差异见[平台总览](install/)。
+装好后新开一个对话，说“呼波特能做什么”。第一次办事时，Agent 会引导你准备工具和用手机号登录。详见[五分钟上手](quickstart.md)；WorkBuddy 用户看 [WorkBuddy 使用指南](install/workbuddy.md)。
 
 ## 适用与不适用
 

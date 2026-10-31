@@ -37,7 +37,8 @@ function absolutize(body, fromPath) {
 }
 
 // 首页卡片是 HTML，在纯文本里去掉
-const dropHtml = (s) => s.replace(/<ul class="cards">[\s\S]*?<\/ul>\n?/g, "").replace(/<p class="lead">([\s\S]*?)<\/p>/g, "$1");
+const dropHtml = (s) => s.replace(/<ul class="cards">[\s\S]*?<\/ul>\n?/g, "").replace(/<p class="lead">([\s\S]*?)<\/p>/g, "$1")
+  .replace(/<div class="prompt">([\s\S]*?)<\/div>/g, (_, t) => "> " + t.trim());
 
 let out = `# 呼波特电话数字员工 Skill 文档（全文）
 

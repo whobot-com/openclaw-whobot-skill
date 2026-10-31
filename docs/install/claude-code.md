@@ -7,6 +7,15 @@ description: 在 Claude Code 中安装和使用呼波特电话数字员工 Skill
 
 Claude Code 原生支持 Agent Skills，会根据 Skill 的描述自动加载，也可以用 `/whobot-phonecall-skill` 手动调用。它自带 AskUserQuestion 选择卡，体验最完整。
 
+
+## 一句话安装
+
+在对话里发送：
+
+<div class="prompt">请帮我安装这个 Skill：https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill</div>
+
+装好后新开一个对话。以下是命令行和手动方式，供需要时使用。
+
 ## 方式一：插件市场（推荐）
 
 在 Claude Code 里输入：
