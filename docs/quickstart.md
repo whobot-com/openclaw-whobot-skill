@@ -5,11 +5,15 @@ description: 一句话安装呼波特电话数字员工 Skill：把一句话发�
 
 # 五分钟上手
 
-不用打开终端，也不用记命令。把下面这句话发给你正在用的 AI Agent（WorkBuddy、Claude Code、Codex、OpenClaw、Cursor 都可以）。
+不用打开终端，也不用记命令。复制下面这句话，发给你正在用的 AI Agent（WorkBuddy、Claude Code、Codex、OpenClaw、Cursor 都可以），就能装好。
 
 ## 第一步：一句话安装
 
-<div class="prompt">请帮我安装这个 Skill：https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill</div>
+点代码框右上角的“复制”，粘贴到 Agent 的对话框发送：
+
+```text
+请帮我安装这个 Skill：https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill
+```
 
 Agent 会自己下载并放到正确的位置。装好后，**新开一个对话**让它生效。
 
@@ -19,11 +23,15 @@ Agent 会自己下载并放到正确的位置。装好后，**新开一个对话
 
 在新对话里说：
 
-<div class="prompt">呼波特能做什么？</div>
+```text
+呼波特能做什么？
+```
 
 Agent 会介绍能做的事。接着可以直接说你的需求，例如：
 
-<div class="prompt">我是做口腔诊所的，想找一个能邀约老客户到店的电话数字员工，先让我体验一下。</div>
+```text
+我是做口腔诊所的，想找一个能邀约老客户到店的电话数字员工，先让我体验一下。
+```
 
 ## 第三步：按提示完成第一次使用
 

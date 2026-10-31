@@ -19,21 +19,6 @@
     if (/^\s*注意[:：]/.test(q.textContent)) q.classList.add('warn');
   });
 
-  document.querySelectorAll('.doc .prompt').forEach(function (box) {
-    var text = box.textContent.trim();
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.className = 'prompt-copy';
-    b.textContent = '复制这句话';
-    b.addEventListener('click', function () {
-      navigator.clipboard.writeText(text).then(function () {
-        b.textContent = '已复制，去发给 Agent';
-        setTimeout(function () { b.textContent = '复制这句话'; }, 2000);
-      });
-    });
-    box.appendChild(b);
-  });
-
   document.querySelectorAll('.doc pre').forEach(function (pre) {
     var b = document.createElement('button');
     b.type = 'button';

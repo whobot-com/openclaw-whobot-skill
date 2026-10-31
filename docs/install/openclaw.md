@@ -10,7 +10,9 @@ description: 通过 ClawHub 或手动方式在 OpenClaw 中安装呼波特电话
 
 在对话里发送：
 
-<div class="prompt">请帮我安装这个 Skill：https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill</div>
+```text
+请帮我安装这个 Skill：https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill
+```
 
 装好后新开一个对话。以下是命令行和手动方式，供需要时使用。
 

@@ -58,10 +58,10 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .doc hr { border: 0; height: 1px; background: rgba(22,32,47,.08); margin: 36px 0; }
 .doc strong { font-weight: 650; }
 .doc code { font-family: var(--mono); font-size: .88em; background: var(--code-bg); padding: .12em .4em; border-radius: 5px; }
-.doc pre { position: relative; background: var(--code-bg); border-radius: var(--radius); padding: 14px 16px; overflow-x: auto; margin: 0 0 16px; line-height: 1.6; }
+.doc pre { position: relative; padding-right: 72px !important; background: var(--code-bg); border-radius: var(--radius); padding: 14px 16px; overflow-x: auto; margin: 0 0 16px; line-height: 1.6; }
 .doc pre code { background: none; padding: 0; font-size: 13.5px; white-space: pre; }
-.copy-btn { position: absolute; top: 8px; right: 8px; border: 0; background: #fff; color: var(--ink-2); font: 12px var(--font); padding: 3px 10px; border-radius: 6px; cursor: pointer; opacity: 0; transition: opacity .15s; box-shadow: 0 1px 2px rgba(22,32,47,.08); }
-.doc pre:hover .copy-btn, .copy-btn:focus-visible { opacity: 1; }
+.copy-btn { position: absolute; top: 8px; right: 8px; border: 0; background: #fff; color: var(--ink-2); font: 12px var(--font); padding: 3px 10px; border-radius: 6px; cursor: pointer; box-shadow: 0 1px 2px rgba(22,32,47,.12); }
+.copy-btn:hover { color: var(--blue-ink); }
 .doc table { width: 100%; border-collapse: collapse; margin: 0 0 18px; font-size: 14.5px; display: block; overflow-x: auto; }
 .doc th, .doc td { text-align: left; padding: 9px 12px; vertical-align: top; }
 .doc thead th { background: var(--bg-2); font-weight: 600; white-space: nowrap; }
@@ -69,11 +69,6 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .doc blockquote { margin: 0 0 16px; padding: 12px 16px; background: var(--blue-soft); border-radius: var(--radius); color: var(--ink); }
 .doc blockquote p:last-child { margin-bottom: 0; }
 .doc blockquote.warn { background: var(--warn-bg); color: var(--warn-ink); }
-
-/* 一句话安装 */
-.doc .prompt { position: relative; margin: 4px 0 20px; padding: 18px 20px 58px; border-radius: 12px; background: linear-gradient(135deg, #eef3ff, #f6f9ff); font-size: 17px; line-height: 1.7; color: var(--ink); word-break: break-all; box-shadow: inset 0 0 0 1px rgba(47,107,255,.14); }
-.prompt-copy { position: absolute; left: 20px; bottom: 14px; border: 0; background: var(--blue); color: #fff; font: 600 14px var(--font); padding: 7px 16px; border-radius: 8px; cursor: pointer; }
-.prompt-copy:hover { background: var(--blue-ink); }
 
 /* 首页卡片 */
 .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; margin: 8px 0 24px; padding: 0 !important; list-style: none; }
@@ -95,3 +90,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   .doc h1 { font-size: 26px; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* 文本类代码框（一句话安装、示例说法）自动换行 */
+.doc .language-text pre, .doc pre code.language-text, .doc .language-text code { white-space: pre-wrap; word-break: break-all; }
+.doc .language-text pre { font-size: 15px; }
