@@ -7,7 +7,7 @@ description: 呼波特（WhoBot）AI 电话数字员工 Skill：在 Claude Code�
 
 <p class="lead">在你常用的 AI Agent 工具里，用一句话找到、体验、创建并调优会接打真实电话的 AI 数字员工。</p>
 
-`whobot-phonecall-skill` 是呼波特（WhoBot）官方 Agent Skill，当前版本 **2.0.0**，配套官方命令行工具 `@whobot/cli`（协议 **2**）。Skill 本身是纯文本说明（`SKILL.md` + 参考资料），由宿主 Agent 读取后调用 CLI 完成业务操作；账号、员工和费用都在呼波特服务端。
+`whobot-phonecall-skill` 是呼波特（WhoBot）官方 Agent Skill，当前版本 **2.0.4**，配套官方命令行工具 `@whobot/cli`（协议 **2**）。Skill 本身是纯文本说明（`SKILL.md` + 参考资料），由宿主 Agent 读取后调用 CLI 完成业务操作；账号、员工和费用都在呼波特服务端。
 
 ## 能做什么
 

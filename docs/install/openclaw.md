@@ -28,7 +28,7 @@ openclaw skills install @whobot/whobot-phonecall-skill --global
 
 条目页面：<https://clawhub.ai/whobot/whobot-phonecall-skill>（组织 `whobot`）。另有个人发布者条目 `@whobot-ai/whobot-phonecall-skill`，两者内容同源，装一个即可。
 
-ClawHub 上显示的是 ClawHub 发布版本（如 2.0.1），Skill 文件内的版本是 2.0.0，两者分别管理，不矛盾。
+ClawHub 发布版本与 Skill 文件版本分别管理。当前 GitHub 中的 Skill 文件版本为 2.0.4；ClawHub 已上线内容以各条目页面为准。
 
 ## 方式二：npx skills
 

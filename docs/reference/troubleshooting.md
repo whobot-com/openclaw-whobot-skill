@@ -10,7 +10,7 @@ description: 呼波特 Skill 与 @whobot/cli 的安装检查、更新、自检�
 对 Agent 说“帮我看看为什么用不了”，Skill 会运行 `whobot doctor`。你也可以自己在终端运行：
 
 ```bash
-whobot status --skill 2.0.0
+whobot status --skill 2.0.4
 whobot doctor --pretty
 ```
 
