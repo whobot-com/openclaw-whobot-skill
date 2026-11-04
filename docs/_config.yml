@@ -3,6 +3,8 @@ description: WhoBot whobot-phonecall-skill 的安装、各平台接入、使用�
 lang: zh-CN
 url: https://whobot-com.github.io
 baseurl: /openclaw-whobot-skill
+# 官网是正式地址：GitHub Pages 这套的 canonical 也指向官网，官网版由 .github/workflows/docs-official.yml 构建
+canonical_base: https://www.whobot.com/skills/docs
 repo_url: https://github.com/whobot-com/openclaw-whobot-skill
 upstream_url: https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill
 skill_version: 2.0.4

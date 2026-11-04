@@ -8,7 +8,7 @@ import path from "node:path";
 
 const docs = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const repo = path.resolve(docs, "..");
-const site = "https://whobot-com.github.io/openclaw-whobot-skill";
+const site = "https://www.whobot.com/skills/docs";
 
 // nav.yml 结构固定，只取 title 和 path，避免引入 YAML 依赖
 const nav = await readFile(path.join(docs, "_data/nav.yml"), "utf8");

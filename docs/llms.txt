@@ -8,41 +8,41 @@
 
 ## 开始
 
-- [概览](https://whobot-com.github.io/openclaw-whobot-skill/)：能做什么、一条命令安装、适用范围
-- [五分钟上手](https://whobot-com.github.io/openclaw-whobot-skill/quickstart.html)：一句话安装、第一次对话、登录与体验通话
+- [概览](https://www.whobot.com/skills/docs/)：能做什么、一条命令安装、适用范围
+- [五分钟上手](https://www.whobot.com/skills/docs/quickstart.html)：一句话安装、第一次对话、登录与体验通话
 
 ## 各平台接入
 
-- [平台总览](https://whobot-com.github.io/openclaw-whobot-skill/install/)：各平台推荐方式、安装目录与共同要求
-- [WorkBuddy 使用指南](https://whobot-com.github.io/openclaw-whobot-skill/install/workbuddy.html)：一句话安装、常用说法、第一次使用、外呼前提、常见问题（也适用于 CodeBuddy）
-- [Claude Code](https://whobot-com.github.io/openclaw-whobot-skill/install/claude-code.html)：插件市场、npx skills、手动安装，超时与权限
-- [Codex](https://whobot-com.github.io/openclaw-whobot-skill/install/codex.html)：~/.agents/skills、$skill-installer、沙箱联网
-- [OpenClaw](https://whobot-com.github.io/openclaw-whobot-skill/install/openclaw.html)：ClawHub 安装、手动安装、从旧版 openclaw-whobot 迁移
-- [Cursor](https://whobot-com.github.io/openclaw-whobot-skill/install/cursor.html)：安装目录与调用方式
-- [其他 Agent 工具](https://whobot-com.github.io/openclaw-whobot-skill/install/other-agents.html)：Cline、Gemini CLI、GitHub Copilot、Trae、Qoder、Qwen Code、Kimi Code、OpenCode、Windsurf 等
-- [DeepSeek Harness 插件](https://whobot-com.github.io/openclaw-whobot-skill/install/deepseek-harness.html)：@whobot/dsh-agent-whobot，卡片式交互
+- [平台总览](https://www.whobot.com/skills/docs/install/)：各平台推荐方式、安装目录与共同要求
+- [WorkBuddy 使用指南](https://www.whobot.com/skills/docs/install/workbuddy.html)：一句话安装、常用说法、第一次使用、外呼前提、常见问题（也适用于 CodeBuddy）
+- [Claude Code](https://www.whobot.com/skills/docs/install/claude-code.html)：插件市场、npx skills、手动安装，超时与权限
+- [Codex](https://www.whobot.com/skills/docs/install/codex.html)：~/.agents/skills、$skill-installer、沙箱联网
+- [OpenClaw](https://www.whobot.com/skills/docs/install/openclaw.html)：ClawHub 安装、手动安装、从旧版 openclaw-whobot 迁移
+- [Cursor](https://www.whobot.com/skills/docs/install/cursor.html)：安装目录与调用方式
+- [其他 Agent 工具](https://www.whobot.com/skills/docs/install/other-agents.html)：Cline、Gemini CLI、GitHub Copilot、Trae、Qoder、Qwen Code、Kimi Code、OpenCode、Windsurf 等
+- [DeepSeek Harness 插件](https://www.whobot.com/skills/docs/install/deepseek-harness.html)：@whobot/dsh-agent-whobot，卡片式交互
 
 ## 使用指南
 
-- [找标杆员工](https://whobot-com.github.io/openclaw-whobot-skill/guide/find-benchmark.html)：按打给谁、电话目标、卖什么匹配标杆
-- [体验通话](https://whobot-com.github.io/openclaw-whobot-skill/guide/try-a-call.html)：网页语音与真实电话试打
-- [创建数字员工](https://whobot-com.github.io/openclaw-whobot-skill/guide/create-agent.html)：标杆、录音、资料或业务描述创建并雇佣
-- [调优与撤销](https://whobot-com.github.io/openclaw-whobot-skill/guide/adjust-agent.html)：改开场白与话术、版本与撤销
-- [线索外呼](https://whobot-com.github.io/openclaw-whobot-skill/guide/leads.html)：上岗前提、表头、时段、去重、线索包
-- [账号与余额](https://whobot-com.github.io/openclaw-whobot-skill/guide/account.html)：登录、退出、重置、余额
+- [找标杆员工](https://www.whobot.com/skills/docs/guide/find-benchmark.html)：按打给谁、电话目标、卖什么匹配标杆
+- [体验通话](https://www.whobot.com/skills/docs/guide/try-a-call.html)：网页语音与真实电话试打
+- [创建数字员工](https://www.whobot.com/skills/docs/guide/create-agent.html)：标杆、录音、资料或业务描述创建并雇佣
+- [调优与撤销](https://www.whobot.com/skills/docs/guide/adjust-agent.html)：改开场白与话术、版本与撤销
+- [线索外呼](https://www.whobot.com/skills/docs/guide/leads.html)：上岗前提、表头、时段、去重、线索包
+- [账号与余额](https://www.whobot.com/skills/docs/guide/account.html)：登录、退出、重置、余额
 
 ## 参考
 
-- [工作原理与协议 v2](https://whobot-com.github.io/openclaw-whobot-skill/reference/protocol.html)：目录结构、预检、next.action 动作表、执行纪律、入口命令
-- [确认、费用与隐私](https://whobot-com.github.io/openclaw-whobot-skill/reference/safety.html)
-- [更新与排障](https://whobot-com.github.io/openclaw-whobot-skill/reference/troubleshooting.html)
-- [版本与发布渠道](https://whobot-com.github.io/openclaw-whobot-skill/reference/releases.html)
-- [常见问题](https://whobot-com.github.io/openclaw-whobot-skill/faq.html)
+- [工作原理与协议 v2](https://www.whobot.com/skills/docs/reference/protocol.html)：目录结构、预检、next.action 动作表、执行纪律、入口命令
+- [确认、费用与隐私](https://www.whobot.com/skills/docs/reference/safety.html)
+- [更新与排障](https://www.whobot.com/skills/docs/reference/troubleshooting.html)
+- [版本与发布渠道](https://www.whobot.com/skills/docs/reference/releases.html)
+- [常见问题](https://www.whobot.com/skills/docs/faq.html)
 - [SKILL.md 原文](https://github.com/whobot-ai/skills/blob/main/skills/whobot-phonecall-skill/SKILL.md)
 
 ## Optional
 
-- [llms-full.txt](https://whobot-com.github.io/openclaw-whobot-skill/llms-full.txt)：以上全部页面与 SKILL.md 的合并全文
+- [llms-full.txt](https://www.whobot.com/skills/docs/llms-full.txt)：以上全部页面与 SKILL.md 的合并全文
 - [ModelScope 魔搭](https://modelscope.cn/skills/WhoBot/whobot-phonecall-skill)：组织 WhoBot 发布的同一 Skill，适合国内网络环境
 - [呼波特公司与产品介绍](https://www.whobot.com/llms.txt)
 - [管理平台](https://work.whobot.com/)：员工上岗、企业认证

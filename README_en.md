@@ -4,7 +4,7 @@
 
 Synced from [`whobot-phonecall-skill`](https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill). Skill version **2.0.4**, CLI protocol **2**.
 
-📖 **Full documentation (Chinese): <https://whobot-com.github.io/openclaw-whobot-skill/>** — per-platform setup, usage guides, protocol reference, [llms.txt](https://whobot-com.github.io/openclaw-whobot-skill/llms.txt).
+📖 **Full documentation (Chinese): <https://www.whobot.com/skills/docs/>** — per-platform setup, usage guides, protocol reference, [llms.txt](https://www.whobot.com/skills/docs/llms.txt).
 
 Discover agents by industry and task, try browser voice or real phone calls, create and tune agents, upload leads, check outbound progress, and manage account access. Available operations and pricing depend on product references and system responses. Follow the skill confirmation flow for real calls and paid actions.
 
@@ -20,7 +20,7 @@ Please install the WhoBot phone skill: https://github.com/whobot-com/openclaw-wh
 
 Command-line install:
 
-Requires Node.js 20+ with npm and npx; the `npx skills` installer requires Node.js 22.20+. See the [platform overview](https://whobot-com.github.io/openclaw-whobot-skill/install/) for Claude Code, Codex, OpenClaw, WorkBuddy, Cursor and more.
+Requires Node.js 20+ with npm and npx; the `npx skills` installer requires Node.js 22.20+. See the [platform overview](https://www.whobot.com/skills/docs/install/) for Claude Code, Codex, OpenClaw, WorkBuddy, Cursor and more.
 
 ```bash
 npx skills add whobot-com/openclaw-whobot-skill -g -y
