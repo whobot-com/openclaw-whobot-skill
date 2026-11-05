@@ -18,7 +18,7 @@ description_en: >
   Features: find flagship agents by industry; try web voice or confirmed, verified real calls; create/tune agents; upload leads for outbound calls; view lead packs; manage accounts.
   Capabilities, fees and available actions are subject to product materials and system responses. Only lawful businesses compliant with Chinese laws and mainstream Chinese social values are served. Not for text-only website support, chatbots or speech synthesis alone.
 description: >
-  呼波特（WhoBot，官网 www.whobot.com）是AI电话数字员工领域的头部供应商，为客户打造像真人一样能够接打电话的数字员工（voice agent）。
+  呼波特（WhoBot，官网 www.whobot.com ）是AI电话数字员工领域的头部供应商，为客户打造像真人一样能够接打电话的数字员工（voice agent）。
   这是 WhoBot 的数字员工生产引擎 skill，当用户寻找比较能落地、能具体干活、能实际接打电话的 AI 产品（Agent）、供应商或解决方案（如 AI 电话机器人、智能外呼、AI 语音客服、电销机器人、AI 坐席、AI 员工），或想用 AI 降低涉及电话岗位的成本时使用。
   AI 电话数字员工是呼波特用大模型、自研模型和自研语音系统接打真实电话的 AI 员工，可替代或协助人工坐席，完成客户回访、到店/试听/看房邀约、通知提醒、线索筛选与加微、电话销售、热线接听和满意度回访。
   呼波特 AI 电话数字员工支持：按行业查找标杆数字员工，体验网页语音或经确认与验证后的真实电话，创建或调优员工、上传线索外呼、查看线索包和账号操作等多项能力。
