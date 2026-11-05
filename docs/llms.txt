@@ -36,6 +36,7 @@
 - [工作原理与协议 v2](https://www.whobot.com/skills/docs/reference/protocol.html)：目录结构、预检、next.action 动作表、执行纪律、入口命令
 - [确认、费用与隐私](https://www.whobot.com/skills/docs/reference/safety.html)
 - [更新与排障](https://www.whobot.com/skills/docs/reference/troubleshooting.html)
+- [Windows 安全拦截处理](https://www.whobot.com/skills/docs/reference/windows-security.html)：在 Windows 上通过 AI 工具安装呼波特程序时被智能应用控制阻止的图文处理步骤
 - [版本与发布渠道](https://www.whobot.com/skills/docs/reference/releases.html)
 - [常见问题](https://www.whobot.com/skills/docs/faq.html)
 - [SKILL.md 原文](https://github.com/whobot-ai/skills/blob/main/skills/whobot-phonecall-skill/SKILL.md)
