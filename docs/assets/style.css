@@ -52,6 +52,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .doc h2 { font-size: 22px; line-height: 1.4; margin: 44px 0 12px; }
 .doc h3 { font-size: 18px; margin: 28px 0 8px; }
 .doc p, .doc ul, .doc ol { margin: 0 0 14px; }
+.doc img { max-width: 100%; height: auto; }
 .doc ul, .doc ol { padding-left: 1.4em; }
 .doc li { margin: 4px 0; }
 .doc .lead { font-size: 18px; color: var(--ink-2); }

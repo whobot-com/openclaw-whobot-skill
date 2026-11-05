@@ -13,6 +13,10 @@ description: 关于呼波特电话数字员工 Skill 的常见问题：费用、
 
 问产品、看介绍不需要。查看员工、体验通话、创建员工等需要登录，Skill 会在需要时引导你用手机号登录。
 
+### Windows 提示“此应用的一部分已被阻止”怎么办？
+
+先确认是否为 Windows 智能应用控制拦截呼波特程序。处理前请了解设置影响，再按[Windows 安全拦截处理](reference/windows-security.md)的图文步骤完成安装。
+
 ### 我用的工具不在列表里，能用吗？
 
 只要它支持 Agent Skills、能执行本机命令、命令超时可以 ≥ 130 秒，就能用。把 `whobot-phonecall-skill` 文件夹放进它的 skills 目录即可，见[其他 Agent 工具](install/other-agents.md)。
