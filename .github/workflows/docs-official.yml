@@ -1,0 +1,34 @@
+# 构建官网版文档（https://www.whobot.com/skills/docs/），产物以 artifact 形式下载后交给官网部署。
+# GitHub Pages 版继续由仓库 Pages 设置（main /docs）发布。
+name: docs-official
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["docs/**", "SKILL.md", ".github/workflows/docs-official.yml"]
+  pull_request:
+    paths: ["docs/**", "SKILL.md", ".github/workflows/docs-official.yml"]
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 切换为官网地址
+        run: |
+          sed -i 's#^url:.*#url: https://www.whobot.com#; s#^baseurl:.*#baseurl: /skills/docs#' docs/_config.yml
+          grep -E '^(url|baseurl|canonical_base):' docs/_config.yml
+      - uses: actions/jekyll-build-pages@v1
+        with:
+          source: docs
+          destination: _site
+      - name: 检查没有残留 GitHub 文档站地址
+        run: |
+          sudo chown -R "$(id -u)" _site
+          ! grep -rIl 'whobot-com.github.io' _site
+      - uses: actions/upload-artifact@v4
+        with:
+          name: whobot-skills-docs
+          path: _site
+          include-hidden-files: false

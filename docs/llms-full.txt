@@ -1,11 +1,11 @@
 # 呼波特电话数字员工 Skill 文档（全文）
 
-> 本文件由 docs/scripts/build-llms.mjs 生成，汇总 https://whobot-com.github.io/openclaw-whobot-skill/ 的全部页面与 SKILL.md 原文，供大模型一次读取。索引见 https://whobot-com.github.io/openclaw-whobot-skill/llms.txt 。
+> 本文件由 docs/scripts/build-llms.mjs 生成，汇总 https://www.whobot.com/skills/docs/ 的全部页面与 SKILL.md 原文，供大模型一次读取。索引见 https://www.whobot.com/skills/docs/llms.txt 。
 
 
 ---
 
-<!-- 来源：https://whobot-com.github.io/openclaw-whobot-skill/ -->
+<!-- 来源：https://www.whobot.com/skills/docs/ -->
 
 # 呼波特电话数字员工 Skill
 
@@ -24,7 +24,7 @@
 | “这批客户交给它打，工作日白天拨。” | 检查表头、确认时段与去重后上传线索，查询和暂停线索包 |
 | “账户里还有多少钱？” | 登录、退出、重置本机账号，查询企业总余额 |
 
-涉及费用、真实拨打、上传客户资料的操作，都会先给你看确认卡，你同意后才执行。详见[确认、费用与隐私](https://whobot-com.github.io/openclaw-whobot-skill/reference/safety.html)。
+涉及费用、真实拨打、上传客户资料的操作，都会先给你看确认卡，你同意后才执行。详见[确认、费用与隐私](https://www.whobot.com/skills/docs/reference/safety.html)。
 
 ## 从这里开始
 
@@ -37,7 +37,7 @@
 请帮我安装呼波特的电话 Skill https://github.com/whobot-com/openclaw-whobot-skill
 ```
 
-装好后新开一个对话，说“呼波特能做什么”。第一次办事时，Agent 会引导你准备工具和用手机号登录。详见[五分钟上手](https://whobot-com.github.io/openclaw-whobot-skill/quickstart.html)；WorkBuddy 用户看 [WorkBuddy 使用指南](https://whobot-com.github.io/openclaw-whobot-skill/install/workbuddy.html)。
+装好后新开一个对话，说“呼波特能做什么”。第一次办事时，Agent 会引导你准备工具和用手机号登录。详见[五分钟上手](https://www.whobot.com/skills/docs/quickstart.html)；WorkBuddy 用户看 [WorkBuddy 使用指南](https://www.whobot.com/skills/docs/install/workbuddy.html)。
 
 ## 适用与不适用
 
@@ -51,12 +51,12 @@
 - Skill 源码（合集仓库）：<https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill>
 - 专用仓库与本文档：<https://github.com/whobot-com/openclaw-whobot-skill>
 - ClawHub：<https://clawhub.ai/whobot/whobot-phonecall-skill>　ModelScope 魔搭：<https://modelscope.cn/skills/WhoBot/whobot-phonecall-skill>
-- 给 AI 读的索引：[llms.txt](https://whobot-com.github.io/openclaw-whobot-skill/llms.txt) · [llms-full.txt](https://whobot-com.github.io/openclaw-whobot-skill/llms-full.txt) · 公司与产品全量介绍 [whobot.com/llms.txt](https://www.whobot.com/llms.txt)（GitHub 同步：[whobot-com/llms.txt](https://github.com/whobot-com/llms.txt)）
-- DeepSeek Harness 用户：安装插件 [`@whobot/dsh-agent-whobot`](https://whobot-com.github.io/openclaw-whobot-skill/install/deepseek-harness.html)
+- 给 AI 读的索引：[llms.txt](https://www.whobot.com/skills/docs/llms.txt) · [llms-full.txt](https://www.whobot.com/skills/docs/llms-full.txt) · 公司与产品全量介绍 [whobot.com/llms.txt](https://www.whobot.com/llms.txt)（GitHub 同步：[whobot-com/llms.txt](https://github.com/whobot-com/llms.txt)）
+- DeepSeek Harness 用户：安装插件 [`@whobot/dsh-agent-whobot`](https://www.whobot.com/skills/docs/install/deepseek-harness.html)
 
 ---
 
-<!-- 来源：https://whobot-com.github.io/openclaw-whobot-skill/quickstart.html -->
+<!-- 来源：https://www.whobot.com/skills/docs/quickstart.html -->
 
 # 五分钟上手
 
@@ -100,9 +100,9 @@ Agent 会介绍能做的事。接着可以直接说你的需求，例如：
 
 ## 接下来
 
-- 用 WorkBuddy：[WorkBuddy 使用指南](https://whobot-com.github.io/openclaw-whobot-skill/install/workbuddy.html)
-- 想知道还能说什么：[使用指南](https://whobot-com.github.io/openclaw-whobot-skill/guide/find-benchmark.html)
-- 装不上、用不了：[更新与排障](https://whobot-com.github.io/openclaw-whobot-skill/reference/troubleshooting.html)
+- 用 WorkBuddy：[WorkBuddy 使用指南](https://www.whobot.com/skills/docs/install/workbuddy.html)
+- 想知道还能说什么：[使用指南](https://www.whobot.com/skills/docs/guide/find-benchmark.html)
+- 装不上、用不了：[更新与排障](https://www.whobot.com/skills/docs/reference/troubleshooting.html)
 
 ## 附：用命令安装（开发者）
 
@@ -112,11 +112,11 @@ Agent 会介绍能做的事。接着可以直接说你的需求，例如：
 npx skills add whobot-ai/skills --skill whobot-phonecall-skill -g -y
 ```
 
-各平台的安装目录和手动方式见[平台总览](https://whobot-com.github.io/openclaw-whobot-skill/install/)。
+各平台的安装目录和手动方式见[平台总览](https://www.whobot.com/skills/docs/install/)。
 
 ---
 
-<!-- 来源：https://whobot-com.github.io/openclaw-whobot-skill/install/ -->
+<!-- 来源：https://www.whobot.com/skills/docs/install/ -->
 
 # 各平台接入方案
 
@@ -136,13 +136,13 @@ Agent 会自己下载并放到它的技能目录；装好后新开一个对话�
 
 | 平台 | 命令行 / 市场安装 | 安装位置（用户级） | 页面 |
 |---|---|---|---|
-| **WorkBuddy**（推荐）/ CodeBuddy | 一句话安装即可；手动可复制文件夹 | `~/.workbuddy/skills/`、`~/.codebuddy/skills/` | [WorkBuddy 使用指南](https://whobot-com.github.io/openclaw-whobot-skill/install/workbuddy.html) |
-| Claude Code | 插件市场，或 `npx skills add … -a claude-code` | `~/.claude/skills/` | [Claude Code](https://whobot-com.github.io/openclaw-whobot-skill/install/claude-code.html) |
-| Codex | `npx skills add … -a codex` | `~/.agents/skills/` | [Codex](https://whobot-com.github.io/openclaw-whobot-skill/install/codex.html) |
-| OpenClaw | ClawHub：`openclaw skills install @whobot/whobot-phonecall-skill` | 工作区 `skills/` 或 `~/.openclaw/skills/` | [OpenClaw](https://whobot-com.github.io/openclaw-whobot-skill/install/openclaw.html) |
-| Cursor | `npx skills add … -a cursor` | `~/.cursor/skills/` | [Cursor](https://whobot-com.github.io/openclaw-whobot-skill/install/cursor.html) |
-| Cline、Gemini CLI、GitHub Copilot、Trae、Qoder、Qwen Code、Kimi Code 等 | `npx skills add … -a <agent>` | 见页面 | [其他 Agent 工具](https://whobot-com.github.io/openclaw-whobot-skill/install/other-agents.html) |
-| DeepSeek Harness | 安装插件 `@whobot/dsh-agent-whobot`（不是 Skill） | Harness 插件管理器 | [DeepSeek Harness 插件](https://whobot-com.github.io/openclaw-whobot-skill/install/deepseek-harness.html) |
+| **WorkBuddy**（推荐）/ CodeBuddy | 一句话安装即可；手动可复制文件夹 | `~/.workbuddy/skills/`、`~/.codebuddy/skills/` | [WorkBuddy 使用指南](https://www.whobot.com/skills/docs/install/workbuddy.html) |
+| Claude Code | 插件市场，或 `npx skills add … -a claude-code` | `~/.claude/skills/` | [Claude Code](https://www.whobot.com/skills/docs/install/claude-code.html) |
+| Codex | `npx skills add … -a codex` | `~/.agents/skills/` | [Codex](https://www.whobot.com/skills/docs/install/codex.html) |
+| OpenClaw | ClawHub：`openclaw skills install @whobot/whobot-phonecall-skill` | 工作区 `skills/` 或 `~/.openclaw/skills/` | [OpenClaw](https://www.whobot.com/skills/docs/install/openclaw.html) |
+| Cursor | `npx skills add … -a cursor` | `~/.cursor/skills/` | [Cursor](https://www.whobot.com/skills/docs/install/cursor.html) |
+| Cline、Gemini CLI、GitHub Copilot、Trae、Qoder、Qwen Code、Kimi Code 等 | `npx skills add … -a <agent>` | 见页面 | [其他 Agent 工具](https://www.whobot.com/skills/docs/install/other-agents.html) |
+| DeepSeek Harness | 安装插件 `@whobot/dsh-agent-whobot`（不是 Skill） | Harness 插件管理器 | [DeepSeek Harness 插件](https://www.whobot.com/skills/docs/install/deepseek-harness.html) |
 
 `…` 代表 `whobot-ai/skills --skill whobot-phonecall-skill -g -y`。
 
@@ -155,7 +155,7 @@ Agent 会自己下载并放到它的技能目录；装好后新开一个对话�
 | ModelScope 魔搭 | `WhoBot/whobot-phonecall-skill`（[页面](https://modelscope.cn/skills/WhoBot/whobot-phonecall-skill)，自动同步合集仓库） | 国内网络环境、魔搭用户 |
 | ClawHub | `@whobot/whobot-phonecall-skill`（组织版）、`@whobot-ai/whobot-phonecall-skill`（个人版） | OpenClaw |
 
-ClawHub 的发布版本号与 Skill 文件内的版本号分别管理，详见[版本与发布渠道](https://whobot-com.github.io/openclaw-whobot-skill/reference/releases.html)。
+ClawHub 的发布版本号与 Skill 文件内的版本号分别管理，详见[版本与发布渠道](https://www.whobot.com/skills/docs/reference/releases.html)。
 
 ## 命令行安装（任何平台）
 
@@ -182,7 +182,7 @@ cp -R skills/skills/whobot-phonecall-skill <宿主的 skills 目录>/
 
 ---
 
-<!-- 来源：https://whobot-com.github.io/openclaw-whobot-skill/install/workbuddy.html -->
+<!-- 来源：https://www.whobot.com/skills/docs/install/workbuddy.html -->
 
 # WorkBuddy 使用指南
 
@@ -227,7 +227,7 @@ WorkBuddy 会用选项卡片让你点选（比如选行业、选员工、确认�
 
 ## 让员工给客户外呼之前
 
-新做好的员工处于“培训中”，还不能给客户名单拨打。需要先到 [呼波特管理平台](https://work.whobot.com/) 完成企业认证，并让员工上岗。详见[线索外呼](https://whobot-com.github.io/openclaw-whobot-skill/guide/leads.html)。
+新做好的员工处于“培训中”，还不能给客户名单拨打。需要先到 [呼波特管理平台](https://work.whobot.com/) 完成企业认证，并让员工上岗。详见[线索外呼](https://www.whobot.com/skills/docs/guide/leads.html)。
 
 ## 常见问题
 
@@ -235,7 +235,7 @@ WorkBuddy 会用选项卡片让你点选（比如选行业、选员工、确认�
 让它帮你安装，或到 [nodejs.org](https://nodejs.org/) 下载长期支持版（LTS）安装后，重新打开 WorkBuddy。
 
 **Windows 提示“此应用的一部分已被阻止”？**
-先确认是否为“智能应用控制”拦截，再按[Windows 安全拦截处理](https://whobot-com.github.io/openclaw-whobot-skill/reference/windows-security.html)的图文步骤调整设置、继续安装并检查版本。
+先确认是否为“智能应用控制”拦截，再按[Windows 安全拦截处理](https://www.whobot.com/skills/docs/reference/windows-security.html)的图文步骤调整设置、继续安装并检查版本。
 
 **装好了但说话没反应？**
 确认是在安装后**新建**的对话里使用；并确认 WorkBuddy 当前允许运行命令（只能聊天的模式下，它只能回答产品问题）。
@@ -263,7 +263,7 @@ npx skills add whobot-ai/skills --skill whobot-phonecall-skill -g -a codebuddy -
 
 ---
 
-<!-- 来源：https://whobot-com.github.io/openclaw-whobot-skill/install/claude-code.html -->
+<!-- 来源：https://www.whobot.com/skills/docs/install/claude-code.html -->
 
 # Claude Code
 
@@ -331,7 +331,7 @@ Skill 会运行 `whobot …` 命令。不想每次确认时，可以在权限设
 
 ---
 
-<!-- 来源：https://whobot-com.github.io/openclaw-whobot-skill/install/codex.html -->
+<!-- 来源：https://www.whobot.com/skills/docs/install/codex.html -->
 
 # Codex
 
@@ -379,7 +379,7 @@ Codex 通常会自动发现新 Skill；没出现时重启 Codex。
 
 ---
 
-<!-- 来源：https://whobot-com.github.io/openclaw-whobot-skill/install/openclaw.html -->
+<!-- 来源：https://www.whobot.com/skills/docs/install/openclaw.html -->
 
 # OpenClaw
 
@@ -437,7 +437,7 @@ cp -R openclaw-whobot-skill/references ~/.openclaw/skills/whobot-phonecall-skill
 
 ---
 
-<!-- 来源：https://whobot-com.github.io/openclaw-whobot-skill/install/cursor.html -->
+<!-- 来源：https://www.whobot.com/skills/docs/install/cursor.html -->
 
 # Cursor
 
@@ -478,7 +478,7 @@ Cursor 也会兼容读取 `~/.claude/skills/`、`~/.codex/skills/`，所以已�
 
 ---
 
-<!-- 来源：https://whobot-com.github.io/openclaw-whobot-skill/install/other-agents.html -->
+<!-- 来源：https://www.whobot.com/skills/docs/install/other-agents.html -->
 
 # 其他 Agent 工具
 
@@ -541,7 +541,7 @@ curl -fsSL https://modelscope.cn/skills/install.sh | bash -s -- WhoBot/whobot-ph
 
 ---
 
-<!-- 来源：https://whobot-com.github.io/openclaw-whobot-skill/install/deepseek-harness.html -->
+<!-- 来源：https://www.whobot.com/skills/docs/install/deepseek-harness.html -->
 
 # DeepSeek Harness 插件
 
@@ -584,7 +584,7 @@ DeepSeek Harness 不使用这个 Skill，而是安装呼波特的专用插件 **
 
 ---
 
-<!-- 来源：https://whobot-com.github.io/openclaw-whobot-skill/guide/find-benchmark.html -->
+<!-- 来源：https://www.whobot.com/skills/docs/guide/find-benchmark.html -->
 
 # 找标杆员工
 
@@ -616,11 +616,11 @@ DeepSeek Harness 不使用这个 Skill，而是安装呼波特的专用插件 **
 
 ## 没有合适的怎么办
 
-Skill 会照实说没有，并建议用你们的资料或销售录音做一个专属员工，一次问清企业名称、卖什么、打给谁、电话目标。见[创建数字员工](https://whobot-com.github.io/openclaw-whobot-skill/guide/create-agent.html)。
+Skill 会照实说没有，并建议用你们的资料或销售录音做一个专属员工，一次问清企业名称、卖什么、打给谁、电话目标。见[创建数字员工](https://www.whobot.com/skills/docs/guide/create-agent.html)。
 
 ---
 
-<!-- 来源：https://whobot-com.github.io/openclaw-whobot-skill/guide/try-a-call.html -->
+<!-- 来源：https://www.whobot.com/skills/docs/guide/try-a-call.html -->
 
 # 体验通话
 
@@ -660,7 +660,7 @@ Skill 会照实说没有，并建议用你们的资料或销售录音做一个�
 
 ---
 
-<!-- 来源：https://whobot-com.github.io/openclaw-whobot-skill/guide/create-agent.html -->
+<!-- 来源：https://www.whobot.com/skills/docs/guide/create-agent.html -->
 
 # 创建数字员工
 
@@ -692,8 +692,8 @@ Skill 会照实说没有，并建议用你们的资料或销售录音做一个�
 
 ## 完成之后
 
-- 新员工处于**培训中**，可以先网页试打一通，再按需[调优](https://whobot-com.github.io/openclaw-whobot-skill/guide/adjust-agent.html)。
-- 要给客户外呼，员工需要先在管理平台上岗，见[线索外呼](https://whobot-com.github.io/openclaw-whobot-skill/guide/leads.html)。
+- 新员工处于**培训中**，可以先网页试打一通，再按需[调优](https://www.whobot.com/skills/docs/guide/adjust-agent.html)。
+- 要给客户外呼，员工需要先在管理平台上岗，见[线索外呼](https://www.whobot.com/skills/docs/guide/leads.html)。
 
 ## 出错时
 
@@ -703,7 +703,7 @@ Skill 会照实说没有，并建议用你们的资料或销售录音做一个�
 
 ---
 
-<!-- 来源：https://whobot-com.github.io/openclaw-whobot-skill/guide/adjust-agent.html -->
+<!-- 来源：https://www.whobot.com/skills/docs/guide/adjust-agent.html -->
 
 # 调优与撤销
 
@@ -734,7 +734,7 @@ Skill 会照实说没有，并建议用你们的资料或销售录音做一个�
 
 ---
 
-<!-- 来源：https://whobot-com.github.io/openclaw-whobot-skill/guide/leads.html -->
+<!-- 来源：https://www.whobot.com/skills/docs/guide/leads.html -->
 
 # 线索外呼
 
@@ -782,7 +782,7 @@ Skill 会把以下内容说清楚，等你明确回复“确认”才上传（�
 
 ---
 
-<!-- 来源：https://whobot-com.github.io/openclaw-whobot-skill/guide/account.html -->
+<!-- 来源：https://www.whobot.com/skills/docs/guide/account.html -->
 
 # 账号与余额
 
@@ -821,11 +821,11 @@ Skill 会照系统返回说“企业账户总余额 X（含付费、赠费和信
 
 ---
 
-<!-- 来源：https://whobot-com.github.io/openclaw-whobot-skill/reference/protocol.html -->
+<!-- 来源：https://www.whobot.com/skills/docs/reference/protocol.html -->
 
 # 工作原理与协议 v2
 
-本页面向开发者和平台集成方。普通用户只需要看[使用指南](https://whobot-com.github.io/openclaw-whobot-skill/guide/find-benchmark.html)。
+本页面向开发者和平台集成方。普通用户只需要看[使用指南](https://www.whobot.com/skills/docs/guide/find-benchmark.html)。
 
 ## 组成
 
@@ -908,7 +908,7 @@ whobot status --skill 2.0.4
 
 ---
 
-<!-- 来源：https://whobot-com.github.io/openclaw-whobot-skill/reference/safety.html -->
+<!-- 来源：https://www.whobot.com/skills/docs/reference/safety.html -->
 
 # 确认、费用与隐私
 
@@ -948,7 +948,7 @@ whobot status --skill 2.0.4
 
 ---
 
-<!-- 来源：https://whobot-com.github.io/openclaw-whobot-skill/reference/troubleshooting.html -->
+<!-- 来源：https://www.whobot.com/skills/docs/reference/troubleshooting.html -->
 
 # 更新与排障
 
@@ -967,8 +967,8 @@ whobot doctor --pretty
 |---|---|
 | `whobot: command not found` | 确认 Node.js 20+ 可用，运行 `npx --yes @whobot/cli@latest install`，新开终端再试 |
 | 一句话安装失败 | 确认 Agent 能联网、能运行命令；或按各平台页面手动安装 |
-| Windows 提示“此应用的一部分已被阻止” | 先确认是否为智能应用控制拦截，按[Windows 安全拦截处理](https://whobot-com.github.io/openclaw-whobot-skill/reference/windows-security.html)操作 |
-| `npx skills` 安装失败 | 安装工具需要 Node.js 22.20+；或改用[手动复制](https://whobot-com.github.io/openclaw-whobot-skill/install/#命令行安装任何平台) |
+| Windows 提示“此应用的一部分已被阻止” | 先确认是否为智能应用控制拦截，按[Windows 安全拦截处理](https://www.whobot.com/skills/docs/reference/windows-security.html)操作 |
+| `npx skills` 安装失败 | 安装工具需要 Node.js 22.20+；或改用[手动复制](https://www.whobot.com/skills/docs/install/#命令行安装任何平台) |
 | 预检提示需要升级 | 按 Skill 给出的确认卡升级 CLI 或 Skill，然后新开会话 |
 | 安装输出 `PREVIOUS_CLI_MISSING` 或 `CREDENTIAL_ORIGIN_MISMATCH` | 原来的程序被清理或服务地址已变。同意后用安装命令加 `--reset-local` 重装，再重新登录一次；员工和数据在服务端不受影响 |
 | 显示已登录却不能用 | 说“为什么显示已登录却不能用”，Skill 会查询状态，必要时引导重置 |
@@ -988,7 +988,7 @@ whobot doctor --pretty
 
 ---
 
-<!-- 来源：https://whobot-com.github.io/openclaw-whobot-skill/reference/windows-security.html -->
+<!-- 来源：https://www.whobot.com/skills/docs/reference/windows-security.html -->
 
 # Windows 安全拦截处理
 
@@ -1006,7 +1006,7 @@ whobot doctor --pretty
 
 下图是这类问题的 Windows 安全提示：
 
-![Windows 提示无法确认呼波特程序的发布者](https://whobot-com.github.io/openclaw-whobot-skill/assets/images/windows-security/00-windows-security-error.png)
+![Windows 提示无法确认呼波特程序的发布者](https://www.whobot.com/skills/docs/assets/images/windows-security/00-windows-security-error.png)
 
 这类提示表示 Windows 未能确认程序的发布者或可信度。**“无法确认发布者”本身不等于已经检测到病毒。**
 
@@ -1024,7 +1024,7 @@ whobot doctor --pretty
 
 按键盘上的 **Windows 键**，在图中 **1** 的搜索框输入 **Windows 安全中心**，再点击图中 **2** 的 **打开** 按钮。
 
-![搜索 Windows 安全中心并点击打开](https://whobot-com.github.io/openclaw-whobot-skill/assets/images/windows-security/01-search-windows-security.png)
+![搜索 Windows 安全中心并点击打开](https://www.whobot.com/skills/docs/assets/images/windows-security/01-search-windows-security.png)
 
 ### 第二步：进入“应用和浏览器控制”
 
@@ -1032,7 +1032,7 @@ whobot doctor --pretty
 
 **截图中菜单已经展开，可直接点击 2，不必再点 1。**
 
-![展开导航，选择应用和浏览器控制](https://whobot-com.github.io/openclaw-whobot-skill/assets/images/windows-security/02-security-home.png)
+![展开导航，选择应用和浏览器控制](https://www.whobot.com/skills/docs/assets/images/windows-security/02-security-home.png)
 
 ### 第三步：打开“智能应用控制设置”
 
@@ -1040,7 +1040,7 @@ whobot doctor --pretty
 
 注意选择这一项；页面下方的“基于声誉的保护设置”是另一项设置。
 
-![点击智能应用控制设置](https://whobot-com.github.io/openclaw-whobot-skill/assets/images/windows-security/03-app-browser-control.png)
+![点击智能应用控制设置](https://www.whobot.com/skills/docs/assets/images/windows-security/03-app-browser-control.png)
 
 ### 第四步：检查当前状态，选择“关闭”
 
@@ -1048,13 +1048,13 @@ whobot doctor --pretty
 
 如果这里原本就是关闭状态，请跳到本文最后的“仍然失败怎么办”，不要继续关闭其他安全功能。
 
-![确认当前打开状态，再点击关闭](https://whobot-com.github.io/openclaw-whobot-skill/assets/images/windows-security/04-smart-app-control-on.png)
+![确认当前打开状态，再点击关闭](https://www.whobot.com/skills/docs/assets/images/windows-security/04-smart-app-control-on.png)
 
 ### 第五步：确认“关闭”已经选中
 
 核对图中 **1**：**关闭**左侧的圆点已变成蓝色选中状态。这一步只需确认，无需再次点击。若系统出现确认窗口，请阅读本机提示，确认接受后再继续；若要求管理员授权，请由设备管理员完成。
 
-![确认智能应用控制已关闭](https://whobot-com.github.io/openclaw-whobot-skill/assets/images/windows-security/05-smart-app-control-off.png)
+![确认智能应用控制已关闭](https://www.whobot.com/skills/docs/assets/images/windows-security/05-smart-app-control-off.png)
 
 ### 第六步：回到你使用的 AI 工具，继续安装和检查
 
@@ -1064,7 +1064,7 @@ whobot doctor --pretty
 已关闭智能应用控制，请继续安装呼波特，并检查是否可以正常使用。先不要登录或拨打电话。
 ```
 
-![回到 AI 工具，发送继续安装和检查的请求](https://whobot-com.github.io/openclaw-whobot-skill/assets/images/windows-security/06-ai-tool-retry.png)
+![回到 AI 工具，发送继续安装和检查的请求](https://www.whobot.com/skills/docs/assets/images/windows-security/06-ai-tool-retry.png)
 
 如果原对话已结束，可以新建任务，明确要求使用已安装的“呼波特 AI 电话数字员工”技能进行安装和检查。
 
@@ -1084,7 +1084,7 @@ whobot doctor --pretty
 
 ---
 
-<!-- 来源：https://whobot-com.github.io/openclaw-whobot-skill/reference/releases.html -->
+<!-- 来源：https://www.whobot.com/skills/docs/reference/releases.html -->
 
 # 版本与发布渠道
 
@@ -1119,7 +1119,7 @@ Skill 文件版本和 ClawHub 发布版本分别管理：ClawHub 每次上传都
 
 ---
 
-<!-- 来源：https://whobot-com.github.io/openclaw-whobot-skill/faq.html -->
+<!-- 来源：https://www.whobot.com/skills/docs/faq.html -->
 
 # 常见问题
 
@@ -1133,11 +1133,11 @@ Skill 文件版本和 ClawHub 发布版本分别管理：ClawHub 每次上传都
 
 ### Windows 提示“此应用的一部分已被阻止”怎么办？
 
-先确认是否为 Windows 智能应用控制拦截呼波特程序。处理前请了解设置影响，再按[Windows 安全拦截处理](https://whobot-com.github.io/openclaw-whobot-skill/reference/windows-security.html)的图文步骤完成安装。
+先确认是否为 Windows 智能应用控制拦截呼波特程序。处理前请了解设置影响，再按[Windows 安全拦截处理](https://www.whobot.com/skills/docs/reference/windows-security.html)的图文步骤完成安装。
 
 ### 我用的工具不在列表里，能用吗？
 
-只要它支持 Agent Skills、能执行本机命令、命令超时可以 ≥ 130 秒，就能用。把 `whobot-phonecall-skill` 文件夹放进它的 skills 目录即可，见[其他 Agent 工具](https://whobot-com.github.io/openclaw-whobot-skill/install/other-agents.html)。
+只要它支持 Agent Skills、能执行本机命令、命令超时可以 ≥ 130 秒，就能用。把 `whobot-phonecall-skill` 文件夹放进它的 skills 目录即可，见[其他 Agent 工具](https://www.whobot.com/skills/docs/install/other-agents.html)。
 
 ### 只能聊天的网页版 AI 能用吗？
 
@@ -1149,7 +1149,7 @@ Skill 文件版本和 ClawHub 发布版本分别管理：ClawHub 每次上传都
 
 ### 为什么员工建好了不能外呼？
 
-新员工处于培训中，需要先在[管理平台](https://work.whobot.com/)完成企业认证并让员工上岗。见[线索外呼](https://whobot-com.github.io/openclaw-whobot-skill/guide/leads.html)。
+新员工处于培训中，需要先在[管理平台](https://work.whobot.com/)完成企业认证并让员工上岗。见[线索外呼](https://www.whobot.com/skills/docs/guide/leads.html)。
 
 ### 能看每个号码的拨打结果吗？
 
