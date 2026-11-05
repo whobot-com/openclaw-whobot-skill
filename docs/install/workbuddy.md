@@ -53,6 +53,9 @@ WorkBuddy 会用选项卡片让你点选（比如选行业、选员工、确认�
 **WorkBuddy 说电脑上没有 Node.js？**
 让它帮你安装，或到 [nodejs.org](https://nodejs.org/) 下载长期支持版（LTS）安装后，重新打开 WorkBuddy。
 
+**Windows 提示“此应用的一部分已被阻止”？**
+先确认是否为“智能应用控制”拦截，再按[Windows 安全拦截处理](../reference/windows-security.md)的图文步骤调整设置、继续安装并检查版本。
+
 **装好了但说话没反应？**
 确认是在安装后**新建**的对话里使用；并确认 WorkBuddy 当前允许运行命令（只能聊天的模式下，它只能回答产品问题）。
 

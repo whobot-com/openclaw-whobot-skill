@@ -26,5 +26,6 @@
     - { title: 工作原理与协议 v2, path: reference/protocol.md }
     - { title: 确认、费用与隐私, path: reference/safety.md }
     - { title: 更新与排障, path: reference/troubleshooting.md }
+    - { title: Windows 安全拦截, path: reference/windows-security.md }
     - { title: 版本与发布渠道, path: reference/releases.md }
     - { title: 常见问题, path: faq.md }

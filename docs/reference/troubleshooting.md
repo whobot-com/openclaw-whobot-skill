@@ -20,6 +20,7 @@ whobot doctor --pretty
 |---|---|
 | `whobot: command not found` | 确认 Node.js 20+ 可用，运行 `npx --yes @whobot/cli@latest install`，新开终端再试 |
 | 一句话安装失败 | 确认 Agent 能联网、能运行命令；或按各平台页面手动安装 |
+| Windows 提示“此应用的一部分已被阻止” | 先确认是否为智能应用控制拦截，按[Windows 安全拦截处理](windows-security.md)操作 |
 | `npx skills` 安装失败 | 安装工具需要 Node.js 22.20+；或改用[手动复制](../install/index.md#命令行安装任何平台) |
 | 预检提示需要升级 | 按 Skill 给出的确认卡升级 CLI 或 Skill，然后新开会话 |
 | 安装输出 `PREVIOUS_CLI_MISSING` 或 `CREDENTIAL_ORIGIN_MISMATCH` | 原来的程序被清理或服务地址已变。同意后用安装命令加 `--reset-local` 重装，再重新登录一次；员工和数据在服务端不受影响 |
