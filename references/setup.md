@@ -17,7 +17,7 @@
 
 1. 检查 Node.js 20+、npm、npx；缺少时先安装。
 2. Skill 三步安装：克隆仓库、复制 `skills/whobot-phonecall-skill`、重启宿主。
-3. 命令不存在时执行 `npx --yes @whobot/cli@latest install`，再运行 `whobot status --skill 2.0.4`。
+3. 命令不存在时执行 `npx --yes @whobot/cli@latest install`，再运行 `whobot status --skill 2.0.5`。
 4. 自检运行 `whobot doctor`（需要人读时可加 `--pretty`）；需要反馈时运行 `whobot support`，把 `data.report` 原样放进代码块交给客服；输出带 `data.contactUrl` 时用图片展示客服二维码：`![联系客服](https://…)`（括号里放 `data.contactUrl` 的值），下一行再附这个链接（有的宿主不显示图片），`data.contactTitle`、`data.contactNote` 只转述。用户问官网、后台或管理平台：官网 https://whobot.com ，管理平台 https://work.whobot.com/ ；`data.consoleUrl` 存在时以它为准。
 
 网页通话状态只由服务端保存；CLI 被宿主回收或更换对话后，继续运行 `next.command` 中的 `whobot call wait` / `whobot call show` 查询同一通话，不读取或清理本地网页通话状态文件。
@@ -33,6 +33,8 @@
 最低 CLI 和 Skill 版本由服务端分别校验，不自行比较或推导配套版本。预检的 `data.upgrades` 给出具体目标：CLI 用 `installCommand`，Skill 用 `packageUrl` 和 `instructionsUrl`；取得更新同意后操作，不把命令当作用户文案。按预检要求升级对应组件至渠道最新稳定版；Skill 用原平台更新入口或官方完整包安装，不自动覆盖宿主目录。Skill 更新后重载或新建任务，重新预检后才继续业务。失败重试或用户明确要求时也可重查；无 Skill 参数的状态查询只作诊断，不代表 Skill 已通过。
 
 安装输出含 `PREVIOUS_CLI_MISSING` 或 `CREDENTIAL_ORIGIN_MISMATCH`：原来的程序被宿主清理了（或服务地址已变），本机登录核对不了，重试不会好。用选择卡说明并征求同意，推荐“清掉本机登录后重装”：员工和数据都在服务端不受影响，装好后要重新登录一次。同意后运行安装输出给出的恢复命令（即第 3 步的安装命令末尾加 `--reset-local`），成功后按 [account](account.md) 重新登录；不同意就停下，不重试、不手动删文件、不换别的办法。
+
+Windows 上运行 `whobot` 或安装命令失败，报错含 `spawnSync … UNKNOWN`、`version smoke failed`、`Permission denied`、“应用程序控制策略已阻止此文件”（`Application Control policy`）是系统安全策略拦下了程序，重装、重试都无用，也不用再自己排查。单独一行给出 [Windows 安全拦截处理](https://www.whobot.com/skills/docs/reference/windows-security.html) ，请用户点开按页面处理，处理好后告诉你，再重跑第 3 步的安装命令；不替用户关安全软件、不改系统设置、不手动下载程序。
 
 协议 v1 或 `status` 未知时停止业务，不运行旧自升级器：先用 `whobot version` 查看 channel，再用 `npm view @whobot/cli dist-tags --json` 取得同渠道最新具体版本；展示目标并取得同意后，将该版本代入 `npx --yes @whobot/cli@<具体版本> install`。仅 Skill 更新而 CLI 仍旧版也走此流程，完成后重新预检。PATH 没有入口就用安装结果给出的实际入口。宿主命令预算不足时按宿主设置调整，不给 CLI 传超时参数。
 

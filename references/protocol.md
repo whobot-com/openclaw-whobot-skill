@@ -33,7 +33,7 @@
 
 <!-- contract:agents-hire-ask#next -->
 ```json
-{"action":"ask","ask":{"fields":[{"name":"pricingMode","label":"计费方式","options":[{"value":"effect","label":"按效果付费 ¥6/意向"},{"value":"seat","label":"按坐席付费 ¥750/坐席/月"}],"default":"effect"},{"name":"brandName","label":"品牌名","default":"小猫猫"},{"name":"agentPosition","label":"岗位名","default":"小猫 · 会员健康关怀","optional":true}]},"command":["whobot","agents","hire","op_hire_placeholder","--pricing","{pricingMode}","--brand","{brandName}","--position","{agentPosition}"]}
+{"action":"ask","ask":{"fields":[{"name":"pricingMode","label":"计费方式","options":[{"value":"effect","label":"按效果付费 ¥6/意向"},{"value":"seat","label":"按坐席付费 ¥750/坐席/月"}],"default":"effect"},{"name":"brandName","label":"品牌名","default":"小猫猫"},{"name":"agentPosition","label":"数字员工名","default":"小猫 · 会员健康关怀","optional":true}]},"command":["whobot","agents","hire","op_hire_placeholder","--pricing","{pricingMode}","--brand","{brandName}","--position","{agentPosition}"]}
 ```
 
 ## 等待与交还

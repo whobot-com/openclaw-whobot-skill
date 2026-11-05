@@ -15,7 +15,7 @@ whobot agents tune <agent> --confirm <令牌>
 whobot ops show <operation>
 ```
 
-刚雇佣好的员工就在培训中，`agents show` 的 actions 里有 `tune`：用户说"把开场白改成……""微信号换成我的"就是调优，直接进入，不说只能重做，也不让用户等培训完。已上岗的员工 actions 没有 `tune`，说明要到呼波特管理平台调整（地址按 [setup](setup.md)）。
+刚创建好的员工就在培训中，`agents show` 的 actions 里有 `tune`：用户说"把开场白改成……""微信号换成我的"就是调优，直接进入，不说只能重做，也不让用户等培训完。已上岗的员工 actions 没有 `tune`，说明要到呼波特管理平台调整（地址按 [setup](setup.md)）。
 
 `versions` 返回 `run` 时立即执行那条 `agents revert`，这一步只预览。调优由用户明确提出后进入 `agents tune`。材料查询返回 `run`、`wait` 都立即执行，不让用户来问。失败/拒绝材料的 `suggest` 只展示，用户明确选择重试或排除后才执行，不能自动跳过材料。
 

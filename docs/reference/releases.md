@@ -9,7 +9,7 @@ description: 呼波特电话数字员工 Skill 的版本号含义、各发布渠
 
 | 项目 | 值 |
 |---|---|
-| Skill 文件版本（`SKILL.md` / `release.json`） | 2.0.4 |
+| Skill 文件版本（`SKILL.md` / `release.json`） | 2.0.5 |
 | CLI 协议 | 2 |
 | CLI 包 | `@whobot/cli`，渠道 `latest`，Node.js ≥ 20 |
 | ClawHub 发布版本 | 独立发布，以各条目页面显示的已上线版本为准 |
@@ -28,6 +28,8 @@ Skill 文件版本和 ClawHub 发布版本分别管理：ClawHub 每次上传都
 | skills.sh | <https://www.skills.sh/whobot-ai/skills/whobot-phonecall-skill> | 以 GitHub 为源，按安装记录收录 |
 
 ## 历史
+
+- **2.0.5**（2026-11）：同步上游新版，支持参照本企业已有员工创建员工，新增用词与费用说明，线索上传回执即导入结果，补充 Windows 安全拦截处理、自有员工试打计费与打给客户的说明。
 
 - **2.0.4**（2026-11）：同步上游新版，补充公司资料、登录与通话体验流程，以及活动网页通话阻止升级时的恢复说明。
 
