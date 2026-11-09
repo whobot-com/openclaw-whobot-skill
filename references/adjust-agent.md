@@ -1,4 +1,4 @@
-# 调优原员工、查看版本并撤销
+# 调优原员工、查看版本、撤销与调整员工状态
 
 ## 入口
 
@@ -40,3 +40,36 @@ whobot ops show <operation>
 ## 恢复
 
 用户再问进度时才执行附带的 `ops show`。调优结果要分开说明新版本、逐条复测、已完成的原句、未完成条目和需要人工处理的条目。`partial` 不是全部通过，不能用一条成功代表全部完成。撤销结果里原来的版本还在。同一次操作重复查询只复述。只转述结果里写明的改动；和用户要求对不上时直接说哪里没做到，提议再调一次。
+
+
+### 员工状态：上岗、开工、休息、下岗培训、解雇
+
+#### 状态入口
+
+只用系统给出的员工引用（`agents list --mine` 或 `agents show` 里的 agent），不要编编号：
+
+```text
+whobot agents status <agent>
+whobot agents status <agent> --action <toWork|start|rest|toTrain|dismiss>
+whobot agents status <agent> --confirm <令牌>
+```
+
+用户问"她现在在干什么""能不能开工"时，先运行 `agents status <agent>`，按返回的 `statusLabel` 和 `actions` 回答。用户要改状态时，只在对应 action 的 `enabled` 为 true 时运行 `--action`；为 false 时转述 `reason`（例如需要企业管理员操作），不试探。
+
+| 用户说法 | action |
+| --- | --- |
+| 上岗、正式上线、开始用 | toWork（上岗） |
+| 开工、开始打、恢复拨打 | start（开工） |
+| 先停一下、休息、暂停拨打 | rest（休息） |
+| 回去调一调、下岗培训 | toTrain（下岗培训） |
+| 不要了、解雇、删掉这个员工 | dismiss（解雇） |
+
+#### 状态确认
+
+`--action` 只预览，返回确认卡和 `next.command`。把确认卡交给用户，用户明确同意后原样执行 `next.command`。解雇不能恢复，开工会开始真实拨打并按计费方式产生费用，这两项确认卡上已写明，不要替用户确认，也不加推荐。
+
+#### 状态结果
+
+确认后得到一次 `employee_status` 操作。`state` 为 succeeded 时只说新状态（`statusLabel`）；有 `warning` 时原样转述。`state` 为 unknown 时说明结果还不确定、不会再次调整；用户再问进度时才执行附带的 `ops show`，按查询结果说新状态。
+
+上岗后员工处于暂停中，开工后才会开始拨打。线路、企业认证或余额问题按返回原文说明，并给管理平台 <https://work.whobot.com/> 。

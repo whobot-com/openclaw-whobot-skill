@@ -1,5 +1,5 @@
 {
-  "skillVersion": "2.0.5",
+  "skillVersion": "2.0.6",
   "protocol": 2,
   "cli": {
     "package": "@whobot/cli",

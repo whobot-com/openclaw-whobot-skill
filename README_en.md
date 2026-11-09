@@ -2,11 +2,11 @@
 
 # WhoBot AI Phone Agent Skill
 
-Synced from [`whobot-phonecall-skill`](https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill). Skill version **2.0.5**, CLI protocol **2**.
+Synced from [`whobot-phonecall-skill`](https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill). Skill version **2.0.6**, CLI protocol **2**.
 
 📖 **Full documentation (Chinese): <https://www.whobot.com/skills/docs/>** — per-platform setup, usage guides, protocol reference, [llms.txt](https://www.whobot.com/skills/docs/llms.txt).
 
-Discover agents by industry and task, try browser voice or real phone calls, create and tune agents, upload leads, check outbound progress, and manage account access. Available operations and pricing depend on product references and system responses. Follow the skill confirmation flow for real calls and paid actions.
+Discover agents by industry and task, try browser voice or real phone calls, let the personal agent make calls for you (e.g. restaurant booking), create and tune agents, change agent status (go live, start, rest, retrain, dismiss), upload leads, check outbound progress, and manage account access. Available operations and pricing depend on product references and system responses. Follow the skill confirmation flow for real calls and paid actions.
 
 ## Install
 
@@ -43,7 +43,7 @@ Follow [SKILL.md](SKILL.md) and [setup](references/setup.md) to install or check
 
 ```bash
 npx --yes @whobot/cli@latest install
-whobot status --skill 2.0.5
+whobot status --skill 2.0.6
 ```
 
 This repository stores the skill at its root. References to `skills/whobot-phonecall-skill` refer to the upstream multi-skill repository layout.

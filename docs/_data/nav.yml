@@ -18,7 +18,7 @@
     - { title: 找标杆员工, path: guide/find-benchmark.md }
     - { title: 体验通话, path: guide/try-a-call.md }
     - { title: 创建数字员工, path: guide/create-agent.md }
-    - { title: 调优与撤销, path: guide/adjust-agent.md }
+    - { title: 调优、撤销与员工状态, path: guide/adjust-agent.md }
     - { title: 线索外呼, path: guide/leads.md }
     - { title: 账号与余额, path: guide/account.md }
 - section: 参考

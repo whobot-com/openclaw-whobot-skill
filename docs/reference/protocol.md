@@ -12,17 +12,16 @@ description: 呼波特 Skill 如何驱动 @whobot/cli：目录结构、预检、
 ```text
 whobot-phonecall-skill/
 ├── SKILL.md          # 入口：身份、说话方式、路由表、规则、动作表
-├── release.json      # skillVersion 2.0.5、protocol 2、CLI 包名与渠道、协议链接
+├── release.json      # skillVersion 2.0.6、protocol 2、CLI 包名与渠道、协议链接
 └── references/       # 按需读取的旅程说明
     ├── protocol.md       协议执行与示例
     ├── setup.md          安装、自检与排障
     ├── account.md        账号与登录
-    ├── product.md        产品介绍（不调用 CLI）
-    ├── company.md        公司资料（不调用 CLI）
+    ├── product.md        公司与产品介绍（不调用 CLI）
     ├── find-benchmark.md 找标杆
     ├── try-a-call.md     通话体验
     ├── create-agent.md   创建员工
-    ├── adjust-agent.md   调优与撤销
+    ├── adjust-agent.md   调优、撤销与员工状态
     └── leads.md          线索与线索包
 ```
 
@@ -33,7 +32,7 @@ Skill 只含纯文本，不含脚本、二进制或密钥。所有业务动作�
 第一次用到 CLI 时运行：
 
 ```bash
-whobot status --skill 2.0.5
+whobot status --skill 2.0.6
 ```
 
 - 命令不存在或协议不是 2：按 setup 安装 / 更新（`npx --yes @whobot/cli@latest install`）。

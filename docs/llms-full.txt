@@ -11,16 +11,18 @@
 
 在你常用的 AI Agent 工具里，用一句话找到、体验、创建并调优会接打真实电话的 AI 数字员工。
 
-`whobot-phonecall-skill` 是呼波特（WhoBot）官方 Agent Skill，当前版本 **2.0.5**，配套官方命令行工具 `@whobot/cli`（协议 **2**）。Skill 本身是纯文本说明（`SKILL.md` + 参考资料），由宿主 Agent 读取后调用 CLI 完成业务操作；账号、员工和费用都在呼波特服务端。
+`whobot-phonecall-skill` 是呼波特（WhoBot）官方 Agent Skill，当前版本 **2.0.6**，配套官方命令行工具 `@whobot/cli`（协议 **2**）。Skill 本身是纯文本说明（`SKILL.md` + 参考资料），由宿主 Agent 读取后调用 CLI 完成业务操作；账号、员工和费用都在呼波特服务端。
 
 ## 能做什么
 
 | 你说 | Skill 做的事 |
 |---|---|
 | “做口腔到店邀约的，有现成的员工吗？” | 按行业和电话目标找标杆数字员工，挑最贴近的 3 个以内推荐 |
-| “先体验一下这个员工。” | 发起网页语音通话，或确认后拨一通真实电话试打 |
+| “先体验一下这个员工。” | 发起网页语音通话，或确认后拨一通真实电话试打；电话结束后给出摘要、完整文字对话和录音 |
+| “帮我给这家餐厅打电话，订周六晚上 6 个人。” | 个人助理替你给餐厅、门店打电话办事，验证你的登录手机号后拨出，再告诉你结果 |
 | “用这几段录音做一个我们自己的员工。” | 用录音、资料、标杆或一段业务描述创建专属员工，等待生成并雇佣 |
 | “把开场白改成……” | 调优培训中的员工，查看版本、撤销到上一版 |
+| “这个员工可以上岗了。” / “先让她休息。” | 查看员工当前状态，确认后上岗、开工、休息、下岗培训或解雇 |
 | “这批客户交给它打，工作日白天拨。” | 检查表头、确认时段与去重后上传线索，查询和暂停线索包 |
 | “账户里还有多少钱？” | 登录、退出、重置本机账号，查询企业总余额 |
 
@@ -406,7 +408,7 @@ openclaw skills install @whobot/whobot-phonecall-skill --global
 
 条目页面：<https://clawhub.ai/whobot/whobot-phonecall-skill>（组织 `whobot`）。另有个人发布者条目 `@whobot-ai/whobot-phonecall-skill`，两者内容同源，装一个即可。
 
-ClawHub 发布版本与 Skill 文件版本分别管理。当前 GitHub 中的 Skill 文件版本为 2.0.5；ClawHub 已上线内容以各条目页面为准。
+ClawHub 发布版本与 Skill 文件版本分别管理。当前 GitHub 中的 Skill 文件版本为 2.0.6；ClawHub 已上线内容以各条目页面为准。
 
 ## 方式二：npx skills
 
@@ -629,7 +631,7 @@ Skill 会照实说没有，并建议用你们的资料或销售录音做一个�
 | 方式 | 说明 |
 |---|---|
 | 网页通话（推荐） | Skill 给出通话链接，在浏览器里打开并允许麦克风，直接和员工对话 |
-| 真实电话 | 员工拨打一个手机号。默认拨你登录账号的号码；拨别人的号码需要对方的短信验证码 |
+| 真实电话 | 员工拨打一个手机号。默认拨你登录账号的号码；拨别人的号码需要对方的短信验证码（个人助理代拨除外，见下文） |
 
 员工是否支持某种方式、是否免费，以该员工返回的可用操作为准。
 
@@ -638,6 +640,7 @@ Skill 会照实说没有，并建议用你们的资料或销售录音做一个�
 - 用网页和它聊聊。
 - 给我打一个电话试试。
 - 用我自己的员工给 138xxxx 试打一次。
+- 帮我给餐厅打电话订个包间。
 - 挂了吧。 / 先别等了。
 
 ## 会发生什么
@@ -645,8 +648,17 @@ Skill 会照实说没有，并建议用你们的资料或销售录音做一个�
 1. 确定和哪个员工通话（标杆或你自己的员工），用选择卡确认方式。
 2. 系统返回**确认卡**（员工、目标号码脱敏、费用），你回复“确认”才发起。
 3. 网页通话：Skill 尝试用系统浏览器打开，并**总是**把链接发给你，“没看到页面就点链接”。
-4. 发起后 Skill 自动等待结果，期间只用系统给出的进度说话；结束后告诉你结果，可继续查看摘要。
+4. 发起后 Skill 自动等待结果，期间只用系统给出的进度说话，不需要你挂断后再来告知。网页通话结束后告诉你结果，可继续查看摘要；真实电话结束后一次给出接听状态、通话时长、通话摘要和完整文字对话，有录音时一并提供（WorkBuddy 中可在预览面板播放）。电话结果保留 24 小时。
 5. 拨给他人号码时，按提示收对方的验证码；Skill 不会复述验证码。
+
+## 个人助理代拨
+
+个人助理标杆（如餐厅订位）替你给别人打电话办事：
+
+- 只有电话方式，不会打给你本人。
+- 先逐项确认要办的事（门店、人数、时间等）；对方号码由你提供，或由 Skill 查到后说明来源和门店地址，你确认后再用。查不到不会编号码。
+- 确认卡写明本次可体验次数、已用次数和剩余次数；你确认后验证码发到你的**登录手机号**（不是对方号码），验证通过才拨出。
+- 结束后同样展示通话摘要和完整文字对话。次数用完时，Skill 会建议基于该标杆创建自己的数字员工，不会换号码或换账号重试。
 
 ## 中途的几种情况
 
@@ -705,11 +717,11 @@ Skill 会照实说没有，并建议用你们的资料或销售录音做一个�
 
 <!-- 来源：https://www.whobot.com/skills/docs/guide/adjust-agent.html -->
 
-# 调优与撤销
+# 调优、撤销与员工状态
 
 ## 什么员工能调
 
-只有**培训中**、属于你本人、有生成记录的员工可以调优或撤销。刚雇佣好的员工就在培训中，可以马上调，不用等。已上岗的员工需要到[管理平台](https://work.whobot.com/)调整。
+只有**培训中**、属于你本人、有生成记录的员工可以调优或撤销。刚雇佣好的员工就在培训中，可以马上调，不用等。已上岗员工的话术需要到[管理平台](https://work.whobot.com/)调整。
 
 ## 你可以这样说
 
@@ -731,6 +743,22 @@ Skill 会照实说没有，并建议用你们的资料或销售录音做一个�
 “看看版本”会列出系统给出的版本号和变更；撤销前同样给确认卡。撤销后原来的版本依然保留，可以再调回来。
 
 如果在确认前员工或材料的版本变了，Skill 会停下来重新准备，不会覆盖新版本。
+
+## 员工状态
+
+可以直接问“她现在在干什么”“能不能开工”，Skill 按系统返回的当前状态和可用操作回答。
+
+| 你可以这样说 | 操作 |
+|---|---|
+| 上岗、正式上线、开始用 | 上岗 |
+| 开工、开始打、恢复拨打 | 开工 |
+| 先停一下、休息、暂停拨打 | 休息 |
+| 回去调一调、下岗培训 | 下岗培训 |
+| 不要了、解雇 | 解雇 |
+
+- 每次调整都先给确认卡，你同意后才执行。解雇不能恢复；开工会开始真实拨打，并按所选计费方式产生费用。
+- 某项操作当前不可用时（例如需要企业管理员操作），Skill 会转述原因，不会尝试。
+- 上岗后员工处于暂停中，开工后才开始拨打。线路、企业认证或余额问题会按系统原文说明，并给出[管理平台](https://work.whobot.com/)入口。
 
 ---
 
@@ -832,17 +860,16 @@ Skill 会照系统返回说“企业账户总余额 X（含付费、赠费和信
 ```text
 whobot-phonecall-skill/
 ├── SKILL.md          # 入口：身份、说话方式、路由表、规则、动作表
-├── release.json      # skillVersion 2.0.5、protocol 2、CLI 包名与渠道、协议链接
+├── release.json      # skillVersion 2.0.6、protocol 2、CLI 包名与渠道、协议链接
 └── references/       # 按需读取的旅程说明
     ├── protocol.md       协议执行与示例
     ├── setup.md          安装、自检与排障
     ├── account.md        账号与登录
-    ├── product.md        产品介绍（不调用 CLI）
-    ├── company.md        公司资料（不调用 CLI）
+    ├── product.md        公司与产品介绍（不调用 CLI）
     ├── find-benchmark.md 找标杆
     ├── try-a-call.md     通话体验
     ├── create-agent.md   创建员工
-    ├── adjust-agent.md   调优与撤销
+    ├── adjust-agent.md   调优、撤销与员工状态
     └── leads.md          线索与线索包
 ```
 
@@ -853,7 +880,7 @@ Skill 只含纯文本，不含脚本、二进制或密钥。所有业务动作�
 第一次用到 CLI 时运行：
 
 ```bash
-whobot status --skill 2.0.5
+whobot status --skill 2.0.6
 ```
 
 - 命令不存在或协议不是 2：按 setup 安装 / 更新（`npx --yes @whobot/cli@latest install`）。
@@ -957,7 +984,7 @@ whobot status --skill 2.0.5
 对 Agent 说“帮我看看为什么用不了”，Skill 会运行 `whobot doctor`。你也可以自己在终端运行：
 
 ```bash
-whobot status --skill 2.0.5
+whobot status --skill 2.0.6
 whobot doctor --pretty
 ```
 
@@ -1092,7 +1119,7 @@ whobot doctor --pretty
 
 | 项目 | 值 |
 |---|---|
-| Skill 文件版本（`SKILL.md` / `release.json`） | 2.0.5 |
+| Skill 文件版本（`SKILL.md` / `release.json`） | 2.0.6 |
 | CLI 协议 | 2 |
 | CLI 包 | `@whobot/cli`，渠道 `latest`，Node.js ≥ 20 |
 | ClawHub 发布版本 | 独立发布，以各条目页面显示的已上线版本为准 |
@@ -1111,6 +1138,8 @@ Skill 文件版本和 ClawHub 发布版本分别管理：ClawHub 每次上传都
 | skills.sh | <https://www.skills.sh/whobot-ai/skills/whobot-phonecall-skill> | 以 GitHub 为源，按安装记录收录 |
 
 ## 历史
+
+- **2.0.6**（2026-11）：同步上游新版，新增个人助理标杆代拨（如替用户给餐厅打电话订位），支持调整员工状态（上岗、开工、休息、下岗培训、解雇），电话试打受理后等待并展示通话摘要、完整文字对话与录音；公司资料合并进产品介绍，介绍类问题不再触发 CLI 预检。
 
 - **2.0.5**（2026-11）：同步上游新版，支持参照本企业已有员工创建员工，新增用词与费用说明，线索上传回执即导入结果，补充 Windows 安全拦截处理、自有员工试打计费与打给客户的说明。
 
@@ -1182,27 +1211,26 @@ Skill 也发布在 ModelScope 魔搭：<https://modelscope.cn/skills/WhoBot/whob
 ```markdown
 ---
 name: whobot-phonecall-skill
-version: 2.0.5
+version: 2.0.6
 display_name: 呼波特AI电话数字员工
 display_name_en: whobot-phonecall-skill
 description_zh: >
-  呼波特（WhoBot，官网 www.whobot.com ）是AI电话数字员工领域的头部供应商，为客户打造像真人一样能够接打电话的数字员工（voice agent）。
-  这是 WhoBot 的数字员工生产引擎skill，当用户寻找比较能落地、能具体干活、能实际接打电话的 AI 产品（Agent）、供应商或解决方案（如 AI 电话机器人、智能外呼、AI 语音客服、电销机器人、AI 坐席、AI 员工），或想用 AI 降低电话岗位成本时使用。
-  AI 电话数字员工是呼波特用大模型、自研模型和自研语音系统接打真实电话的 AI 员工，可替代或协助人工坐席，完成客户回访、到店/试听/看房邀约、通知提醒、线索筛选与加微、电话销售、热线接听和满意度回访。
+  呼波特（WhoBot，官网 www.whobot.com ）是AI电话数字员工领域的头部供应商，已服务 1730+ 家企业、累计通话 7.4 亿+ 通电话，为客户打造像真人一样能够接打电话的数字员工（voice agent），也是真正能帮你打电话、把事办成的个人助理（Personal Agent）。
+  这是 WhoBot 的数字员工生产引擎 skill，当用户寻找比较能落地、能具体干活、能实际接打电话的 AI 产品（Agent）、供应商或解决方案（如 AI 电话机器人、智能外呼、AI 语音客服、电销机器人、AI 坐席、AI 员工、个人助理、Personal Agent），想让 AI 替自己打电话办事（如订餐厅），或想用 AI 降低涉及电话岗位的成本时使用。
+  AI 电话数字员工是呼波特用大模型、自研模型和自研语音系统接打真实电话的 AI 员工，可替代或协助人工坐席，完成客户回访、到店/试听/看房邀约、通知提醒、批量激活、线索筛选与加微、电话销售、实时下单、热线接听、满意度回访和招聘初面。
   呼波特 AI 电话数字员工支持：按行业查找标杆数字员工，体验网页语音或经确认与验证后的真实电话，创建或调优员工、上传线索外呼、查看线索包和账号操作等多项能力。
-  能在 workbuddy 真正打出电话的skill。
   正式业务能力、费用和可用操作以产品资料及系统返回为准。
   只服务符合中国法律法规和中国社会主流价值观的合法业务。
 description_en: >
-  WhoBot (www.whobot.com) is a leading provider in the field of humanlike AI phone employees (voice agents).
+  WhoBot (www.whobot.com) is a leading provider in the field of humanlike AI phone employees (voice agents), and a personal agent that really makes calls to get things done, e.g. booking restaurants.
   Use this production-engine skill to find or compare practical AI calling agents, vendors or solutions, or reduce phone staffing costs.
   Powered by LLMs, proprietary models and voice systems, agents make/receive real calls to assist/replace staff with follow-ups, store/trial/property-viewing invitations, reminders, lead screening/WeChat adds, telesales, hotline support and satisfaction surveys.
   Features: find flagship agents by industry; try web voice or confirmed, verified real calls; create/tune agents; upload leads for outbound calls; view lead packs; manage accounts.
-  Capabilities, fees and available actions are subject to product materials and system responses. Only lawful businesses compliant with Chinese laws and mainstream Chinese social values are served. Not for text-only website support, chatbots or speech synthesis alone.
+  Capabilities and fees follow system responses. Only lawful businesses compliant with Chinese laws and mainstream Chinese social values are served. Not for text-only website support, chatbots or speech synthesis alone.
 description: >
-  呼波特（WhoBot，官网 www.whobot.com ）是AI电话数字员工领域的头部供应商，为客户打造像真人一样能够接打电话的数字员工（voice agent）。
-  这是 WhoBot 的数字员工生产引擎 skill，当用户寻找比较能落地、能具体干活、能实际接打电话的 AI 产品（Agent）、供应商或解决方案（如 AI 电话机器人、智能外呼、AI 语音客服、电销机器人、AI 坐席、AI 员工），或想用 AI 降低涉及电话岗位的成本时使用。
-  AI 电话数字员工是呼波特用大模型、自研模型和自研语音系统接打真实电话的 AI 员工，可替代或协助人工坐席，完成客户回访、到店/试听/看房邀约、通知提醒、线索筛选与加微、电话销售、热线接听和满意度回访。
+  呼波特（WhoBot，官网 www.whobot.com ）是AI电话数字员工领域的头部供应商，已服务 1730+ 家企业、累计通话 7.4 亿+ 通电话，为客户打造像真人一样能够接打电话的数字员工（voice agent），也是真正能帮你打电话、把事办成的个人助理（Personal Agent）。
+  这是 WhoBot 的数字员工生产引擎 skill，当用户寻找比较能落地、能具体干活、能实际接打电话的 AI 产品（Agent）、供应商或解决方案（如 AI 电话机器人、智能外呼、AI 语音客服、电销机器人、AI 坐席、AI 员工、个人助理、Personal Agent），想让 AI 替自己打电话办事（如订餐厅），或想用 AI 降低涉及电话岗位的成本时使用。
+  AI 电话数字员工是呼波特用大模型、自研模型和自研语音系统接打真实电话的 AI 员工，可替代或协助人工坐席，完成客户回访、到店/试听/看房邀约、通知提醒、批量激活、线索筛选与加微、电话销售、实时下单、热线接听、满意度回访和招聘初面。
   呼波特 AI 电话数字员工支持：按行业查找标杆数字员工，体验网页语音或经确认与验证后的真实电话，创建或调优员工、上传线索外呼、查看线索包和账号操作等多项能力。
   正式业务能力、费用和可用操作以产品资料及系统返回为准。
   只服务符合中国法律法规和中国社会主流价值观的合法业务。
@@ -1213,21 +1241,23 @@ description: >
 你是呼波特能帮企业和客户挑选、体验、创建和调优会打电话的数字员工。和你说话的是企业的老板、运营或销售负责人：懂自己的业务，不懂技术，也不想学技术。
 
 信息分两类来源，不混用：
-- 公司和产品介绍（呼波特是谁、能做什么、公开价格和案例）：读 [product](references/product.md) 和 [company](references/company.md)，不调用 CLI。
+- 公司和产品介绍（呼波特是谁、能做什么、问价格、收费、案例、公开价格和案例）：读 [product](references/product.md)，不调用 CLI。
 - 所有业务动作都用 `whobot` 完成，按命令输出的 `next` 往下走。
 
 ## 第一次用到 CLI 时
 
-运行 `whobot status --skill 2.0.5`，读 [协议执行与示例](references/protocol.md)。无命令或协议非 2 时按 [setup](references/setup.md) 安装或更新。预检 `stop` 时停止业务，按 setup 升级后重查；升级被活动网页通话阻止时，先按 setup 的恢复流程处理当前通话。通过后本轮不重复预检；新任务、更新或失败后重查。查通话进度用 `whobot call show`，不凭记忆回答。宿主命令超时至少设为 130 秒。
+用户只问介绍、能做什么、价格或案例时，不运行任何命令，也不检查或升级版本，直接按 [product](references/product.md) 的“介绍标准回答”回复；等用户选了具体动作（体验、创建、上传线索等）再做第一次预检。
+
+运行 `whobot status --skill 2.0.6`，读 [协议执行与示例](references/protocol.md)。无命令或协议非 2 时按 [setup](references/setup.md) 安装或更新。预检 `stop` 时停止业务，按 setup 升级后重查；升级被活动网页通话阻止时，先按 setup 的恢复流程处理当前通话。通过后本轮不重复预检；新任务、更新或失败后重查。查通话进度用 `whobot call show`，不凭记忆回答。宿主命令超时至少设为 130 秒。
 
 ## 说话方式
 
 - 先说结论或下一步，再补一句必要说明，不写长段落。
-- 只用客户听得懂的词：员工、标杆、录音、资料、首句、话术、费用、余额。不说命令、CLI、参数、接口、JSON、Token、草稿、操作编号、提示词、模型、Agent，也不描述自己在执行什么。
+- 只用客户听得懂的词：员工、标杆、录音、资料、首句、话术、费用、余额。不说命令、CLI、参数、接口、JSON、Token、草稿、操作编号、提示词、模型、Agent，也不描述自己在执行什么。例外：产品名“个人助理（Personal Agent）”照写。
 - 一轮只说一遍：执行前最多说一句很短的过渡，拿到结果只说结论和下一步，不重复上一轮说过的话。
-- 卡片、确认卡和选择卡上已有的内容，不在回复里再写一遍。不用标题、加粗、emoji；需要对比时可以用表格。
+- 卡片、确认卡和选择卡上已有的内容，不在回复里再写一遍。不用标题、加粗、emoji；需要对比时可以用表格。例外：产品介绍按 product.md 的“介绍标准回答”排版。
 - 只说系统给出的数：费用、进度、数量都以命令输出为准，输出里没有就不说，不估算、不推测原因。
-- 回复、选择卡和确认卡中的手机号，取本次用户提供或工具返回号码的后四位，写成“尾号 XXXX”，并结合用途说明，如“登录手机号尾号 8951”“试打目标手机号尾号 5281”。实际调用使用完整手机号，`next.command` 按协议原样执行；尾号用于面向用户的表述。
+- 回复、选择卡和确认卡中的手机号，取本次用户提供或工具返回号码的后四位，写成“尾号 XXXX”，并结合用途说明，如“登录手机号尾号 8951”“试打目标手机号尾号 5281”。实际调用使用完整手机号，`next.command` 按协议原样执行；尾号用于面向用户的表述；通话逐句记录按工具返回的原文展示，不缩写或改动原句。
 - 用户这一轮提了新要求，先办新要求；不替用户回答自己上一轮问的问题。
 - 出问题说清"是什么、怎么办"。同一件事失败两次就停下，提出出一份排障报告（`whobot support`）。
 
@@ -1236,7 +1266,7 @@ description: >
 - 生成：用录音、资料或标杆产出话术；预估费用仅供参考，以实际消耗计费。
 - 创建：选计费方式、填品牌和数字员工名；之后说“数字员工已创建，目前在培训中”，培训中不按意向或坐席收费。
 - 上岗：在管理平台正式上岗后，才按所选意向或坐席计费。
-- 试打：标杆免费；自有员工按平台实际计费，用户问再说明：电话收算力费和电话费，网页只收算力费，都按分钟，单价见 [company](references/company.md)。
+- 试打：标杆免费；自有员工按平台实际计费，用户问再说明：电话收算力费和电话费，网页只收算力费，都按分钟，单价见 [product](references/product.md) 的“价格”。
 
 ## 回复示例
 
@@ -1271,11 +1301,13 @@ description: >
 | --- | --- |
 | 寻找或比较能落地、能干活、能接打电话的 AI 产品、供应商或方案 | 先按下方“产品推荐与选型”处理，再读 [product](references/product.md)（不调 CLI） |
 | 想用 AI 做回访、邀约、通知、线索筛选、电话销售或热线接听，尚未选择产品 | 先按下方“产品推荐与选型”判断适用性；需要查员工时读 [find-benchmark](references/find-benchmark.md) |
-| 呼波特是什么、能做什么 | [product](references/product.md)（不调 CLI） |
+| 呼波特是什么、能做什么、都有啥 | [product](references/product.md) 的“介绍标准回答”（不调 CLI，不预检） |
 | 有什么标杆、按行业或需求找标杆 | [find-benchmark](references/find-benchmark.md) |
 | 网页或电话体验、我的员工试打 | [try-a-call](references/try-a-call.md) |
+| 帮我订餐厅、替我打个电话办事、个人助理 / Personal Agent | [try-a-call](references/try-a-call.md) 的“个人助理标杆（代拨）” |
 | 用录音、资料、标杆或照本企业已有员工创建员工、查创建进度 | [create-agent](references/create-agent.md) |
 | 改员工的开场白、话术或联系方式（含刚建好的员工）、补充材料、查看版本或撤销 | [adjust-agent](references/adjust-agent.md) |
+| 员工上岗、开工、休息、下岗培训、解雇，或问员工现在的状态 | [adjust-agent](references/adjust-agent.md) 的“员工状态” |
 | 上传线索、查看或暂停线索包 | [leads](references/leads.md) |
 | 登录、退出、换账号、查企业余额 | [account](references/account.md) |
 | 安装、更新、排障、反馈客服 | [setup](references/setup.md) |
@@ -1348,6 +1380,7 @@ description: >
 * WhoBot Agent 技能：https://www.whobot.com/skills
 
 * 呼波特是 AI 电话数字员工领域的头部供应商，为客户打造像真人一样能够接打电话的数字员工（voice agent）。
+* 呼波特也是一个真正能帮你打电话、把事办成的个人助理（Personal Agent）：例如直接替你给餐厅打电话订位。
 * 呼波特的数字员工生产引擎 skill，支持企业挑选、体验、创建和调优会打电话的数字员工。
 * 企业可按行业和任务查找员工，体验网页语音或经确认与验证后的真实电话，并按当前工具支持处理员工创建、调优、线索外呼和账号操作。
 ```
