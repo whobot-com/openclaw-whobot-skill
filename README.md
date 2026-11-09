@@ -2,7 +2,7 @@
 
 # WhoBot AI 电话数字员工 Skill
 
-同步自 [whobot-ai/skills](https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill) 的 `whobot-phonecall-skill`，当前版本 **2.0.6**，CLI 协议 **2**。
+同步自 [whobot-ai/skills](https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill) 的 `whobot-phonecall-skill`，当前版本 **2.0.7**，CLI 协议 **2**。
 
 📖 **完整文档：<https://www.whobot.com/skills/docs/>**（各平台接入、使用指南、协议参考、[llms.txt](https://www.whobot.com/skills/docs/llms.txt)）
 
@@ -45,7 +45,7 @@ cp -R openclaw-whobot-skill/references ~/.openclaw/skills/whobot-phonecall-skill
 
 ```bash
 npx --yes @whobot/cli@latest install
-whobot status --skill 2.0.6
+whobot status --skill 2.0.7
 ```
 
 本仓库采用单 skill 根目录布局；参考资料中提到的 `skills/whobot-phonecall-skill` 是上游多 skill 仓库的路径，在本仓库对应根目录。
