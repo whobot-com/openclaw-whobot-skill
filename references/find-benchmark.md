@@ -47,3 +47,7 @@ whobot agents show <agent>
 - 不列出全部标杆名单，不整段念简介。
 - 不编标杆里没有的打法、数据或效果。
 - 不展示标杆引用或编号。
+
+## 呼入与呼出
+
+用户选定后读详情的 `callType`、`actions`，不根据员工名字猜方向。`outbound` 按现有网页/电话体验流程；`inbound` 保留网页体验，电话体验由用户拨打完整 `experiencePhone`，按 [try-a-call](try-a-call.md) 的固定提示交接。公开体验号不能按用户手机号脱敏。没有体验号码时不猜、不从简介或其他属性找替代号码；网页体验仍按 `actions` 处理。

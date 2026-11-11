@@ -7,14 +7,14 @@ description: 呼波特（WhoBot）AI 电话数字员工 Skill：在 Claude Code�
 
 <p class="lead">在你常用的 AI Agent 工具里，用一句话找到、体验、创建并调优会接打真实电话的 AI 数字员工。</p>
 
-`whobot-phonecall-skill` 是呼波特（WhoBot）官方 Agent Skill，当前版本 **2.0.7**，配套官方命令行工具 `@whobot/cli`（协议 **2**）。Skill 本身是纯文本说明（`SKILL.md` + 参考资料），由宿主 Agent 读取后调用 CLI 完成业务操作；账号、员工和费用都在呼波特服务端。
+`whobot-phonecall-skill` 是呼波特（WhoBot）官方 Agent Skill，当前版本 **2.1.0**，配套官方命令行工具 `@whobot/cli`（协议 **2**）。Skill 本身是纯文本说明（`SKILL.md` + 参考资料），由宿主 Agent 读取后调用 CLI 完成业务操作；账号、员工和费用都在呼波特服务端。
 
 ## 能做什么
 
 | 你说 | Skill 做的事 |
 |---|---|
 | “做口腔到店邀约的，有现成的员工吗？” | 按行业和电话目标找标杆数字员工，挑最贴近的 3 个以内推荐 |
-| “先体验一下这个员工。” | 发起网页语音通话，或确认后拨一通真实电话试打；电话结束后给出摘要、完整文字对话和录音 |
+| “先体验一下这个员工。” | 发起网页语音通话，或确认后拨一通真实电话试打；电话结束后给出摘要、完整文字对话和录音。接听类（呼入）员工直接给你公开体验号码，你拨过去就能体验 |
 | “帮我给这家餐厅打电话，订周六晚上 6 个人。” | 个人助理替你给餐厅、门店打电话办事，验证你的登录手机号后拨出，再告诉你结果 |
 | “用这几段录音做一个我们自己的员工。” | 用录音、资料、标杆或一段业务描述创建专属员工，等待生成并雇佣 |
 | “把开场白改成……” | 调优培训中的员工，查看版本、撤销到上一版 |
@@ -42,7 +42,7 @@ description: 呼波特（WhoBot）AI 电话数字员工 Skill：在 Claude Code�
 请帮我安装呼波特的电话 Skill https://github.com/whobot-com/openclaw-whobot-skill
 ```
 
-装好后新开一个对话，说“呼波特能做什么”。第一次办事时，Agent 会引导你准备工具和用手机号登录。详见[五分钟上手](quickstart.md)；WorkBuddy 用户看 [WorkBuddy 使用指南](install/workbuddy.md)。
+装好后新开一个对话，说“呼波特能做什么”。第一次办事时，Agent 会引导你准备工具和用手机号登录。新注册企业赠送 1000 万 token，体验时优先消耗赠送额度；数字员工正式上岗前不收坐席费。详见[五分钟上手](quickstart.md)；WorkBuddy 用户看 [WorkBuddy 使用指南](install/workbuddy.md)。
 
 ## 适用与不适用
 

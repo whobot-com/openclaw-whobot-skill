@@ -10,7 +10,7 @@ description: 呼波特 Skill 与 @whobot/cli 的安装检查、更新、自检�
 对 Agent 说“帮我看看为什么用不了”，Skill 会运行 `whobot doctor`。你也可以自己在终端运行：
 
 ```bash
-whobot status --skill 2.0.7
+whobot status --skill 2.1.0
 whobot doctor --pretty
 ```
 
@@ -26,6 +26,10 @@ whobot doctor --pretty
 | 安装输出 `PREVIOUS_CLI_MISSING` 或 `CREDENTIAL_ORIGIN_MISMATCH` | 原来的程序被清理或服务地址已变。同意后用安装命令加 `--reset-local` 重装，再重新登录一次；员工和数据在服务端不受影响 |
 | 显示已登录却不能用 | 说“为什么显示已登录却不能用”，Skill 会查询状态，必要时引导重置 |
 | 等待中被宿主打断 | 回复“继续”或“刚才那通怎么样”，Skill 会查询同一个任务，不会重复操作 |
+| 验证码错误或过期 | 错误时重新输入正确的验证码；过期时需要重新获取，旧验证码不能再用 |
+| 提示操作太频繁（限流） | Skill 会转述系统给出的具体限制，不估计何时解除，也不会反复重试 |
+| 提示员工试打资源正在使用 | 本次没有拨出，不代表你有电话没挂断；稍后再试 |
+| 真实电话想挂断 | 真实电话和自己拨入的电话目前不能由 Skill 挂断，在电话上直接挂机；只有网页通话能说“挂了吧”结束 |
 | 同一句话触发了两个 Skill | 停用旧版 `openclaw-whobot` |
 
 ## 更新

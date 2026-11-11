@@ -7,7 +7,7 @@ baseurl: /openclaw-whobot-skill
 canonical_base: https://www.whobot.com/skills/docs
 repo_url: https://github.com/whobot-com/openclaw-whobot-skill
 upstream_url: https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill
-skill_version: 2.0.7
+skill_version: 2.1.0
 cli_protocol: 2
 
 markdown: kramdown
