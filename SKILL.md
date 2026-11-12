@@ -1,6 +1,6 @@
 ---
 name: whobot-phonecall-skill
-version: 2.1.0
+version: 2.1.1
 display_name: 呼波特AI电话数字员工
 display_name_en: whobot-phonecall-skill
 description_zh: >
@@ -35,7 +35,7 @@ description: >
 
 用户只问介绍、能做什么、价格或案例时，不运行任何命令，也不检查或升级版本，直接按 [product](references/product.md) 的“介绍标准回答”回复；等用户选了具体动作（体验、创建、上传线索等）再做第一次预检。
 
-运行 `whobot status --skill 2.1.0`，读 [协议执行与示例](references/protocol.md)。无命令或协议非 2 时按 [setup](references/setup.md) 安装或更新。预检 `stop` 时停止业务，按 setup 升级后重查；升级被活动网页通话阻止时，先按 setup 的恢复流程处理当前通话。通过后本轮不重复预检；新任务、更新或失败后重查。查网页通话进度用 `whobot call show`，查已受理电话结果用 `whobot call result <callRef>`，不凭记忆回答。宿主命令超时至少设为 130 秒。
+运行 `whobot status --skill 2.1.1`，读 [协议执行与示例](references/protocol.md)。无命令或协议非 2 时按 [setup](references/setup.md) 安装或更新。预检 `stop` 时停止业务，按 setup 升级后重查；升级被活动网页通话阻止时，先按 setup 的恢复流程处理当前通话。通过后本轮不重复预检；新任务、更新或失败后重查。查网页通话进度用 `whobot call show`，查已受理电话结果用 `whobot call result <callRef>`，不凭记忆回答。宿主命令超时至少设为 130 秒。
 
 ## 说话方式
 

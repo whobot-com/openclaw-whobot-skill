@@ -9,7 +9,7 @@ whobot agents show <agent>
 whobot call start <agent> --via web
 whobot call start <agent> --via phone
 whobot call start <agent> --via phone --phone <手机号>
-whobot call start <agent> --via phone --phone <对方号码> --attr-login-phone own_phone
+whobot call start <agent> --via phone --phone <对方号码> --attr-login-phone <name>
 whobot call result <callRef>
 ```
 
@@ -68,7 +68,7 @@ whobot call result <callRef>
 
 **个人助理标杆（代拨）**：呼出类型（`callType=outbound`）且详情 `scene` 为“个人助理”的标杆（如餐厅订位）替用户给别人打电话：只有电话体验，不问体验方式，不打给用户本人。确认后验证码发到用户的登录手机号（不是对方号码），验证通过才拨打。
 
-1. 先把要办的事和用户说清楚，逐项确认 `trialAttributes`；`default` 只是示例，不当推荐值；日期时间换算成具体日期和时刻。用户说“留我的登录手机号”“用当前账号号码”时，明确传 `--attr-login-phone own_phone`，由服务端解析完整号码；确认卡会展示“当前登录手机号，尾号 XXXX”。用户提供其他完整号码时传 `--attr own_phone=<完整号码>`，两者不能同时指定。员工声明了 `own_phone` 时，未明确号码就先询问；不填脱敏号码或尾号，不猜测服务端会默认补齐，不省略后尝试拨号。缺项报错后等待用户补充，不继续确认或提交验证码。
+1. 先把要办的事和用户说清楚，逐项确认 `trialAttributes`；`default` 只是示例，不当推荐值；日期时间换算成具体日期和时刻。没有 `default` 的每一项都要有值，缺一项服务端就拒绝。用户的回电号码按 `label` 找（如“用户电话”“联系电话”），属性名取这一项的 `name`，每个员工的名字可能不同，不套用其他员工的名字。用户说“留我的登录手机号”“用当前账号号码”时，传 `--attr-login-phone <这一项的 name>`，由服务端解析完整号码；确认卡会展示“当前登录手机号，尾号 XXXX”。用户提供其他完整号码时传 `--attr <这一项的 name>=<完整号码>`，两者不能同时指定。用户没说留哪个号码就先询问；不填脱敏号码或尾号，不猜测服务端会默认补齐，不省略后尝试拨号。返回 `INVALID_ARGUMENT` 时按 `userMessage` 转述缺少或出错的那一项，等用户补充后重新发起，不继续确认或提交验证码。
 2. 对方号码用户给了就用；需要你查（如餐厅电话）时，说明来源和门店地址，用户确认后再用。支持手机、带区号座机和 400/800；查不到就问，不编号码。
 3. 运行 `whobot call start <agent> --via phone --phone <对方号码> --attr ...`，确认卡逐项展示（含 notes），用户确认后提交。额度按本次确认卡说明具体可体验次数、已使用次数和当前剩余次数，并保留“电话发起成功计 1 次”；不概括为“有限次数”，不把默认额度当作所有账号的额度，不沿用旧确认卡数字。返回 `next.action=ask` 时说“验证码已发送至你的登录手机号尾号 XXXX（取 `data.phoneMasked` 后四位），请提供该验证码。电话尚未拨出。”，只替换 `next.command` 中的 `{code}` 提交；验证码错误按 `next.ask` 再次询问。验证通过后按标准流程第 5 步等结果，同时展示摘要和完整文字对话。
 4. 返回 `TRIAL_LIMIT_REACHED` 时原样转述 `userMessage`，可建议基于该标杆创建自己的数字员工（[create-agent](create-agent.md)）；不换号码或换账号重试。

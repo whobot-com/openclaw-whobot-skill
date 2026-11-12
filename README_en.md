@@ -2,7 +2,7 @@
 
 # WhoBot AI Phone Agent Skill
 
-Synced from [`whobot-phonecall-skill`](https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill). Skill version **2.1.0**, CLI protocol **2**.
+Synced from [`whobot-phonecall-skill`](https://github.com/whobot-ai/skills/tree/main/skills/whobot-phonecall-skill). Skill version **2.1.1**, CLI protocol **2**.
 
 📖 **Full documentation (Chinese): <https://www.whobot.com/skills/docs/>** — per-platform setup, usage guides, protocol reference, [llms.txt](https://www.whobot.com/skills/docs/llms.txt).
 
@@ -43,7 +43,7 @@ Follow [SKILL.md](SKILL.md) and [setup](references/setup.md) to install or check
 
 ```bash
 npx --yes @whobot/cli@latest install
-whobot status --skill 2.1.0
+whobot status --skill 2.1.1
 ```
 
 This repository stores the skill at its root. References to `skills/whobot-phonecall-skill` refer to the upstream multi-skill repository layout.

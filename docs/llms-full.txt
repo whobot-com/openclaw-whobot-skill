@@ -11,7 +11,7 @@
 
 在你常用的 AI Agent 工具里，用一句话找到、体验、创建并调优会接打真实电话的 AI 数字员工。
 
-`whobot-phonecall-skill` 是呼波特（WhoBot）官方 Agent Skill，当前版本 **2.1.0**，配套官方命令行工具 `@whobot/cli`（协议 **2**）。Skill 本身是纯文本说明（`SKILL.md` + 参考资料），由宿主 Agent 读取后调用 CLI 完成业务操作；账号、员工和费用都在呼波特服务端。
+`whobot-phonecall-skill` 是呼波特（WhoBot）官方 Agent Skill，当前版本 **2.1.1**，配套官方命令行工具 `@whobot/cli`（协议 **2**）。Skill 本身是纯文本说明（`SKILL.md` + 参考资料），由宿主 Agent 读取后调用 CLI 完成业务操作；账号、员工和费用都在呼波特服务端。
 
 ## 能做什么
 
@@ -408,7 +408,7 @@ openclaw skills install @whobot/whobot-phonecall-skill --global
 
 条目页面：<https://clawhub.ai/whobot/whobot-phonecall-skill>（组织 `whobot`）。另有个人发布者条目 `@whobot-ai/whobot-phonecall-skill`，两者内容同源，装一个即可。
 
-ClawHub 发布版本与 Skill 文件版本分别管理。当前 GitHub 中的 Skill 文件版本为 2.1.0；ClawHub 已上线内容以各条目页面为准。
+ClawHub 发布版本与 Skill 文件版本分别管理。当前 GitHub 中的 Skill 文件版本为 2.1.1；ClawHub 已上线内容以各条目页面为准。
 
 ## 方式二：npx skills
 
@@ -870,7 +870,7 @@ Skill 会照系统返回说“企业账户总余额 X（含付费、赠费和信
 ```text
 whobot-phonecall-skill/
 ├── SKILL.md          # 入口：身份、说话方式、路由表、规则、动作表
-├── release.json      # skillVersion 2.1.0、protocol 2、CLI 包名与渠道、协议链接
+├── release.json      # skillVersion 2.1.1、protocol 2、CLI 包名与渠道、协议链接
 └── references/       # 按需读取的旅程说明
     ├── protocol.md       协议执行与示例
     ├── setup.md          安装、自检与排障
@@ -890,7 +890,7 @@ Skill 只含纯文本，不含脚本、二进制或密钥。所有业务动作�
 第一次用到 CLI 时运行：
 
 ```bash
-whobot status --skill 2.1.0
+whobot status --skill 2.1.1
 ```
 
 - 命令不存在或协议不是 2：按 setup 安装 / 更新（`npx --yes @whobot/cli@latest install`）。
@@ -994,7 +994,7 @@ whobot status --skill 2.1.0
 对 Agent 说“帮我看看为什么用不了”，Skill 会运行 `whobot doctor`。你也可以自己在终端运行：
 
 ```bash
-whobot status --skill 2.1.0
+whobot status --skill 2.1.1
 whobot doctor --pretty
 ```
 
@@ -1133,7 +1133,7 @@ whobot doctor --pretty
 
 | 项目 | 值 |
 |---|---|
-| Skill 文件版本（`SKILL.md` / `release.json`） | 2.1.0 |
+| Skill 文件版本（`SKILL.md` / `release.json`） | 2.1.1 |
 | CLI 协议 | 2 |
 | CLI 包 | `@whobot/cli`，渠道 `latest`，Node.js ≥ 20 |
 | ClawHub 发布版本 | 独立发布，以各条目页面显示的已上线版本为准 |
@@ -1152,6 +1152,8 @@ Skill 文件版本和 ClawHub 发布版本分别管理：ClawHub 每次上传都
 | skills.sh | <https://www.skills.sh/whobot-ai/skills/whobot-phonecall-skill> | 以 GitHub 为源，按安装记录收录 |
 
 ## 历史
+
+- **2.1.1**（2026-11）：同步上游新版，修复已知问题。
 
 - **2.1.0**（2026-11）：同步上游新版，新增呼入标杆体验（用户拨打公开体验号码），登录确认醒目展示新注册赠送与计费说明并改为手动回复，主动登录改为先取协议卡再要手机号，新增失败与排障说明（验证码、限流、试打占用等），并明确电话外呼不能用命令挂断。
 
@@ -1229,7 +1231,7 @@ Skill 也发布在 ModelScope 魔搭：<https://modelscope.cn/skills/WhoBot/whob
 ```markdown
 ---
 name: whobot-phonecall-skill
-version: 2.1.0
+version: 2.1.1
 display_name: 呼波特AI电话数字员工
 display_name_en: whobot-phonecall-skill
 description_zh: >
@@ -1264,7 +1266,7 @@ description: >
 
 用户只问介绍、能做什么、价格或案例时，不运行任何命令，也不检查或升级版本，直接按 [product](references/product.md) 的“介绍标准回答”回复；等用户选了具体动作（体验、创建、上传线索等）再做第一次预检。
 
-运行 `whobot status --skill 2.1.0`，读 [协议执行与示例](references/protocol.md)。无命令或协议非 2 时按 [setup](references/setup.md) 安装或更新。预检 `stop` 时停止业务，按 setup 升级后重查；升级被活动网页通话阻止时，先按 setup 的恢复流程处理当前通话。通过后本轮不重复预检；新任务、更新或失败后重查。查网页通话进度用 `whobot call show`，查已受理电话结果用 `whobot call result <callRef>`，不凭记忆回答。宿主命令超时至少设为 130 秒。
+运行 `whobot status --skill 2.1.1`，读 [协议执行与示例](references/protocol.md)。无命令或协议非 2 时按 [setup](references/setup.md) 安装或更新。预检 `stop` 时停止业务，按 setup 升级后重查；升级被活动网页通话阻止时，先按 setup 的恢复流程处理当前通话。通过后本轮不重复预检；新任务、更新或失败后重查。查网页通话进度用 `whobot call show`，查已受理电话结果用 `whobot call result <callRef>`，不凭记忆回答。宿主命令超时至少设为 130 秒。
 
 ## 说话方式
 

@@ -17,7 +17,7 @@
 
 1. 检查 Node.js 20+、npm、npx；缺少时先安装。
 2. Skill 三步安装：克隆仓库、复制 `skills/whobot-phonecall-skill`、重启宿主。
-3. 命令不存在时执行 `npx --yes @whobot/cli@latest install`，再运行 `whobot status --skill 2.1.0`。
+3. 命令不存在时执行 `npx --yes @whobot/cli@latest install`，再运行 `whobot status --skill 2.1.1`。
 4. 自检运行 `whobot doctor`（需要人读时可加 `--pretty`）；需要反馈时运行 `whobot support`，把 `data.report` 原样放进代码块交给客服；输出带 `data.contactUrl` 时用图片展示客服二维码：`![联系客服](https://…)`（括号里放 `data.contactUrl` 的值），下一行再附这个链接（有的宿主不显示图片），`data.contactTitle`、`data.contactNote` 只转述。用户问官网、后台或管理平台：官网 https://whobot.com ，管理平台 https://work.whobot.com/ ；`data.consoleUrl` 存在时以它为准。
 
 网页通话状态只由服务端保存；CLI 被宿主回收或更换对话后，继续运行 `next.command` 中的 `whobot call wait` / `whobot call show` 查询同一通话，不读取或清理本地网页通话状态文件。
