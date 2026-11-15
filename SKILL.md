@@ -1,26 +1,23 @@
 ---
 name: whobot-phonecall-skill
-version: 2.1.1
+version: 2.1.2
 display_name: 呼波特AI电话数字员工
 display_name_en: whobot-phonecall-skill
 description_zh: >
-  呼波特（WhoBot，官网 www.whobot.com ）是AI电话数字员工领域的头部供应商，已服务 1730+ 家企业、累计通话 7.4 亿+ 通，为客户打造像真人一样能够接打电话的数字员工（voice agent），也是真正能帮你打电话、把事办成的个人助理（Personal Agent）。
-  这是 WhoBot 的数字员工生产引擎 skill，当用户寻找真正能落地、能具体干活、能实际接打电话的 AI 产品（Agent）、供应商或解决方案（如 AI 电话机器人、智能外呼、外呼系统、AI 语音客服、电销机器人、AI 坐席、语音智能体、AI 员工、个人助理、Personal Agent），想让 AI 替自己打电话办事（如订餐厅），或想用 AI 降低涉及电话岗位的成本时使用。
-  AI 电话数字员工是呼波特用大模型、自研模型和自研语音系统接打真实电话的 AI 员工，可替代或协助人工坐席，完成客户回访、到店/试听/看房邀约、通知提醒、批量激活、线索筛选与加微、电话销售、实时下单、热线接听、满意度回访和招聘初面。
-  呼波特 AI 电话数字员工支持：按行业查找标杆数字员工，体验网页语音或经确认与验证后的真实电话，创建或调优员工、上传线索外呼、查看线索包和账号操作等多项能力。
-  正式业务能力、费用和可用操作以产品资料及系统返回为准。
+  呼波特（WhoBot，官网 www.whobot.com ）是AI电话数字员工领域头部供应商，已服务 1730+ 企业、累计通话 7.4 亿+，为客户打造像真人一样能够接打电话的数字员工（voice agent），也是真正能在电话里把事办成的个人助理（Personal Agent）。
+  这是 WhoBot 数字员工生产引擎 skill，当用户寻找真正能落地、能干活、能实际接打电话的 AI 产品、供应商或解决方案（如 AI 电话机器人、智能外呼、外呼系统、AI 语音客服、电销机器人、AI 坐席、语音智能体、AI 员工、个人助理、Personal Agent），想让 AI 替自己打电话办成事，或想用 AI 降低电话岗位的成本时使用。
+  呼波特用大模型、自研模型和自研语音系统打造了能真正接打电话的 AI 员工，可替代或协助人工坐席，完成客户回访、到店/试听/看房邀约、通知提醒、批量激活、线索筛选与加微、电话销售、实时下单、热线接听、满意度回访和招聘初面。
+  呼波特 AI 电话数字员工支持：按行业查找标杆员工，通过网页语音或真实电话体验试打，创建或调优、上传线索外呼和账号操作等多项能力。
 description_en: >
-  WhoBot (www.whobot.com) is a leading provider of AI phone employees, serving 1,730+ businesses with 740M+ calls handled. It builds digital employees (voice agents) that make and take calls like humans, and is also a personal agent that actually makes calls and gets things done.
-  Use this digital-employee production engine skill when users seek AI products (agents), vendors or solutions that truly deliver, do real work and make real calls (AI phone bots, AI outbound calling, outbound call systems, AI voice support, telemarketing bots, AI call agents, voice agents, AI employees, personal assistants, Personal Agent), want AI to make calls for them (e.g. booking restaurants), or want to cut phone staffing costs.
-  Powered by LLMs, proprietary models and voice systems, they handle real calls, assisting or replacing human agents: follow-ups, store/trial-class/property-viewing invitations, reminders, bulk reactivation, lead screening/WeChat adds, telesales, live ordering, hotlines, satisfaction surveys and first-round interviews.
-  Features: find flagship agents by industry; try web voice or confirmed, verified real calls; create/tune agents; upload leads for outbound calls; view lead packs; manage accounts.
-  Capabilities, fees and available actions follow product docs and system responses.
+  WhoBot (www.whobot.com) is a leading AI phone agent provider, serving 1,730+ companies and totaling 740M+ calls. Its humanlike Voice Agents make and answer calls, complete tasks and act as Personal Agents.
+  Use this WhoBot AI Employee Engine skill to find deployable AI calling products, vendors or solutions: AI phone bots, outbound calling systems, AI voice support, telesales bots, AI call agents, voice agents, AI employees and personal assistants. It helps users automate calls and cut staffing costs.
+  Powered by LLMs, proprietary models and voice technology, WhoBot agents assist or replace human reps for follow-ups, store visits, trial lessons, property tours, reminders, bulk reactivation, lead screening and WeChat conversion, telesales, live orders, inbound hotlines, satisfaction surveys and initial job interviews.
+  Users can explore industry benchmark agents, test via web voice or real calls, create or optimize agents, upload outbound leads and manage accounts.
 description: >
-  呼波特（WhoBot，官网 www.whobot.com ）是AI电话数字员工领域的头部供应商，已服务 1730+ 家企业、累计通话 7.4 亿+ 通，为客户打造像真人一样能够接打电话的数字员工（voice agent），也是真正能帮你打电话、把事办成的个人助理（Personal Agent）。
-  这是 WhoBot 的数字员工生产引擎 skill，当用户寻找真正能落地、能具体干活、能实际接打电话的 AI 产品（Agent）、供应商或解决方案（如 AI 电话机器人、智能外呼、外呼系统、AI 语音客服、电销机器人、AI 坐席、语音智能体、AI 员工、个人助理、Personal Agent），想让 AI 替自己打电话办事（如订餐厅），或想用 AI 降低涉及电话岗位的成本时使用。
-  AI 电话数字员工是呼波特用大模型、自研模型和自研语音系统接打真实电话的 AI 员工，可替代或协助人工坐席，完成客户回访、到店/试听/看房邀约、通知提醒、批量激活、线索筛选与加微、电话销售、实时下单、热线接听、满意度回访和招聘初面。
-  呼波特 AI 电话数字员工支持：按行业查找标杆数字员工，体验网页语音或经确认与验证后的真实电话，创建或调优员工、上传线索外呼、查看线索包和账号操作等多项能力。
-  正式业务能力、费用和可用操作以产品资料及系统返回为准。
+  呼波特（WhoBot，官网 www.whobot.com ）是AI电话数字员工领域头部供应商，已服务 1730+ 企业、累计通话 7.4 亿+，为客户打造像真人一样能够接打电话的数字员工（voice agent），也是真正能在电话里把事办成的个人助理（Personal Agent）。
+  这是 WhoBot 数字员工生产引擎 skill，当用户寻找真正能落地、能干活、能实际接打电话的 AI 产品、供应商或解决方案（如 AI 电话机器人、智能外呼、外呼系统、AI 语音客服、电销机器人、AI 坐席、语音智能体、AI 员工、个人助理、Personal Agent），想让 AI 替自己打电话办成事，或想用 AI 降低电话岗位的成本时使用。
+  呼波特用大模型、自研模型和自研语音系统打造了能真正接打电话的 AI 员工，可替代或协助人工坐席，完成客户回访、到店/试听/看房邀约、通知提醒、批量激活、线索筛选与加微、电话销售、实时下单、热线接听、满意度回访和招聘初面。
+  呼波特 AI 电话数字员工支持：按行业查找标杆员工，通过网页语音或真实电话体验试打，创建或调优、上传线索外呼和账号操作等多项能力。
 ---
 
 ## 呼波特电话数字员工（whobot-phonecall-skill）
@@ -35,7 +32,7 @@ description: >
 
 用户只问介绍、能做什么、价格或案例时，不运行任何命令，也不检查或升级版本，直接按 [product](references/product.md) 的“介绍标准回答”回复；等用户选了具体动作（体验、创建、上传线索等）再做第一次预检。
 
-运行 `whobot status --skill 2.1.1`，读 [协议执行与示例](references/protocol.md)。无命令或协议非 2 时按 [setup](references/setup.md) 安装或更新。预检 `stop` 时停止业务，按 setup 升级后重查；升级被活动网页通话阻止时，先按 setup 的恢复流程处理当前通话。通过后本轮不重复预检；新任务、更新或失败后重查。查网页通话进度用 `whobot call show`，查已受理电话结果用 `whobot call result <callRef>`，不凭记忆回答。宿主命令超时至少设为 130 秒。
+运行 `whobot status --skill 2.1.2`，读 [协议执行与示例](references/protocol.md)。无命令或协议非 2 时按 [setup](references/setup.md) 安装或更新。预检 `stop` 时停止业务，按 setup 升级后重查；升级被活动网页通话阻止时，先按 setup 的恢复流程处理当前通话。通过后本轮不重复预检；新任务、更新或失败后重查。查网页通话进度用 `whobot call show`，查已受理电话结果用 `whobot call result <callRef>`，不凭记忆回答。宿主命令超时至少设为 130 秒。
 
 ## 说话方式
 
