@@ -12,7 +12,7 @@ description: 呼波特 Skill 如何驱动 @whobot/cli：目录结构、预检、
 ```text
 whobot-phonecall-skill/
 ├── SKILL.md          # 入口：身份、说话方式、路由表、规则、动作表
-├── release.json      # skillVersion 2.1.3、protocol 2、CLI 包名与渠道、协议链接
+├── release.json      # skillVersion 2.1.4、protocol 2、CLI 包名与渠道、协议链接
 └── references/       # 按需读取的旅程说明
     ├── protocol.md       协议执行与示例
     ├── setup.md          安装、自检与排障
@@ -21,6 +21,7 @@ whobot-phonecall-skill/
     ├── find-benchmark.md 找标杆
     ├── benchmark-page.md 标杆介绍页模板（宿主预览面板）
     ├── try-a-call.md     通话体验
+    ├── personal-assistant.md 个人助理代拨、余额与充值
     ├── create-agent.md   创建员工
     ├── adjust-agent.md   调优、撤销与员工状态
     └── leads.md          线索与线索包
@@ -33,7 +34,7 @@ Skill 只含纯文本，不含脚本、二进制或密钥。所有业务动作�
 第一次用到 CLI 时运行：
 
 ```bash
-whobot status --skill 2.1.3
+whobot status --skill 2.1.4
 ```
 
 - 命令不存在或协议不是 2：按 setup 安装 / 更新（`npx --yes @whobot/cli@latest install`）。
@@ -80,6 +81,7 @@ whobot status --skill 2.1.3
 | 账号 | `whobot login --phone <手机号>`、`whobot logout`、`whobot reset`、`whobot balance` |
 | 员工 | `whobot agents list --benchmark --need <原话>`、`whobot agents list --mine`、`whobot agents show <agent>` |
 | 通话 | `whobot call start <agent> --via web|phone`、`whobot call show`、`whobot call wait`、`whobot call cancel` |
+| 个人助理 | `whobot assistant list`、`whobot assistant show <agent>`、`whobot assistant call <agent> …`、`whobot assistant result <callRef>`、`whobot assistant balance`、`whobot assistant recharge` |
 | 创建 | `whobot agents create --recording|--document|--benchmark|--business-text …`、`whobot ops list`、`whobot ops show <op>` |
 | 调优 | `whobot agents tune <agent> …`、`whobot agents versions <agent>`、`whobot agents revert <agent>` |
 | 线索 | `whobot leads template <agent>`、`whobot leads upload <agent> …`、`whobot packages list|show|pause|resume` |

@@ -11,7 +11,7 @@
 
 在你常用的 AI Agent 工具里，用一句话找到、体验、创建并调优会接打真实电话的 AI 数字员工。
 
-`whobot-phonecall-skill` 是呼波特（WhoBot）官方 Agent Skill，当前版本 **2.1.3**，配套官方命令行工具 `@whobot/cli`（协议 **2**）。Skill 本身是纯文本说明（`SKILL.md` + 参考资料），由宿主 Agent 读取后调用 CLI 完成业务操作；账号、员工和费用都在呼波特服务端。
+`whobot-phonecall-skill` 是呼波特（WhoBot）官方 Agent Skill，当前版本 **2.1.4**，配套官方命令行工具 `@whobot/cli`（协议 **2**）。Skill 本身是纯文本说明（`SKILL.md` + 参考资料），由宿主 Agent 读取后调用 CLI 完成业务操作；账号、员工和费用都在呼波特服务端。
 
 ## 能做什么
 
@@ -20,12 +20,12 @@
 | “做口腔到店邀约的，有现成的员工吗？” | 按行业和电话目标找标杆数字员工，挑最贴近的 3 个以内推荐 |
 | “介绍一下这个员工。” | 不用登录：讲清它打给谁、电话里办成什么事，给出介绍视频、案例录音和对话；在 WorkBuddy 里会在右侧打开它的介绍页 |
 | “先体验一下这个员工。” | 发起网页语音通话，或确认后拨一通真实电话试打；电话结束后给出摘要、完整文字对话和录音。接听类（呼入）员工直接给你公开体验号码，你拨过去就能体验 |
-| “帮我给这家餐厅打电话，订周六晚上 6 个人。” | 个人助理替你给餐厅、门店打电话办事，你确认后直接拨出，再告诉你结果 |
+| “帮我给这家餐厅打电话，订周六晚上 6 个人。” | 个人助理替你给餐厅、门店打电话办事，你确认后直接拨出，再告诉你结果；按接通分钟计费，分钟不够时可以在对话里扫码充值 |
 | “用这几段录音做一个我们自己的员工。” | 用录音、资料、标杆或一段业务描述创建专属员工，等待生成并雇佣 |
 | “把开场白改成……” | 调优培训中的员工，查看版本、撤销到上一版 |
 | “这个员工可以上岗了。” / “先让她休息。” | 查看员工当前状态，确认后上岗、开工、休息、下岗培训或解雇 |
 | “这批客户交给它打，工作日白天拨。” | 检查表头、确认时段与去重后上传线索，查询和暂停线索包 |
-| “账户里还有多少钱？” | 登录、退出、重置本机账号，查询企业总余额 |
+| “账户里还有多少钱？” | 登录、退出、重置本机账号，查询企业账户余额或个人助理剩余分钟 |
 
 涉及费用、真实拨打、上传客户资料的操作，都会先给你看确认卡，你同意后才执行。详见[确认、费用与隐私](https://www.whobot.com/skills/docs/reference/safety.html)。
 
@@ -409,7 +409,7 @@ openclaw skills install @whobot/whobot-phonecall-skill --global
 
 条目页面：<https://clawhub.ai/whobot/whobot-phonecall-skill>（组织 `whobot`）。另有个人发布者条目 `@whobot-ai/whobot-phonecall-skill`，两者内容同源，装一个即可。
 
-ClawHub 发布版本与 Skill 文件版本分别管理。当前 GitHub 中的 Skill 文件版本为 2.1.3；ClawHub 已上线内容以各条目页面为准。
+ClawHub 发布版本与 Skill 文件版本分别管理。当前 GitHub 中的 Skill 文件版本为 2.1.4；ClawHub 已上线内容以各条目页面为准。
 
 ## 方式二：npx skills
 
@@ -633,7 +633,7 @@ Skill 会照实说没有，并建议用你们的资料或销售录音做一个�
 | 方式 | 说明 |
 |---|---|
 | 网页通话（推荐） | Skill 给出通话链接，在浏览器里打开并允许麦克风，直接和员工对话 |
-| 真实电话 | 员工拨打一个手机号。默认拨你登录账号的号码；拨别人的号码需要对方的短信验证码（个人助理代拨除外，见下文） |
+| 真实电话 | 员工拨打一个手机号。默认拨你登录账号的号码；拨别人的号码需要对方的短信验证码 |
 | 拨打体验号码 | 只用于呼入（接听类）标杆：你自己拨打系统给出的公开体验号码，见下文 |
 
 员工是否支持某种方式、是否免费，以该员工返回的可用操作为准。员工是外呼还是呼入，以系统返回的类型为准，不按名字判断。
@@ -643,7 +643,6 @@ Skill 会照实说没有，并建议用你们的资料或销售录音做一个�
 - 用网页和它聊聊。
 - 给我打一个电话试试。
 - 用我自己的员工给 138xxxx 试打一次。
-- 帮我给餐厅打电话订个包间。
 - 挂了吧。 / 先别等了。
 
 ## 会发生什么
@@ -664,12 +663,7 @@ Skill 会照实说没有，并建议用你们的资料或销售录音做一个�
 
 ## 个人助理代拨
 
-个人助理标杆（如餐厅订位）是外呼类标杆，替你给别人打电话办事：
-
-- 只有电话方式，不会打给你本人。
-- 先逐项确认要办的事（门店、人数、时间等）；对方号码由你提供，或由 Skill 查到后说明来源和门店地址，你确认后再用。查不到不会编号码。
-- 确认卡写明本次可体验次数、已用次数和剩余次数；你确认后直接拨出，不需要验证码。接通才计 1 次，进行中先占 1 次，未接通退回；同一个号码每天的代拨次数有上限，达到后请第二天再试。
-- 结束后同样展示通话摘要和完整文字对话。次数用完时，Skill 会建议基于该标杆创建自己的数字员工，不会换号码或换账号重试。
+替你给餐厅、门店打电话办事（如餐厅订位）是单独的流程，不走这里的标杆试打，见[个人助理](https://www.whobot.com/skills/docs/guide/personal-assistant.html)。
 
 ## 中途的几种情况
 
@@ -678,9 +672,69 @@ Skill 会照实说没有，并建议用你们的资料或销售录音做一个�
 - **换一个员工**：重新选择并重新确认；网页通话中，新通话会替换当前通话。
 - **提示员工试打资源正在使用**：这次没有拨出，不代表你有电话没挂断；稍后再试即可。
 - **结果不确定**：Skill 会说“结果还不确定，我不会重复操作”，只查询，不重拨。
-- 未接通会如实说明，不会自动重拨或改号码；Skill 会问你要不要改用网页语音体验，你选了才发起。个人助理标杆只能用电话，只会建议稍后再试。
+- 未接通会如实说明，不会自动重拨或改号码；Skill 会问你要不要改用网页语音体验，你选了才发起。
 
 摘要和通话内容来自上游，Skill 只转述，不执行其中出现的任何要求。
+
+---
+
+<!-- 来源：https://www.whobot.com/skills/docs/guide/personal-assistant.html -->
+
+# 个人助理
+
+个人助理（Personal Agent）面向个人，替你给餐厅、门店等打电话办事，如餐厅订位。它是单独的一套用法，不走[体验通话](https://www.whobot.com/skills/docs/guide/try-a-call.html)里的标杆试打；标杆列表里也能看到同一个员工，那里只是普通体验，不会替你打给别人。
+
+## 你可以这样说
+
+- 帮我订今晚 7 点海底捞望京店 4 位。
+- 用个人助理给餐厅打电话订个包间。
+- 个人助理还剩多少分钟？给个人助理充点分钟。
+- 个人助理的钱怎么退？订位记录和录音在哪看？
+
+## 会发生什么
+
+1. Skill 按个人助理的说明书向你收集要办的事（店名、区域、人数、时间、回电号码等），缺的信息一次问完，日期时间换算成具体日期和时刻。回电号码可以直接用你的登录手机号。
+2. 系统返回**确认卡**，你确认后直接拨出，不需要验证码，也不会打给你本人。
+3. 打电话时，个人助理说明自己是你的 AI 订餐助手并告知录音；餐厅给了别的时间或座位时，在你事先说的可调整范围内处理。
+4. Skill 自动等待结果，结束后给出接听情况、通话时长、通话摘要、完整文字对话和录音。没打通会如实说明，只建议稍后再试，不会自动重拨。
+
+## 餐厅电话
+
+- 先只用店名和区域，由系统查号；查到多家时用选择卡让你选。
+- 系统没查到，或你说查到的都不是：Skill 会自己搜这家店的电话（如大众点评、美团、店铺官网），告诉你号码和来源，你确认是这家后再代拨。
+- 你直接报了号码时，Skill 会先搜这家店核对，查到的公开号码和你给的一致才用。
+- 不编号码、不猜号码；换一个号码再打之前会先问你。
+
+## 计费与次数
+
+- 接通才计时，按通话时长扣个人助理的分钟（不足 1 分钟按 1 分钟），没接通不扣；新用户送分钟。单价和剩余分钟以确认卡和余额查询的返回为准。
+- 登录手机号不限代拨次数；同一个号码每天被代拨的次数有上限，用完时 Skill 只转述，不会换号码或换账号重试。
+
+## 余额与充值
+
+个人助理的分钟按登录手机号单独计，和企业账户余额是两本账，见[账号与余额](https://www.whobot.com/skills/docs/guide/account.html#查余额)。
+
+- **查余额**：Skill 告诉你“个人助理还剩 X 分钟”；上次通话超出余额时，会说明欠多少分钟，充值后先抵扣。
+- **充值**：代拨时分钟不够或欠费、查余额不足 1 分钟，或你主动要充值时，Skill 用选择卡让你选充值方式：去网站充值、微信支付或支付宝。选微信或支付宝后再选档位（只列充值后够打一通电话的档位），Skill 在对话里给出付款码和付款页链接。
+- **到账**：付好后告诉 Skill，它会查是否到账；到账后问你要不要接着发起刚才的代拨，并重新给确认卡。还没到账时等你再说，不会自己反复查。
+
+Skill 不替你选充值方式或档位，不会在你没选时下单，也不会重复下单。
+
+## 网站、记录、退款与发票
+
+个人助理有自己的网站 <https://dingcan.whobot.com/>，用登录呼波特的同一个手机号、短信验证码登录，代拨的电话都能在网站上看到：
+
+- 概览：剩余分钟和最近的订位。
+- 订位记录：每通电话的结果、录音和文字对话，可以删除某一单的录音和对话；觉得结果或计费不对，在那条记录里点「结果不对？告诉我们」。
+- 钱包：充值（微信、支付宝）、看充值记录、申请退款、看退款进度。
+- 设置：代拨时用的默认信息（称呼、留给餐厅的电话、用餐区域、餐厅没有想要的时间时怎么处理等）、短信通知、更换手机号、已授权的 AI 助手、导出个人信息和注销账号。
+
+网站上不能直接下单订位，订位在对话里发起。
+
+- **退款**：对话里不能退款，请到网站[钱包页](https://dingcan.whobot.com/app/wallet)点「申请退款」。没用完的充值分钟按充值时的单价原路退回（退到微信零钱一般几分钟到账，退到银行卡 1–3 个工作日）；赠送的分钟不能退；通话进行中不能申请。完整规则见[计费与退款规则](https://dingcan.whobot.com/legal/terms#pricing)。
+- **发票**：在网站钱包页点「联系客服」，提供充值订单号（钱包的充值记录里能看到）和开票信息，客服核实后开电子普通发票。
+
+个人助理的充值、退款和发票都在这个网站办理，不走企业管理平台。
 
 ---
 
@@ -853,7 +907,12 @@ Skill 会把以下内容说清楚，等你明确回复“确认”才上传（�
 
 ## 查余额
 
-Skill 会照系统返回说“企业账户总余额 X（含付费、赠费和信用额度）”，不估算、不换算。
+账号下有两本账，互不相通：
+
+- **企业账户余额**：呼波特管理平台里的企业资金，数字员工外呼、生成和调优员工从这里扣，按元计。Skill 会照系统返回说“企业账户总余额 X（含付费、赠费和信用额度）”，不估算、不换算。
+- **个人助理余额**：个人助理替你给餐厅等打电话的代拨分钟，按登录手机号单独计。查询、充值、退款和发票见[个人助理](https://www.whobot.com/skills/docs/guide/personal-assistant.html#余额与充值)。
+
+你说清了查哪本，Skill 就直接查；只说“查余额”“账户里还有多少钱”时，会用选择卡问你查哪本。还没登录时，Skill 先引导你登录，登录后马上帮你查。
 
 ## 凭据保存在哪
 
@@ -872,7 +931,7 @@ Skill 会照系统返回说“企业账户总余额 X（含付费、赠费和信
 ```text
 whobot-phonecall-skill/
 ├── SKILL.md          # 入口：身份、说话方式、路由表、规则、动作表
-├── release.json      # skillVersion 2.1.3、protocol 2、CLI 包名与渠道、协议链接
+├── release.json      # skillVersion 2.1.4、protocol 2、CLI 包名与渠道、协议链接
 └── references/       # 按需读取的旅程说明
     ├── protocol.md       协议执行与示例
     ├── setup.md          安装、自检与排障
@@ -881,6 +940,7 @@ whobot-phonecall-skill/
     ├── find-benchmark.md 找标杆
     ├── benchmark-page.md 标杆介绍页模板（宿主预览面板）
     ├── try-a-call.md     通话体验
+    ├── personal-assistant.md 个人助理代拨、余额与充值
     ├── create-agent.md   创建员工
     ├── adjust-agent.md   调优、撤销与员工状态
     └── leads.md          线索与线索包
@@ -893,7 +953,7 @@ Skill 只含纯文本，不含脚本、二进制或密钥。所有业务动作�
 第一次用到 CLI 时运行：
 
 ```bash
-whobot status --skill 2.1.3
+whobot status --skill 2.1.4
 ```
 
 - 命令不存在或协议不是 2：按 setup 安装 / 更新（`npx --yes @whobot/cli@latest install`）。
@@ -940,6 +1000,7 @@ whobot status --skill 2.1.3
 | 账号 | `whobot login --phone <手机号>`、`whobot logout`、`whobot reset`、`whobot balance` |
 | 员工 | `whobot agents list --benchmark --need <原话>`、`whobot agents list --mine`、`whobot agents show <agent>` |
 | 通话 | `whobot call start <agent> --via web|phone`、`whobot call show`、`whobot call wait`、`whobot call cancel` |
+| 个人助理 | `whobot assistant list`、`whobot assistant show <agent>`、`whobot assistant call <agent> …`、`whobot assistant result <callRef>`、`whobot assistant balance`、`whobot assistant recharge` |
 | 创建 | `whobot agents create --recording|--document|--benchmark|--business-text …`、`whobot ops list`、`whobot ops show <op>` |
 | 调优 | `whobot agents tune <agent> …`、`whobot agents versions <agent>`、`whobot agents revert <agent>` |
 | 线索 | `whobot leads template <agent>`、`whobot leads upload <agent> …`、`whobot packages list|show|pause|resume` |
@@ -997,7 +1058,7 @@ whobot status --skill 2.1.3
 对 Agent 说“帮我看看为什么用不了”，Skill 会运行 `whobot doctor`。你也可以自己在终端运行：
 
 ```bash
-whobot status --skill 2.1.3
+whobot status --skill 2.1.4
 whobot doctor --pretty
 ```
 
@@ -1136,7 +1197,7 @@ whobot doctor --pretty
 
 | 项目 | 值 |
 |---|---|
-| Skill 文件版本（`SKILL.md` / `release.json`） | 2.1.3 |
+| Skill 文件版本（`SKILL.md` / `release.json`） | 2.1.4 |
 | CLI 协议 | 2 |
 | CLI 包 | `@whobot/cli`，渠道 `latest`，Node.js ≥ 20 |
 | ClawHub 发布版本 | 独立发布，以各条目页面显示的已上线版本为准 |
@@ -1155,6 +1216,8 @@ Skill 文件版本和 ClawHub 发布版本分别管理：ClawHub 每次上传都
 | skills.sh | <https://www.skills.sh/whobot-ai/skills/whobot-phonecall-skill> | 以 GitHub 为源，按安装记录收录 |
 
 ## 历史
+
+- **2.1.4**（2026-11）：同步上游新版，个人助理独立成单独流程（新增 `references/personal-assistant.md`，改用 `whobot assistant` 系列命令），不再走标杆试打：按店名和区域由系统查号，查不到时搜索号码、经用户确认后再代拨，登录手机号不限代拨次数；查余额分清企业账户余额与个人助理分钟余额，个人助理可在对话里用微信或支付宝扫码充值，退款、发票、订位记录和录音引导到个人助理网站；登录时协议只展示一次，用户回复手机号即视为同意，未登录查余额直接引导登录。
 
 - **2.1.3**（2026-11）：同步上游新版，选中标杆后先介绍它的简介、介绍视频、案例录音和对话，不需要登录，WorkBuddy 中改为生成标杆介绍页在预览面板播放（新增 `references/benchmark-page.md`）；新增“不登录也能做的事”，用户不想登录、登录失败或工具装不上时给出可以继续的选项；价格说明补充费用构成、按坐席与按效果付费的适用情况和坐席档位选择；排障报告只在连续系统故障或用户要找客服时提供；调优遇到需要人工处理的条目时引导联系商务安排专家训练；个人助理代拨改为按服务端说明书收集信息。
 
@@ -1238,7 +1301,7 @@ Skill 也发布在 ModelScope 魔搭：<https://modelscope.cn/skills/WhoBot/whob
 ```markdown
 ---
 name: whobot-phonecall-skill
-version: 2.1.3
+version: 2.1.4
 display_name: 呼波特AI电话数字员工
 display_name_en: whobot-phonecall-skill
 description_zh: >
@@ -1270,7 +1333,7 @@ description: >
 
 用户只问介绍、能做什么、价格或案例时，不运行任何命令，也不检查或升级版本，直接按 [product](references/product.md) 的“介绍标准回答”回复；等用户选了具体动作（体验、创建、上传线索等）再做第一次预检。
 
-运行 `whobot status --skill 2.1.3`，读 [协议执行与示例](references/protocol.md)。无命令或协议非 2 时按 [setup](references/setup.md) 安装或更新；安装一次仍失败或宿主不能运行命令时，按下方“不登录也能做的事”的最后一段继续，不停在安装上。预检 `stop` 时停止业务，按 setup 升级后重查；升级被活动网页通话阻止时，先按 setup 的恢复流程处理当前通话。通过后本轮不重复预检；新任务、更新或失败后重查。查网页通话进度用 `whobot call show`，查已受理电话结果用 `whobot call result <callRef>`，不凭记忆回答。宿主命令超时至少设为 130 秒。
+运行 `whobot status --skill 2.1.4`，读 [协议执行与示例](references/protocol.md)。无命令或协议非 2 时按 [setup](references/setup.md) 安装或更新；安装一次仍失败或宿主不能运行命令时，按下方“不登录也能做的事”的最后一段继续，不停在安装上。预检 `stop` 时停止业务，按 setup 升级后重查；升级被活动网页通话阻止时，先按 setup 的恢复流程处理当前通话。通过后本轮不重复预检；新任务、更新或失败后重查。查网页通话进度用 `whobot call show`，查已受理电话结果用 `whobot call result <callRef>`（个人助理代拨用 `whobot assistant result <callRef>`），不凭记忆回答。宿主命令超时至少设为 130 秒。
 
 ## 不登录也能做的事
 
@@ -1288,7 +1351,7 @@ description: >
 - 只说系统给出的数：费用、进度、数量都以命令输出为准，输出里没有就不说，不估算、不推测原因。
 - 回复、选择卡和确认卡中的手机号，取本次用户提供或工具返回号码的后四位，写成“尾号 XXXX”，并结合用途说明，如“登录手机号尾号 8951”“试打目标手机号尾号 5281”。实际调用使用完整手机号，`next.command` 按协议原样执行；尾号用于面向用户的表述；通话逐句记录按工具返回的原文展示，不缩写或改动原句。例外：呼入标杆的 `experiencePhone` 是公开体验号码，必须完整展示，不能只显示尾号。
 - 用户这一轮提了新要求，先办新要求；不替用户回答自己上一轮问的问题。
-- 出问题说清"是什么、怎么办"。只有两种情况出排障报告（`whobot support`）、引导联系客服：同一件事连续两次遇到系统故障（错误类别为 `unavailable` 或 `internal`；`unavailable` 且 `retry.safe` 为 false 时第一次就可以给），或用户主动要找客服、人工。查不到地点、电话没人接或没拨出、体验次数或号码当日次数用完、信息缺失或有误、限流，都是正常结果，不算故障：按返回的文案说明，引导用户补充、换个说法或稍后再试，不出排障报告、不推客服，连续多次也一样。调优结果有需要人工处理的条目时，按 [adjust-agent](references/adjust-agent.md) 说明训练需求太高级了、请用户联系商务安排专家帮忙训练，并给客服二维码，也不出排障报告。
+- 出问题说清"是什么、怎么办"。只有两种情况出排障报告（`whobot support`）、引导联系客服：同一件事连续两次遇到系统故障（错误类别为 `unavailable` 或 `internal`；`unavailable` 且 `retry.safe` 为 false 时第一次就可以给），或用户主动要找客服、人工。查不到地点、电话没人接或没拨出、号码当日次数用完、信息缺失或有误、限流，都是正常结果，不算故障：按返回的文案说明，引导用户补充、换个说法或稍后再试，不出排障报告、不推客服，连续多次也一样。调优结果有需要人工处理的条目时，按 [adjust-agent](references/adjust-agent.md) 说明训练需求太高级了、请用户联系商务安排专家帮忙训练，并给客服二维码，也不出排障报告。
 
 ## 用词与费用
 
@@ -1338,19 +1401,22 @@ description: >
 | 介绍某个标杆、看介绍视频、听案例录音或看对话 | [find-benchmark](references/find-benchmark.md) 的“介绍标杆”（不需要登录） |
 | 不登录能做什么、不想登录、登录不了 | 上方“不登录也能做的事” |
 | 网页或电话体验、我的员工试打 | [try-a-call](references/try-a-call.md) |
-| 帮我订餐厅、替我打个电话办事、个人助理 / Personal Agent | [try-a-call](references/try-a-call.md) 的“个人助理标杆（代拨）” |
+| 帮我订餐厅、替我打个电话办事、个人助理 / Personal Agent | [personal-assistant](references/personal-assistant.md) |
 | 用录音、资料、标杆或照本企业已有员工创建员工、查创建进度 | [create-agent](references/create-agent.md) |
 | 改员工的开场白、话术或联系方式（含刚建好的员工）、补充材料、查看版本或撤销 | [adjust-agent](references/adjust-agent.md) |
 | 员工上岗、开工、休息、下岗培训、解雇，或问员工现在的状态 | [adjust-agent](references/adjust-agent.md) 的“员工状态” |
 | 上传线索、查看或暂停线索包 | [leads](references/leads.md) |
-| 登录、退出、换账号、查企业余额 | [account](references/account.md) |
+| 登录、退出、换账号 | [account](references/account.md) |
+| 查余额、账户里还有多少钱 | [account](references/account.md) 的“查余额”：先分清企业账户余额还是个人助理余额 |
+| 个人助理还剩多少分钟、给个人助理充值、代拨提示分钟不够或欠费 | [personal-assistant](references/personal-assistant.md) 的“余额与充值” |
+| 个人助理退款、发票、订位记录和录音、订餐网站 | [personal-assistant](references/personal-assistant.md) 的“网站、记录、退款与发票” |
 | 安装、更新、排障、反馈客服 | [setup](references/setup.md) |
 
 员工可用操作以 `whobot agents show <agent>` 的 `actions` 为准。
 
 用户问官网、后台或管理平台：直接答官网 <https://whobot.com> ，管理平台 <https://work.whobot.com/> （员工上岗、企业认证都在这里）；不上网搜索、不猜；输出带 `data.consoleUrl` 时以它为准。
 
-企业账务、充值、发票直接给链接：
+企业账务、充值、发票直接给链接（个人助理的分钟充值、退款和发票不走这里，见 [personal-assistant](references/personal-assistant.md)）：
 
 - 账务明细、充值（点“立即充值”，支持支付宝或对公转账）：财务资金中心 <https://work.whobot.com/finance/capital-center>
 - 发票申请：发票管理 <https://work.whobot.com/finance/invoice-management>

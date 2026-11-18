@@ -1,6 +1,6 @@
 ---
 name: whobot-phonecall-skill
-version: 2.1.3
+version: 2.1.4
 display_name: 呼波特AI电话数字员工
 display_name_en: whobot-phonecall-skill
 description_zh: >
@@ -32,7 +32,7 @@ description: >
 
 用户只问介绍、能做什么、价格或案例时，不运行任何命令，也不检查或升级版本，直接按 [product](references/product.md) 的“介绍标准回答”回复；等用户选了具体动作（体验、创建、上传线索等）再做第一次预检。
 
-运行 `whobot status --skill 2.1.3`，读 [协议执行与示例](references/protocol.md)。无命令或协议非 2 时按 [setup](references/setup.md) 安装或更新；安装一次仍失败或宿主不能运行命令时，按下方“不登录也能做的事”的最后一段继续，不停在安装上。预检 `stop` 时停止业务，按 setup 升级后重查；升级被活动网页通话阻止时，先按 setup 的恢复流程处理当前通话。通过后本轮不重复预检；新任务、更新或失败后重查。查网页通话进度用 `whobot call show`，查已受理电话结果用 `whobot call result <callRef>`，不凭记忆回答。宿主命令超时至少设为 130 秒。
+运行 `whobot status --skill 2.1.4`，读 [协议执行与示例](references/protocol.md)。无命令或协议非 2 时按 [setup](references/setup.md) 安装或更新；安装一次仍失败或宿主不能运行命令时，按下方“不登录也能做的事”的最后一段继续，不停在安装上。预检 `stop` 时停止业务，按 setup 升级后重查；升级被活动网页通话阻止时，先按 setup 的恢复流程处理当前通话。通过后本轮不重复预检；新任务、更新或失败后重查。查网页通话进度用 `whobot call show`，查已受理电话结果用 `whobot call result <callRef>`（个人助理代拨用 `whobot assistant result <callRef>`），不凭记忆回答。宿主命令超时至少设为 130 秒。
 
 ## 不登录也能做的事
 
@@ -50,7 +50,7 @@ description: >
 - 只说系统给出的数：费用、进度、数量都以命令输出为准，输出里没有就不说，不估算、不推测原因。
 - 回复、选择卡和确认卡中的手机号，取本次用户提供或工具返回号码的后四位，写成“尾号 XXXX”，并结合用途说明，如“登录手机号尾号 8951”“试打目标手机号尾号 5281”。实际调用使用完整手机号，`next.command` 按协议原样执行；尾号用于面向用户的表述；通话逐句记录按工具返回的原文展示，不缩写或改动原句。例外：呼入标杆的 `experiencePhone` 是公开体验号码，必须完整展示，不能只显示尾号。
 - 用户这一轮提了新要求，先办新要求；不替用户回答自己上一轮问的问题。
-- 出问题说清"是什么、怎么办"。只有两种情况出排障报告（`whobot support`）、引导联系客服：同一件事连续两次遇到系统故障（错误类别为 `unavailable` 或 `internal`；`unavailable` 且 `retry.safe` 为 false 时第一次就可以给），或用户主动要找客服、人工。查不到地点、电话没人接或没拨出、体验次数或号码当日次数用完、信息缺失或有误、限流，都是正常结果，不算故障：按返回的文案说明，引导用户补充、换个说法或稍后再试，不出排障报告、不推客服，连续多次也一样。调优结果有需要人工处理的条目时，按 [adjust-agent](references/adjust-agent.md) 说明训练需求太高级了、请用户联系商务安排专家帮忙训练，并给客服二维码，也不出排障报告。
+- 出问题说清"是什么、怎么办"。只有两种情况出排障报告（`whobot support`）、引导联系客服：同一件事连续两次遇到系统故障（错误类别为 `unavailable` 或 `internal`；`unavailable` 且 `retry.safe` 为 false 时第一次就可以给），或用户主动要找客服、人工。查不到地点、电话没人接或没拨出、号码当日次数用完、信息缺失或有误、限流，都是正常结果，不算故障：按返回的文案说明，引导用户补充、换个说法或稍后再试，不出排障报告、不推客服，连续多次也一样。调优结果有需要人工处理的条目时，按 [adjust-agent](references/adjust-agent.md) 说明训练需求太高级了、请用户联系商务安排专家帮忙训练，并给客服二维码，也不出排障报告。
 
 ## 用词与费用
 
@@ -100,19 +100,22 @@ description: >
 | 介绍某个标杆、看介绍视频、听案例录音或看对话 | [find-benchmark](references/find-benchmark.md) 的“介绍标杆”（不需要登录） |
 | 不登录能做什么、不想登录、登录不了 | 上方“不登录也能做的事” |
 | 网页或电话体验、我的员工试打 | [try-a-call](references/try-a-call.md) |
-| 帮我订餐厅、替我打个电话办事、个人助理 / Personal Agent | [try-a-call](references/try-a-call.md) 的“个人助理标杆（代拨）” |
+| 帮我订餐厅、替我打个电话办事、个人助理 / Personal Agent | [personal-assistant](references/personal-assistant.md) |
 | 用录音、资料、标杆或照本企业已有员工创建员工、查创建进度 | [create-agent](references/create-agent.md) |
 | 改员工的开场白、话术或联系方式（含刚建好的员工）、补充材料、查看版本或撤销 | [adjust-agent](references/adjust-agent.md) |
 | 员工上岗、开工、休息、下岗培训、解雇，或问员工现在的状态 | [adjust-agent](references/adjust-agent.md) 的“员工状态” |
 | 上传线索、查看或暂停线索包 | [leads](references/leads.md) |
-| 登录、退出、换账号、查企业余额 | [account](references/account.md) |
+| 登录、退出、换账号 | [account](references/account.md) |
+| 查余额、账户里还有多少钱 | [account](references/account.md) 的“查余额”：先分清企业账户余额还是个人助理余额 |
+| 个人助理还剩多少分钟、给个人助理充值、代拨提示分钟不够或欠费 | [personal-assistant](references/personal-assistant.md) 的“余额与充值” |
+| 个人助理退款、发票、订位记录和录音、订餐网站 | [personal-assistant](references/personal-assistant.md) 的“网站、记录、退款与发票” |
 | 安装、更新、排障、反馈客服 | [setup](references/setup.md) |
 
 员工可用操作以 `whobot agents show <agent>` 的 `actions` 为准。
 
 用户问官网、后台或管理平台：直接答官网 <https://whobot.com> ，管理平台 <https://work.whobot.com/> （员工上岗、企业认证都在这里）；不上网搜索、不猜；输出带 `data.consoleUrl` 时以它为准。
 
-企业账务、充值、发票直接给链接：
+企业账务、充值、发票直接给链接（个人助理的分钟充值、退款和发票不走这里，见 [personal-assistant](references/personal-assistant.md)）：
 
 - 账务明细、充值（点“立即充值”，支持支付宝或对公转账）：财务资金中心 <https://work.whobot.com/finance/capital-center>
 - 发票申请：发票管理 <https://work.whobot.com/finance/invoice-management>
