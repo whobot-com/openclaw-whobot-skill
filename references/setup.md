@@ -17,7 +17,7 @@
 
 1. 检查 Node.js 20+、npm、npx；缺少时先安装。
 2. Skill 三步安装：克隆仓库、复制 `skills/whobot-phonecall-skill`、重启宿主。
-3. 命令不存在时执行 `npx --yes @whobot/cli@latest install`，再运行 `whobot status --skill 2.1.4`。安装失败（包括宿主不能运行命令、Node.js 装不上）时只试这一次，不反复重装，按 SKILL.md 的“不登录也能做的事”最后一段继续服务用户。
+3. 命令不存在时执行 `npx --yes @whobot/cli@latest install`，再运行 `whobot status --skill 2.1.5`。安装失败（包括宿主不能运行命令、Node.js 装不上）时只试这一次，不反复重装，按 SKILL.md 的“不登录也能做的事”最后一段继续服务用户。
 4. 自检运行 `whobot doctor`（需要人读时可加 `--pretty`）；需要反馈时运行 `whobot support`，把 `data.report` 原样放进代码块交给客服；输出带 `data.contactUrl` 时用图片展示客服二维码：`![联系客服](https://…)`（括号里放 `data.contactUrl` 的值），下一行再附这个链接（有的宿主不显示图片），`data.contactTitle`、`data.contactNote` 只转述。用户问官网、后台或管理平台：官网 https://whobot.com ，管理平台 https://work.whobot.com/ ；`data.consoleUrl` 存在时以它为准。
 
 网页通话状态只由服务端保存；CLI 被宿主回收或更换对话后，继续运行 `next.command` 中的 `whobot call wait` / `whobot call show` 查询同一通话，不读取或清理本地网页通话状态文件。
@@ -29,6 +29,8 @@
 ## 常见岔路
 
 升级或安装提示有活动网页通话时，先用 `whobot call show` 查看当前状态。用户已明确要求结束、取消或“干掉”旧试听，就执行 `whobot call cancel`；尚未明确时，用选择卡提供“结束旧试听并继续升级 / 保留试听，稍后升级”，等待选择。已支持 `call cancel` 的协议 2 旧版 CLI 可执行该恢复操作。取消后再用 `whobot call show` 核实：查询返回已结束状态或提示当前没有通话，即继续原升级流程；仍在进行或无法确认状态时，按结果说明并交还。通话状态用于确认服务端占用是否释放，`prepared/in_progress` 表述为“旧试听仍占用中”。
+
+升级提示“已有一次更新正在进行”时，不等待、不重复同一条命令：沿用同一次更新同意，执行一次 `npx --yes @whobot/cli@<具体版本> install`，具体版本取升级确认卡上的目标版本；新版安装程序会自行识别上次中断留下的更新标记。仍提示同一原因说明确有另一次更新在进行，告诉用户稍后说“重新升级”再试，这一轮不再重试、不手动删文件。
 
 最低 CLI 和 Skill 版本由服务端分别校验，不自行比较或推导配套版本。预检的 `data.upgrades` 给出具体目标：CLI 用 `installCommand`，Skill 用 `packageUrl` 和 `instructionsUrl`；取得更新同意后操作，不把命令当作用户文案。按预检要求升级对应组件至渠道最新稳定版；Skill 用原平台更新入口或官方完整包安装，不自动覆盖宿主目录。Skill 更新后重载或新建任务，重新预检后才继续业务。失败重试或用户明确要求时也可重查；无 Skill 参数的状态查询只作诊断，不代表 Skill 已通过。
 
